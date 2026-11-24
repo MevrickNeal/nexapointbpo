@@ -2,7 +2,7 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>NexaPoint BPO | Commercial Cleaning Outbound & Appointment Setting</title>
     <meta name="description" content="NexaPoint BPO delivers dedicated outbound cold calling and appointment setting pods for commercial cleaning companies in the UK, Canada, New Zealand, USA, and Australia.">
     <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
@@ -19,6 +19,9 @@
             darkMode: 'class',
             theme: {
                 extend: {
+                    screens: {
+                        'xs': '420px',
+                    },
                     fontFamily: {
                         sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
                         heading: ['"Plus Jakarta Sans"', 'sans-serif'],
@@ -40,237 +43,304 @@
     </script>
 
     <style>
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
         .stat-card {
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .stat-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 24px -10px rgba(0, 102, 255, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -8px rgba(0, 102, 255, 0.15);
+        }
+
+        /* Seamless Continuous Rolling Ticker */
+        @keyframes rollingMarquee {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        .ticker-wrapper {
+            display: flex;
+            overflow: hidden;
+            user-select: none;
+            width: 100%;
+        }
+        .ticker-track {
+            display: inline-flex;
+            flex-shrink: 0;
+            align-items: center;
+            gap: 2rem;
+            animation: rollingMarquee 38s linear infinite;
+            padding-right: 2rem;
+            will-change: transform;
+        }
+        .ticker-wrapper:hover .ticker-track {
+            animation-play-state: paused;
         }
     </style>
 
     <script>
-        if (localStorage.theme === 'dark') {
+        // Apply theme early to prevent flash of wrong mode
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
             document.documentElement.classList.remove('dark');
         }
     </script>
 </head>
-<body class="bg-white dark:bg-slate-950 text-slate-700 dark:text-slate-300 font-sans antialiased selection:bg-brand-600 selection:text-white">
+<body class="bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-200 font-sans antialiased selection:bg-brand-600 selection:text-white transition-colors duration-200">
 
-    <!-- Top Operational Ticker Bar -->
-    <div class="bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 text-[11px] text-slate-600 dark:text-slate-400 py-2 px-4">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
-            <div class="flex items-center gap-2">
-                <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span id="cms-ticker-text" class="font-medium text-slate-800 dark:text-slate-200">Delivery Operations Center: Pabna, Bangladesh</span>
-                <span class="text-slate-400 dark:text-slate-600">|</span>
-                <span class="hidden sm:inline">24/5 International Shift Alignment</span>
-            </div>
-            
-            <div class="flex items-center gap-4 font-mono text-[11px] overflow-x-auto">
-                <span>LON (UK): <strong id="t-lon" class="text-slate-900 dark:text-slate-200">--:-- GMT</strong></span>
-                <span>TOR (CA): <strong id="t-tor" class="text-slate-900 dark:text-slate-200">--:-- EST</strong></span>
-                <span>AKL (NZ): <strong id="t-akl" class="text-slate-900 dark:text-slate-200">--:-- NZT</strong></span>
-                <span>SAT (US): <strong id="t-sat" class="text-slate-900 dark:text-slate-200">--:-- CST</strong></span>
-                <span>SYD (AU): <strong id="t-syd" class="text-slate-900 dark:text-slate-200">--:-- AEST</strong></span>
-                <span class="border-l border-slate-300 dark:border-slate-700 pl-3">DHK (BD HQ): <strong id="t-dhk" class="text-emerald-600 dark:text-emerald-400">--:-- BST</strong></span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Navigation Header -->
-    <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <!-- ============================================================ -->
+    <!-- 1. NAVIGATION HEADER (TOP BAR) -->
+    <!-- ============================================================ -->
+    <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-200/90 dark:border-slate-800/90 transition-colors">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2">
             
             <!-- Brand Logo -->
-            <a href="#home" class="flex items-center gap-3.5 group">
-                <img src="assets/logo.jpg" alt="NexaPoint BPO" class="h-12 w-auto object-contain rounded-lg border border-slate-200 dark:border-slate-800 group-hover:border-brand-600 transition-colors">
+            <a href="#home" class="flex items-center gap-2.5 sm:gap-3.5 group shrink-0">
+                <img src="assets/logo.jpg" alt="NexaPoint BPO" class="h-9 sm:h-12 w-auto object-contain rounded-lg border border-slate-200 dark:border-slate-800 group-hover:border-brand-600 transition-colors">
                 <div class="flex flex-col">
-                    <span class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-none font-heading">
+                    <span class="text-base sm:text-xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-none font-heading">
                         NexaPoint <span class="text-brand-600">BPO</span>
                     </span>
-                    <span class="text-[10px] tracking-widest text-slate-500 uppercase mt-1 font-semibold">
+                    <span class="hidden xs:block text-[9px] sm:text-[10px] tracking-widest text-slate-500 dark:text-slate-400 uppercase mt-0.5 sm:mt-1 font-semibold">
                         Your Goals, Our Support
                     </span>
                 </div>
             </a>
 
-            <!-- Navigation Links -->
-            <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-700 dark:text-slate-300">
-                <a href="#pipeline" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Outbound Pipeline</a>
-                <a href="#comparison" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Cost Arbitrage</a>
-                <a href="#facilities" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Target Facilities</a>
-                <a href="#hubs" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Global Hubs</a>
-                <a href="#calculator" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">ROI Model</a>
-                <a href="#contact" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Contact</a>
+            <!-- Navigation Links (Desktop) -->
+            <nav class="hidden lg:flex items-center gap-6 xl:gap-7 text-sm font-semibold text-slate-700 dark:text-slate-300">
+                <a href="#pipeline" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Outbound Pipeline</a>
+                <a href="#comparison" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Cost Arbitrage</a>
+                <a href="#facilities" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Target Facilities</a>
+                <a href="#hubs" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Global Hubs</a>
+                <a href="#calculator" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">ROI Model</a>
+                <a href="#contact" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Contact</a>
             </nav>
 
-            <!-- Actions: Day/Night Toggle + Admin/Staff Login + Consultation -->
-            <div class="flex items-center gap-3">
+            <!-- Actions: Day/Night Switcher + Portal Login + Consultation + Mobile Menu -->
+            <div class="flex items-center gap-1.5 sm:gap-3">
                 
                 <!-- Day / Night Mode Switcher Button -->
-                <button id="theme-toggle" type="button" aria-label="Toggle theme" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-500 transition-colors">
-                    <svg id="theme-icon-sun" class="w-4 h-4 hidden dark:block text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                <button id="theme-toggle" type="button" aria-label="Toggle dark/light mode" class="p-2 sm:p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+                    <svg id="theme-icon-sun" class="w-4 h-4 hidden text-amber-400" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/>
                     </svg>
-                    <svg id="theme-icon-moon" class="w-4 h-4 block dark:hidden text-slate-700" fill="currentColor" viewBox="0 0 20 20">
+                    <svg id="theme-icon-moon" class="w-4 h-4 block text-slate-700" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
                     </svg>
                 </button>
 
                 <!-- Admin & Staff Portal Login Button -->
-                <button id="nav-login-btn" type="button" class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-xs font-bold text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 hover:border-brand-600 transition-all shadow-sm">
-                    <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                    <span id="nav-login-label">Portal Login</span>
+                <button id="nav-login-btn" type="button" class="inline-flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3.5 sm:py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-xs font-bold text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 hover:border-brand-600 transition-all shadow-sm">
+                    <svg class="w-3.5 h-3.5 text-brand-600 dark:text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                    <span id="nav-login-label" class="text-[11px] sm:text-xs">Portal Login</span>
                 </button>
 
-                <!-- Primary CTA -->
-                <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider text-white bg-brand-600 hover:bg-brand-700 shadow-md shadow-brand-600/20 transition-all">
+                <!-- Primary CTA (Desktop & Tablet) -->
+                <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider text-white bg-brand-600 hover:bg-brand-700 shadow-md shadow-brand-600/20 transition-all">
                     Schedule Audit
                 </a>
 
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-600 dark:text-slate-300" aria-label="Open mobile menu">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                <!-- Mobile Menu Hamburger Button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors" aria-label="Open mobile menu">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Drawer -->
-        <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-6 py-6 space-y-4">
-            <a href="#pipeline" class="block font-semibold text-slate-800 dark:text-slate-200">Outbound Pipeline</a>
-            <a href="#comparison" class="block font-semibold text-slate-800 dark:text-slate-200">Cost Arbitrage</a>
-            <a href="#facilities" class="block font-semibold text-slate-800 dark:text-slate-200">Target Facilities</a>
-            <a href="#hubs" class="block font-semibold text-slate-800 dark:text-slate-200">Global Hubs</a>
-            <a href="#calculator" class="block font-semibold text-slate-800 dark:text-slate-200">ROI Model</a>
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-950/95 backdrop-blur-md px-5 py-5 space-y-3.5">
+            <a href="#pipeline" class="block font-semibold text-slate-800 dark:text-slate-200 hover:text-brand-600 py-1 text-sm">Outbound Pipeline</a>
+            <a href="#comparison" class="block font-semibold text-slate-800 dark:text-slate-200 hover:text-brand-600 py-1 text-sm">Cost Arbitrage</a>
+            <a href="#facilities" class="block font-semibold text-slate-800 dark:text-slate-200 hover:text-brand-600 py-1 text-sm">Target Facilities</a>
+            <a href="#hubs" class="block font-semibold text-slate-800 dark:text-slate-200 hover:text-brand-600 py-1 text-sm">Global Hubs</a>
+            <a href="#calculator" class="block font-semibold text-slate-800 dark:text-slate-200 hover:text-brand-600 py-1 text-sm">ROI Model</a>
             <button id="mobile-login-btn" type="button" class="w-full py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-bold text-xs flex items-center justify-center gap-2">
                 <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                <span>Portal Login / CMS</span>
+                <span>Portal Login / Admin CMS</span>
             </button>
-            <a href="#contact" class="block text-center py-3 rounded-xl bg-brand-600 text-white font-bold text-sm">Schedule Audit</a>
+            <a href="#contact" class="block text-center py-2.5 rounded-xl bg-brand-600 text-white font-bold text-xs uppercase tracking-wider">Schedule Audit</a>
         </div>
     </header>
 
-    <!-- Hero Section with Infographic Dashboard -->
-    <section id="home" class="relative pt-12 pb-16 lg:pt-16 lg:pb-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+    <!-- ============================================================ -->
+    <!-- 2. CONTINUOUS ROLLING WORLD CLOCK RIBBON (BELOW NAV BAR) -->
+    <!-- ============================================================ -->
+    <div class="relative bg-slate-100 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800 overflow-hidden py-2.5 z-30 select-none">
+        <div class="ticker-wrapper flex items-center overflow-hidden whitespace-nowrap">
+            
+            <!-- Track 1 -->
+            <div class="ticker-track flex items-center gap-8 shrink-0 text-xs font-mono text-slate-600 dark:text-slate-300">
+                <span class="inline-flex items-center gap-2 font-sans font-bold text-slate-900 dark:text-white px-2.5 py-0.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-xs">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="cms-ticker-text text-[11px]">Delivery Operations Center: Pabna, Bangladesh</span>
+                </span>
+                <span><span class="text-slate-400 dark:text-slate-500">LON (UK):</span> <strong class="t-lon text-slate-900 dark:text-slate-100 font-bold">--:--:-- GMT</strong></span>
+                <span class="text-slate-300 dark:text-slate-700">|</span>
+                <span><span class="text-slate-400 dark:text-slate-500">TOR (CA):</span> <strong class="t-tor text-slate-900 dark:text-slate-100 font-bold">--:--:-- EST</strong></span>
+                <span class="text-slate-300 dark:text-slate-700">|</span>
+                <span><span class="text-slate-400 dark:text-slate-500">AKL (NZ):</span> <strong class="t-akl text-slate-900 dark:text-slate-100 font-bold">--:--:-- NZT</strong></span>
+                <span class="text-slate-300 dark:text-slate-700">|</span>
+                <span><span class="text-slate-400 dark:text-slate-500">SAT (US):</span> <strong class="t-sat text-slate-900 dark:text-slate-100 font-bold">--:--:-- CST</strong></span>
+                <span class="text-slate-300 dark:text-slate-700">|</span>
+                <span><span class="text-slate-400 dark:text-slate-500">SYD (AU):</span> <strong class="t-syd text-slate-900 dark:text-slate-100 font-bold">--:--:-- AEST</strong></span>
+                <span class="text-slate-300 dark:text-slate-700">|</span>
+                <span class="border-l border-slate-300 dark:border-slate-700 pl-3"><span class="text-emerald-600 dark:text-emerald-400 font-bold">DHK (BD HQ):</span> <strong class="t-dhk text-emerald-600 dark:text-emerald-400 font-bold">--:--:-- BST</strong></span>
+                <span class="text-slate-300 dark:text-slate-700">|</span>
+                <span class="text-slate-500 dark:text-slate-400 font-sans text-[11px] font-semibold">24/5 International Shift Alignment: UK • Canada • New Zealand • USA • Australia</span>
+            </div>
+
+            <!-- Track 2 (Duplicate for Seamless Infinite Marquee Loop) -->
+            <div class="ticker-track flex items-center gap-8 shrink-0 text-xs font-mono text-slate-600 dark:text-slate-300" aria-hidden="true">
+                <span class="inline-flex items-center gap-2 font-sans font-bold text-slate-900 dark:text-white px-2.5 py-0.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-xs">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="cms-ticker-text text-[11px]">Delivery Operations Center: Pabna, Bangladesh</span>
+                </span>
+                <span><span class="text-slate-400 dark:text-slate-500">LON (UK):</span> <strong class="t-lon text-slate-900 dark:text-slate-100 font-bold">--:--:-- GMT</strong></span>
+                <span class="text-slate-300 dark:text-slate-700">|</span>
+                <span><span class="text-slate-400 dark:text-slate-500">TOR (CA):</span> <strong class="t-tor text-slate-900 dark:text-slate-100 font-bold">--:--:-- EST</strong></span>
+                <span class="text-slate-300 dark:text-slate-700">|</span>
+                <span><span class="text-slate-400 dark:text-slate-500">AKL (NZ):</span> <strong class="t-akl text-slate-900 dark:text-slate-100 font-bold">--:--:-- NZT</strong></span>
+                <span class="text-slate-300 dark:text-slate-700">|</span>
+                <span><span class="text-slate-400 dark:text-slate-500">SAT (US):</span> <strong class="t-sat text-slate-900 dark:text-slate-100 font-bold">--:--:-- CST</strong></span>
+                <span class="text-slate-300 dark:text-slate-700">|</span>
+                <span><span class="text-slate-400 dark:text-slate-500">SYD (AU):</span> <strong class="t-syd text-slate-900 dark:text-slate-100 font-bold">--:--:-- AEST</strong></span>
+                <span class="text-slate-300 dark:text-slate-700">|</span>
+                <span class="border-l border-slate-300 dark:border-slate-700 pl-3"><span class="text-emerald-600 dark:text-emerald-400 font-bold">DHK (BD HQ):</span> <strong class="t-dhk text-emerald-600 dark:text-emerald-400 font-bold">--:--:-- BST</strong></span>
+                <span class="text-slate-300 dark:text-slate-700">|</span>
+                <span class="text-slate-500 dark:text-slate-400 font-sans text-[11px] font-semibold">24/5 International Shift Alignment: UK • Canada • New Zealand • USA • Australia</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- 3. HERO SECTION WITH INFOGRAPHIC PIPELINE -->
+    <!-- ============================================================ -->
+    <section id="home" class="relative pt-8 pb-14 sm:pt-14 sm:pb-20 bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-10 items-center">
+            <div class="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
                 
-                <!-- Left: Punchy Core Pitch -->
-                <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-xs font-bold text-brand-600 dark:text-blue-400 uppercase">
-                        <span class="w-2 h-2 rounded-full bg-brand-600"></span>
+                <!-- Left Column: Core Value Pitch -->
+                <div class="lg:col-span-7 space-y-4 sm:space-y-5 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/70 border border-blue-200 dark:border-blue-900/60 text-[10px] sm:text-xs font-bold text-brand-600 dark:text-blue-400 uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-brand-600 dark:bg-blue-400 shrink-0"></span>
                         Commercial Cleaning Outbound Center • Pabna, Bangladesh
                     </div>
 
-                    <h1 id="cms-hero-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight font-heading">
-                        Fill Your Calendar with High-Value <span class="text-brand-600">Commercial Cleaning Contracts</span>
+                    <h1 id="cms-hero-title" class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight font-heading break-words">
+                        Fill Your Calendar with High-Value <span class="text-brand-600 dark:text-blue-500">Commercial Cleaning Contracts</span>
                     </h1>
 
-                    <p id="cms-hero-sub" class="text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
+                    <p id="cms-hero-sub" class="text-xs sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                         Dedicated offshore cold calling pods connecting your cleaning business with corporate facility decision-makers across the UK, Canada, New Zealand, Australia, and the USA.
                     </p>
 
-                    <!-- KPI Metric Infographic Row -->
-                    <div class="grid grid-cols-3 gap-3 pt-2 text-left">
-                        <div class="p-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
-                            <span class="text-[10px] font-mono uppercase text-slate-400 font-bold block">Monthly Dials</span>
-                            <span id="cms-stat-dials" class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white mt-0.5 block">60,000+</span>
-                            <span class="text-[10px] text-emerald-600 font-bold">120-180/day/rep</span>
+                    <!-- KPI Metric Infographic Row (Optimized for Mobile) -->
+                    <div class="grid grid-cols-3 gap-2 sm:gap-3 pt-2 text-left">
+                        <div class="p-2.5 sm:p-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
+                            <span class="text-[9px] sm:text-[10px] font-mono uppercase text-slate-400 dark:text-slate-500 font-bold block truncate">Monthly Dials</span>
+                            <span id="cms-stat-dials" class="text-base sm:text-2xl font-extrabold text-slate-900 dark:text-white mt-0.5 block tracking-tight">60,000+</span>
+                            <span class="text-[9px] sm:text-[10px] text-emerald-600 dark:text-emerald-400 font-bold block truncate">120-180/day/rep</span>
                         </div>
-                        <div class="p-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
-                            <span class="text-[10px] font-mono uppercase text-slate-400 font-bold block">Cost Arbitrage</span>
-                            <span id="cms-stat-savings" class="text-xl sm:text-2xl font-extrabold text-brand-600 dark:text-blue-400 mt-0.5 block">65%–70%</span>
-                            <span class="text-[10px] text-slate-400">vs Onshore SDR</span>
+                        <div class="p-2.5 sm:p-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
+                            <span class="text-[9px] sm:text-[10px] font-mono uppercase text-slate-400 dark:text-slate-500 font-bold block truncate">Cost Arbitrage</span>
+                            <span id="cms-stat-savings" class="text-base sm:text-2xl font-extrabold text-brand-600 dark:text-blue-400 mt-0.5 block tracking-tight">65%–70%</span>
+                            <span class="text-[9px] sm:text-[10px] text-slate-400 dark:text-slate-500 block truncate">vs Onshore SDR</span>
                         </div>
-                        <div class="p-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
-                            <span class="text-[10px] font-mono uppercase text-slate-400 font-bold block">Attendance</span>
-                            <span id="cms-stat-attendance" class="text-xl sm:text-2xl font-extrabold text-emerald-600 dark:text-emerald-400 mt-0.5 block">94.2%</span>
-                            <span class="text-[10px] text-slate-400">Confirmed Bids</span>
+                        <div class="p-2.5 sm:p-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
+                            <span class="text-[9px] sm:text-[10px] font-mono uppercase text-slate-400 dark:text-slate-500 font-bold block truncate">Attendance</span>
+                            <span id="cms-stat-attendance" class="text-base sm:text-2xl font-extrabold text-emerald-600 dark:text-emerald-400 mt-0.5 block tracking-tight">94.2%</span>
+                            <span class="text-[9px] sm:text-[10px] text-slate-400 dark:text-slate-500 block truncate">Confirmed Bids</span>
                         </div>
                     </div>
 
                     <!-- CTAs -->
-                    <div class="flex flex-col sm:flex-row gap-3 pt-3 justify-center lg:justify-start">
-                        <a href="#contact" class="px-7 py-3.5 rounded-xl text-sm font-bold text-white bg-brand-600 hover:bg-brand-700 shadow-md shadow-brand-600/20 transition-all text-center">
+                    <div class="flex flex-col sm:flex-row gap-2.5 sm:gap-3 pt-3 justify-center lg:justify-start">
+                        <a href="#contact" class="w-full sm:w-auto px-6 py-3 sm:px-7 sm:py-3.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-brand-600 hover:bg-brand-700 shadow-md shadow-brand-600/20 transition-all text-center">
                             Request Feasibility Proposal
                         </a>
-                        <a href="#pipeline" class="px-7 py-3.5 rounded-xl text-sm font-bold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 transition-all text-center">
+                        <a href="#pipeline" class="w-full sm:w-auto px-6 py-3 sm:px-7 sm:py-3.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all text-center">
                             See Outbound Engine
                         </a>
                     </div>
                 </div>
 
-                <!-- Right: Interactive Outbound Pipeline Infographic -->
+                <!-- Right Column: Interactive Outbound Pipeline Infographic -->
                 <div class="lg:col-span-5">
-                    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
+                    <div class="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-slate-200 dark:border-slate-800 shadow-xl space-y-3.5">
                         <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
                             <div>
                                 <span class="text-[10px] font-mono text-brand-600 dark:text-blue-400 uppercase tracking-widest font-bold">Execution Engine</span>
-                                <h4 class="text-sm font-bold text-slate-900 dark:text-white">Walkthrough Delivery Pipeline</h4>
+                                <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">Walkthrough Delivery Pipeline</h4>
                             </div>
-                            <span class="px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950 text-emerald-600 text-[10px] font-mono font-bold">
+                            <span class="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md bg-emerald-50 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 text-[9px] sm:text-[10px] font-mono font-bold">
                                 5-STAGE FLOW
                             </span>
                         </div>
 
-                        <!-- 5 Step Visual Pipeline -->
-                        <div class="space-y-2.5 text-xs">
-                            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <span class="w-6 h-6 rounded-lg bg-blue-100 dark:bg-blue-950 text-brand-600 font-bold flex items-center justify-center text-[11px]">1</span>
-                                    <div>
-                                        <p class="font-bold text-slate-900 dark:text-white">Postal Radius & ICP Mapping</p>
-                                        <p class="text-[11px] text-slate-500">Corporate offices, medical & warehouses</p>
+                        <!-- 5-Step Visual Pipeline -->
+                        <div class="space-y-2 text-xs">
+                            <div class="p-2.5 sm:p-3 rounded-xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700/60 flex items-center justify-between gap-2 min-w-0">
+                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+                                    <span class="w-5 h-5 sm:w-6 sm:h-6 rounded-lg bg-blue-100 dark:bg-blue-950/90 text-brand-600 dark:text-blue-400 font-bold flex items-center justify-center text-[10px] sm:text-[11px] shrink-0">1</span>
+                                    <div class="min-w-0">
+                                        <p class="font-bold text-slate-900 dark:text-white text-[11px] sm:text-xs truncate">Postal Radius & ICP Mapping</p>
+                                        <p class="text-[10px] text-slate-500 dark:text-slate-400 truncate">Corporate offices, medical & warehouses</p>
                                     </div>
                                 </div>
-                                <span class="text-[10px] font-mono text-slate-400">Day 1</span>
+                                <span class="text-[10px] font-mono text-slate-400 dark:text-slate-500 shrink-0">Day 1</span>
                             </div>
 
-                            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <span class="w-6 h-6 rounded-lg bg-blue-100 dark:bg-blue-950 text-brand-600 font-bold flex items-center justify-center text-[11px]">2</span>
-                                    <div>
-                                        <p class="font-bold text-slate-900 dark:text-white">DNC Scrubbing & Data Verification</p>
-                                        <p class="text-[11px] text-slate-500">UK ICO, Canada CASL, US TCPA scrubbed</p>
+                            <div class="p-2.5 sm:p-3 rounded-xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700/60 flex items-center justify-between gap-2 min-w-0">
+                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+                                    <span class="w-5 h-5 sm:w-6 sm:h-6 rounded-lg bg-blue-100 dark:bg-blue-950/90 text-brand-600 dark:text-blue-400 font-bold flex items-center justify-center text-[10px] sm:text-[11px] shrink-0">2</span>
+                                    <div class="min-w-0">
+                                        <p class="font-bold text-slate-900 dark:text-white text-[11px] sm:text-xs truncate">DNC Scrubbing & Verification</p>
+                                        <p class="text-[10px] text-slate-500 dark:text-slate-400 truncate">UK ICO, Canada CASL, US TCPA scrubbed</p>
                                     </div>
                                 </div>
-                                <span class="text-[10px] font-mono text-slate-400">Day 2</span>
+                                <span class="text-[10px] font-mono text-slate-400 dark:text-slate-500 shrink-0">Day 2</span>
                             </div>
 
-                            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <span class="w-6 h-6 rounded-lg bg-blue-100 dark:bg-blue-950 text-brand-600 font-bold flex items-center justify-center text-[11px]">3</span>
-                                    <div>
-                                        <p class="font-bold text-slate-900 dark:text-white">High-Cadence Dedicated Dialing</p>
-                                        <p class="text-[11px] text-slate-500">Local area code caller IDs deployed</p>
+                            <div class="p-2.5 sm:p-3 rounded-xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700/60 flex items-center justify-between gap-2 min-w-0">
+                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+                                    <span class="w-5 h-5 sm:w-6 sm:h-6 rounded-lg bg-blue-100 dark:bg-blue-950/90 text-brand-600 dark:text-blue-400 font-bold flex items-center justify-center text-[10px] sm:text-[11px] shrink-0">3</span>
+                                    <div class="min-w-0">
+                                        <p class="font-bold text-slate-900 dark:text-white text-[11px] sm:text-xs truncate">Dedicated High-Cadence Dialing</p>
+                                        <p class="text-[10px] text-slate-500 dark:text-slate-400 truncate">Local area code caller IDs deployed</p>
                                     </div>
                                 </div>
-                                <span class="text-[10px] font-mono text-brand-600 font-bold">150/day</span>
+                                <span class="text-[10px] font-mono text-brand-600 dark:text-blue-400 font-bold shrink-0">150/day</span>
                             </div>
 
-                            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <span class="w-6 h-6 rounded-lg bg-blue-100 dark:bg-blue-950 text-brand-600 font-bold flex items-center justify-center text-[11px]">4</span>
-                                    <div>
-                                        <p class="font-bold text-slate-900 dark:text-white">1:6 Supervisor QA Audit</p>
-                                        <p class="text-[11px] text-slate-500">Call recording vetted before handover</p>
+                            <div class="p-2.5 sm:p-3 rounded-xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700/60 flex items-center justify-between gap-2 min-w-0">
+                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+                                    <span class="w-5 h-5 sm:w-6 sm:h-6 rounded-lg bg-blue-100 dark:bg-blue-950/90 text-brand-600 dark:text-blue-400 font-bold flex items-center justify-center text-[10px] sm:text-[11px] shrink-0">4</span>
+                                    <div class="min-w-0">
+                                        <p class="font-bold text-slate-900 dark:text-white text-[11px] sm:text-xs truncate">1:6 Supervisor QA Audit</p>
+                                        <p class="text-[10px] text-slate-500 dark:text-slate-400 truncate">Call recordings vetted before handover</p>
                                     </div>
                                 </div>
-                                <span class="text-[10px] font-mono text-emerald-600 font-bold">100% QA</span>
+                                <span class="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 font-bold shrink-0">100% QA</span>
                             </div>
 
-                            <div class="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <span class="w-6 h-6 rounded-lg bg-emerald-600 text-white font-bold flex items-center justify-center text-[11px]">5</span>
-                                    <div>
-                                        <p class="font-bold text-emerald-950 dark:text-emerald-200">Confirmed On-Site Walkthrough</p>
-                                        <p class="text-[11px] text-emerald-700 dark:text-emerald-400">Directly on your calendar with sq ft notes</p>
+                            <div class="p-2.5 sm:p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/70 flex items-center justify-between gap-2 min-w-0">
+                                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+                                    <span class="w-5 h-5 sm:w-6 sm:h-6 rounded-lg bg-emerald-600 text-white font-bold flex items-center justify-center text-[10px] sm:text-[11px] shrink-0">5</span>
+                                    <div class="min-w-0">
+                                        <p class="font-bold text-emerald-950 dark:text-emerald-200 text-[11px] sm:text-xs truncate">Confirmed On-Site Walkthrough</p>
+                                        <p class="text-[10px] text-emerald-700 dark:text-emerald-400 truncate">Directly on your calendar with sq ft notes</p>
                                     </div>
                                 </div>
-                                <span class="text-[10px] font-mono text-emerald-700 dark:text-emerald-300 font-bold">Direct Bid</span>
+                                <span class="text-[10px] font-mono text-emerald-700 dark:text-emerald-300 font-bold shrink-0">Direct Bid</span>
                             </div>
                         </div>
                     </div>
@@ -280,110 +350,112 @@
         </div>
     </section>
 
-    <!-- Cost Comparison Infographic Section -->
-    <section id="comparison" class="py-16 bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
+    <!-- ============================================================ -->
+    <!-- 4. COST ARBITRAGE COMPARISON SECTION -->
+    <!-- ============================================================ -->
+    <section id="comparison" class="py-12 sm:py-16 bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl mx-auto text-center space-y-3 mb-12">
+            <div class="max-w-3xl mx-auto text-center space-y-2 mb-8 sm:mb-12">
                 <span class="text-xs font-bold font-mono uppercase tracking-widest text-brand-600 dark:text-blue-400">Financial Comparison</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-heading">
+                <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-heading">
                     In-House Western SDR vs NexaPoint Dedicated Pod
                 </h2>
-                <p class="text-sm text-slate-500 dark:text-slate-400">
-                    Why commercial cleaning owners scale through our Bangladesh delivery operations.
+                <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+                    Why commercial cleaning contractors scale through our Bangladesh delivery operations.
                 </p>
             </div>
 
             <!-- Side by Side Visual Comparison Bars -->
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8 max-w-4xl mx-auto">
                 
                 <!-- In-House (Expensive) -->
-                <div class="p-6 rounded-2xl border border-rose-200 dark:border-rose-900/60 bg-rose-50/40 dark:bg-rose-950/20 space-y-4">
+                <div class="p-5 sm:p-6 rounded-2xl border border-rose-200 dark:border-rose-900/60 bg-rose-50/40 dark:bg-rose-950/20 space-y-3.5">
                     <div class="flex justify-between items-center">
-                        <h4 class="font-bold text-slate-900 dark:text-white">In-House Hire (London / Toronto / Texas)</h4>
-                        <span class="text-rose-600 font-mono font-bold text-sm">$6,600 / mo</span>
+                        <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">In-House Hire (London / Toronto / Texas)</h4>
+                        <span class="text-rose-600 dark:text-rose-400 font-mono font-bold text-xs sm:text-sm">$6,600 / mo</span>
                     </div>
 
                     <!-- Progress bar breakdown -->
-                    <div class="space-y-2 text-xs">
+                    <div class="space-y-2.5 text-xs">
                         <div>
-                            <div class="flex justify-between text-[11px] text-slate-500 mb-1">
-                                <span>Base Salary + Taxes</span>
-                                <strong class="text-slate-800 dark:text-slate-200">$4,800/mo</strong>
+                            <div class="flex justify-between text-[11px] text-slate-600 dark:text-slate-400 mb-1">
+                                <span>Base Salary + Local Employment Taxes</span>
+                                <strong class="text-slate-900 dark:text-slate-200">$4,800/mo</strong>
                             </div>
-                            <div class="w-full h-2 rounded-full bg-rose-200 dark:bg-rose-950 overflow-hidden">
+                            <div class="w-full h-2 rounded-full bg-rose-200 dark:bg-rose-950/70 overflow-hidden">
                                 <div class="h-full bg-rose-500 rounded-full" style="width: 75%"></div>
                             </div>
                         </div>
 
                         <div>
-                            <div class="flex justify-between text-[11px] text-slate-500 mb-1">
+                            <div class="flex justify-between text-[11px] text-slate-600 dark:text-slate-400 mb-1">
                                 <span>Dialer, CRM & Data List Licenses</span>
-                                <strong class="text-slate-800 dark:text-slate-200">$1,000/mo</strong>
+                                <strong class="text-slate-900 dark:text-slate-200">$1,000/mo</strong>
                             </div>
-                            <div class="w-full h-2 rounded-full bg-rose-200 dark:bg-rose-950 overflow-hidden">
+                            <div class="w-full h-2 rounded-full bg-rose-200 dark:bg-rose-950/70 overflow-hidden">
                                 <div class="h-full bg-rose-400 rounded-full" style="width: 15%"></div>
                             </div>
                         </div>
 
                         <div>
-                            <div class="flex justify-between text-[11px] text-slate-500 mb-1">
+                            <div class="flex justify-between text-[11px] text-slate-600 dark:text-slate-400 mb-1">
                                 <span>Management, Benefits & Turnover Overhead</span>
-                                <strong class="text-slate-800 dark:text-slate-200">$800/mo</strong>
+                                <strong class="text-slate-900 dark:text-slate-200">$800/mo</strong>
                             </div>
-                            <div class="w-full h-2 rounded-full bg-rose-200 dark:bg-rose-950 overflow-hidden">
-                                <div class="h-full bg-rose-300 rounded-full" style="width: 10%"></div>
+                            <div class="w-full h-2 rounded-full bg-rose-200 dark:bg-rose-950/70 overflow-hidden">
+                                <div class="h-full bg-rose-300 dark:bg-rose-600 rounded-full" style="width: 10%"></div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="pt-3 border-t border-rose-200/60 dark:border-rose-900/40 text-xs text-rose-700 dark:text-rose-400">
+                    <div class="pt-3 border-t border-rose-200/60 dark:border-rose-900/40 text-[11px] text-rose-700 dark:text-rose-400">
                         High turnover, sick leave liability, and 3-month onboarding delay.
                     </div>
                 </div>
 
                 <!-- NexaPoint BPO Pod (Optimized) -->
-                <div class="p-6 rounded-2xl border border-emerald-300 dark:border-emerald-800 bg-emerald-50/40 dark:bg-emerald-950/20 space-y-4">
+                <div class="p-5 sm:p-6 rounded-2xl border border-emerald-300 dark:border-emerald-800/70 bg-emerald-50/40 dark:bg-emerald-950/20 space-y-3.5">
                     <div class="flex justify-between items-center">
-                        <h4 class="font-bold text-slate-900 dark:text-white">NexaPoint Dedicated Outbound Pod</h4>
-                        <span class="text-emerald-600 font-mono font-bold text-lg">$1,650 / mo</span>
+                        <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">NexaPoint Dedicated Outbound Pod</h4>
+                        <span class="text-emerald-600 dark:text-emerald-400 font-mono font-bold text-sm sm:text-base">$1,650 / mo</span>
                     </div>
 
                     <!-- Progress bar breakdown -->
-                    <div class="space-y-2 text-xs">
+                    <div class="space-y-2.5 text-xs">
                         <div>
-                            <div class="flex justify-between text-[11px] text-slate-500 mb-1">
+                            <div class="flex justify-between text-[11px] text-slate-600 dark:text-slate-400 mb-1">
                                 <span>Dedicated Full-Time SDR (160 Hours)</span>
                                 <strong class="text-emerald-700 dark:text-emerald-300">Included</strong>
                             </div>
-                            <div class="w-full h-2 rounded-full bg-emerald-200 dark:bg-emerald-950 overflow-hidden">
+                            <div class="w-full h-2 rounded-full bg-emerald-200 dark:bg-emerald-950/70 overflow-hidden">
                                 <div class="h-full bg-emerald-500 rounded-full" style="width: 60%"></div>
                             </div>
                         </div>
 
                         <div>
-                            <div class="flex justify-between text-[11px] text-slate-500 mb-1">
+                            <div class="flex justify-between text-[11px] text-slate-600 dark:text-slate-400 mb-1">
                                 <span>Local Caller IDs, Dialer & DNC Data</span>
                                 <strong class="text-emerald-700 dark:text-emerald-300">Included</strong>
                             </div>
-                            <div class="w-full h-2 rounded-full bg-emerald-200 dark:bg-emerald-950 overflow-hidden">
+                            <div class="w-full h-2 rounded-full bg-emerald-200 dark:bg-emerald-950/70 overflow-hidden">
                                 <div class="h-full bg-emerald-400 rounded-full" style="width: 25%"></div>
                             </div>
                         </div>
 
                         <div>
-                            <div class="flex justify-between text-[11px] text-slate-500 mb-1">
-                                <span>1:6 Daily QA Oversight & Lead Verification</span>
+                            <div class="flex justify-between text-[11px] text-slate-600 dark:text-slate-400 mb-1">
+                                <span>1:6 Daily QA Oversight & Verification</span>
                                 <strong class="text-emerald-700 dark:text-emerald-300">Included</strong>
                             </div>
-                            <div class="w-full h-2 rounded-full bg-emerald-200 dark:bg-emerald-950 overflow-hidden">
-                                <div class="h-full bg-emerald-300 rounded-full" style="width: 15%"></div>
+                            <div class="w-full h-2 rounded-full bg-emerald-200 dark:bg-emerald-950/70 overflow-hidden">
+                                <div class="h-full bg-emerald-300 dark:bg-emerald-600 rounded-full" style="width: 15%"></div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="pt-3 border-t border-emerald-200/60 dark:border-emerald-900/40 text-xs text-emerald-700 dark:text-emerald-400 font-bold flex justify-between">
-                        <span>Net Monthly Savings: $4,950 / month</span>
-                        <span>(75% Reduction)</span>
+                    <div class="pt-3 border-t border-emerald-200/60 dark:border-emerald-900/40 text-[11px] text-emerald-700 dark:text-emerald-400 font-bold flex flex-col sm:flex-row justify-between gap-1">
+                        <span>Net Monthly Savings: $4,950 / rep</span>
+                        <span>(75% Cost Reduction)</span>
                     </div>
                 </div>
 
@@ -391,134 +463,138 @@
         </div>
     </section>
 
-    <!-- Facility Matrix Infographic -->
-    <section id="facilities" class="py-16 bg-slate-50 dark:bg-slate-950">
+    <!-- ============================================================ -->
+    <!-- 5. TARGET FACILITY MATRIX -->
+    <!-- ============================================================ -->
+    <section id="facilities" class="py-12 sm:py-16 bg-slate-50 dark:bg-slate-950 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl mx-auto text-center space-y-3 mb-12">
+            <div class="max-w-3xl mx-auto text-center space-y-2 mb-8 sm:mb-12">
                 <span class="text-xs font-bold font-mono uppercase tracking-widest text-brand-600 dark:text-blue-400">Target Facility Matrix</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-heading">
+                <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-heading">
                     Commercial Properties Dialed Daily
                 </h2>
-                <p class="text-sm text-slate-500">Filtered by square footage and recurring revenue yield.</p>
+                <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Segmented by square footage and recurring janitorial revenue yield.</p>
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-5">
                 
-                <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
-                    <div class="flex justify-between items-start mb-3">
-                        <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-50 dark:bg-blue-950 text-brand-600">5,000–80,000 SQ FT</span>
-                        <span class="text-xs font-bold text-emerald-600">$1,800–$6,500/mo</span>
+                <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
+                    <div class="flex justify-between items-center mb-2.5">
+                        <span class="px-2 py-0.5 rounded text-[9px] sm:text-[10px] font-mono font-bold bg-blue-50 dark:bg-blue-950/80 text-brand-600 dark:text-blue-400">5,000–80,000 SQ FT</span>
+                        <span class="text-[11px] sm:text-xs font-bold text-emerald-600 dark:text-emerald-400">$1,800–$6,500/mo</span>
                     </div>
-                    <h4 class="font-bold text-slate-900 dark:text-white text-sm">Corporate Office Towers</h4>
-                    <p class="text-xs text-slate-500 mt-1">Multi-tenant suites, headquarters, and tech parks requiring 5x/week night janitorial.</p>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Corporate Office Towers</h4>
+                    <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">Multi-tenant suites, headquarters, and tech parks requiring 5x/week night janitorial.</p>
                 </div>
 
-                <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
-                    <div class="flex justify-between items-start mb-3">
-                        <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-50 dark:bg-emerald-950 text-emerald-600">TERMINAL DISINFECTION</span>
-                        <span class="text-xs font-bold text-emerald-600">$2,500–$8,000/mo</span>
+                <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
+                    <div class="flex justify-between items-center mb-2.5">
+                        <span class="px-2 py-0.5 rounded text-[9px] sm:text-[10px] font-mono font-bold bg-emerald-50 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400">TERMINAL DISINFECTION</span>
+                        <span class="text-[11px] sm:text-xs font-bold text-emerald-600 dark:text-emerald-400">$2,500–$8,000/mo</span>
                     </div>
-                    <h4 class="font-bold text-slate-900 dark:text-white text-sm">Medical & Dental Clinics</h4>
-                    <p class="text-xs text-slate-500 mt-1">Strict sterilization protocols, surgical suites, and healthcare regulatory compliance.</p>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Medical & Dental Clinics</h4>
+                    <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">Strict sterilization protocols, surgical suites, and healthcare regulatory compliance.</p>
                 </div>
 
-                <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
-                    <div class="flex justify-between items-start mb-3">
-                        <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-purple-50 dark:bg-purple-950 text-purple-600">AUTO-SCRUBBING</span>
-                        <span class="text-xs font-bold text-emerald-600">$3,000–$12,000/mo</span>
+                <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
+                    <div class="flex justify-between items-center mb-2.5">
+                        <span class="px-2 py-0.5 rounded text-[9px] sm:text-[10px] font-mono font-bold bg-purple-50 dark:bg-purple-950/80 text-purple-600 dark:text-purple-400">AUTO-SCRUBBING</span>
+                        <span class="text-[11px] sm:text-xs font-bold text-emerald-600 dark:text-emerald-400">$3,000–$12,000/mo</span>
                     </div>
-                    <h4 class="font-bold text-slate-900 dark:text-white text-sm">Logistics Warehouses</h4>
-                    <p class="text-xs text-slate-500 mt-1">High-traffic concrete floor scrubbing, breakroom maintenance, and dispatch hubs.</p>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Logistics Warehouses</h4>
+                    <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">High-traffic concrete floor scrubbing, breakroom maintenance, and dispatch hubs.</p>
                 </div>
 
-                <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
-                    <div class="flex justify-between items-start mb-3">
-                        <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-50 dark:bg-amber-950 text-amber-600">CRIMINAL VETTED</span>
-                        <span class="text-xs font-bold text-emerald-600">$2,000–$7,000/mo</span>
+                <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
+                    <div class="flex justify-between items-center mb-2.5">
+                        <span class="px-2 py-0.5 rounded text-[9px] sm:text-[10px] font-mono font-bold bg-amber-50 dark:bg-amber-950/80 text-amber-600 dark:text-amber-400">CRIMINAL VETTED</span>
+                        <span class="text-[11px] sm:text-xs font-bold text-emerald-600 dark:text-emerald-400">$2,000–$7,000/mo</span>
                     </div>
-                    <h4 class="font-bold text-slate-900 dark:text-white text-sm">Private Academies & Schools</h4>
-                    <p class="text-xs text-slate-500 mt-1">Classroom sanitation, restroom sanitizing, and holiday floor restoration deep cleans.</p>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Private Academies & Schools</h4>
+                    <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">Classroom sanitation, restroom sanitizing, and holiday floor restoration deep cleans.</p>
                 </div>
 
-                <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
-                    <div class="flex justify-between items-start mb-3">
-                        <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-rose-50 dark:bg-rose-950 text-rose-600">HIGH-TOUCH LOCKERS</span>
-                        <span class="text-xs font-bold text-emerald-600">$1,500–$4,500/mo</span>
+                <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
+                    <div class="flex justify-between items-center mb-2.5">
+                        <span class="px-2 py-0.5 rounded text-[9px] sm:text-[10px] font-mono font-bold bg-rose-50 dark:bg-rose-950/80 text-rose-600 dark:text-rose-400">HIGH-TOUCH LOCKERS</span>
+                        <span class="text-[11px] sm:text-xs font-bold text-emerald-600 dark:text-emerald-400">$1,500–$4,500/mo</span>
                     </div>
-                    <h4 class="font-bold text-slate-900 dark:text-white text-sm">Fitness Clubs & Gyms</h4>
-                    <p class="text-xs text-slate-500 mt-1">Showers, saunas, rubber matting degreasing, and gym equipment disinfection.</p>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Fitness Clubs & Gyms</h4>
+                    <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">Showers, saunas, rubber matting degreasing, and gym equipment disinfection.</p>
                 </div>
 
-                <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
-                    <div class="flex justify-between items-start mb-3">
-                        <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-cyan-50 dark:bg-cyan-950 text-cyan-600">STRIP & WAX POLISH</span>
-                        <span class="text-xs font-bold text-emerald-600">$2,200–$6,000/mo</span>
+                <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
+                    <div class="flex justify-between items-center mb-2.5">
+                        <span class="px-2 py-0.5 rounded text-[9px] sm:text-[10px] font-mono font-bold bg-cyan-50 dark:bg-cyan-950/80 text-cyan-600 dark:text-cyan-400">STRIP & WAX POLISH</span>
+                        <span class="text-[11px] sm:text-xs font-bold text-emerald-600 dark:text-emerald-400">$2,200–$6,000/mo</span>
                     </div>
-                    <h4 class="font-bold text-slate-900 dark:text-white text-sm">Automotive Showrooms</h4>
-                    <p class="text-xs text-slate-500 mt-1">High-gloss floor buffing, streak-free glass facades, and spotless customer reception zones.</p>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Automotive Showrooms</h4>
+                    <p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">High-gloss floor buffing, streak-free glass facades, and spotless customer reception zones.</p>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Global Delivery Hubs -->
-    <section id="hubs" class="py-16 bg-white dark:bg-slate-900">
+    <!-- ============================================================ -->
+    <!-- 6. GLOBAL DELIVERY HUBS & PHYSICAL PRESENCE -->
+    <!-- ============================================================ -->
+    <section id="hubs" class="py-12 sm:py-16 bg-white dark:bg-slate-900 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl mx-auto text-center space-y-3 mb-12">
+            <div class="max-w-3xl mx-auto text-center space-y-2 mb-8 sm:mb-12">
                 <span class="text-xs font-bold font-mono uppercase tracking-widest text-brand-600 dark:text-blue-400">Physical Presence</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-heading">
+                <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-heading">
                     Operational Centers & Client Liaisons
                 </h2>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
                 <!-- Bangladesh HQ -->
-                <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 space-y-3">
+                <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/70 space-y-3">
                     <div class="flex items-center justify-between">
-                        <span class="text-xs font-mono font-bold text-emerald-700 bg-emerald-100 dark:bg-emerald-950 px-2.5 py-1 rounded">BD HQ</span>
-                        <span class="text-[10px] text-slate-400 font-mono">Pabna Delivery Floor</span>
+                        <span class="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-950/90 px-2.5 py-0.5 rounded">BD HQ</span>
+                        <span class="text-[10px] text-slate-400 dark:text-slate-500 font-mono">Pabna Delivery Floor</span>
                     </div>
-                    <h3 class="text-base font-bold text-slate-900 dark:text-white font-heading">Bangladesh Operations Hub</h3>
-                    <address class="not-italic text-xs text-slate-500 leading-relaxed">
+                    <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white font-heading">Bangladesh Operations Hub</h3>
+                    <address class="not-italic text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                         House: 472 (1st Floor), Aurangzeb Road,<br>
-                        Pabna Sadar, Pabna, আওরঙ্গজেব সড়ক, Pabna 6600
+                        Pabna Sadar, Pabna, আওরঙ্গজেব সড়ক, Pabna 6600
                     </address>
-                    <div class="pt-3 border-t border-slate-200 dark:border-slate-800 text-[11px] text-slate-400 space-y-0.5">
-                        <p>• 120-Seat Outbound Dialing Floor</p>
-                        <p>• Dual Tier-1 Fiber Broadband Lines</p>
+                    <div class="pt-3 border-t border-slate-200 dark:border-slate-700/60 text-[11px] text-slate-500 dark:text-slate-400 space-y-0.5">
+                        <p>• 120-Seat Dedicated Outbound Dialing Floor</p>
+                        <p>• Dual Redundant Tier-1 Fiber Broadband Lines</p>
                     </div>
                 </div>
 
                 <!-- USA Office -->
-                <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 space-y-3">
+                <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/70 space-y-3">
                     <div class="flex items-center justify-between">
-                        <span class="text-xs font-mono font-bold text-blue-700 bg-blue-100 dark:bg-blue-950 px-2.5 py-1 rounded">US LIAISON</span>
-                        <span class="text-[10px] text-slate-400 font-mono">North America</span>
+                        <span class="text-xs font-mono font-bold text-blue-700 dark:text-blue-400 bg-blue-100 dark:bg-blue-950/90 px-2.5 py-0.5 rounded">US LIAISON</span>
+                        <span class="text-[10px] text-slate-400 dark:text-slate-500 font-mono">North America</span>
                     </div>
-                    <h3 class="text-base font-bold text-slate-900 dark:text-white font-heading">United States Office</h3>
-                    <address class="not-italic text-xs text-slate-500 leading-relaxed">
+                    <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white font-heading">United States Office</h3>
+                    <address class="not-italic text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                         303 N Frio St,<br>
                         San Antonio, TX 78207, United States
                     </address>
-                    <div class="pt-3 border-t border-slate-200 dark:border-slate-800 text-[11px] text-slate-400 space-y-0.5">
+                    <div class="pt-3 border-t border-slate-200 dark:border-slate-700/60 text-[11px] text-slate-500 dark:text-slate-400 space-y-0.5">
                         <p>• US & Canadian Account Management</p>
                         <p>• Client Estimator Sync Support</p>
                     </div>
                 </div>
 
                 <!-- Australia Office -->
-                <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 space-y-3">
+                <div class="p-5 sm:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/70 space-y-3">
                     <div class="flex items-center justify-between">
-                        <span class="text-xs font-mono font-bold text-purple-700 bg-purple-100 dark:bg-purple-950 px-2.5 py-1 rounded">AU LIAISON</span>
-                        <span class="text-[10px] text-slate-400 font-mono">Oceania & UK</span>
+                        <span class="text-xs font-mono font-bold text-purple-700 dark:text-purple-400 bg-purple-100 dark:bg-purple-950/90 px-2.5 py-0.5 rounded">AU LIAISON</span>
+                        <span class="text-[10px] text-slate-400 dark:text-slate-500 font-mono">Oceania & UK</span>
                     </div>
-                    <h3 class="text-base font-bold text-slate-900 dark:text-white font-heading">Australia Office</h3>
-                    <address class="not-italic text-xs text-slate-500 leading-relaxed">
+                    <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white font-heading">Australia Office</h3>
+                    <address class="not-italic text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                         Malaga Markets Corner Alexander Drive &,<br>
                         Beach Rd, Malaga WA 6062, Australia
                     </address>
-                    <div class="pt-3 border-t border-slate-200 dark:border-slate-800 text-[11px] text-slate-400 space-y-0.5">
+                    <div class="pt-3 border-t border-slate-200 dark:border-slate-700/60 text-[11px] text-slate-500 dark:text-slate-400 space-y-0.5">
                         <p>• Australia & New Zealand Scheduling</p>
                         <p>• UK Afternoon Shift Coordination</p>
                     </div>
@@ -527,20 +603,22 @@
         </div>
     </section>
 
-    <!-- Interactive Walkthrough ROI Calculator -->
-    <section id="calculator" class="py-16 bg-slate-50 dark:bg-slate-950">
+    <!-- ============================================================ -->
+    <!-- 7. ROI & WALKTHROUGH REVENUE CALCULATOR -->
+    <!-- ============================================================ -->
+    <section id="calculator" class="py-12 sm:py-16 bg-slate-50 dark:bg-slate-950 transition-colors">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-2 mb-10">
-                <span class="text-xs font-bold font-mono uppercase tracking-widest text-emerald-600">Financial Model</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-heading">Walkthrough & Revenue Calculator</h2>
+            <div class="text-center space-y-2 mb-8 sm:mb-10">
+                <span class="text-xs font-bold font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Financial Model</span>
+                <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-heading">Walkthrough & Revenue Calculator</h2>
             </div>
 
-            <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-xl grid md:grid-cols-12 gap-8 items-center">
-                <div class="md:col-span-7 space-y-6">
+            <div class="bg-white dark:bg-slate-900 rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-xl grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-center">
+                <div class="md:col-span-7 space-y-5 sm:space-y-6">
                     <div>
                         <div class="flex justify-between items-center mb-1.5">
                             <label class="text-xs font-bold text-slate-900 dark:text-white uppercase">Dedicated Callers</label>
-                            <span id="c-display" class="text-xs font-mono font-bold text-brand-600 bg-blue-50 px-2.5 py-0.5 rounded">1 Caller</span>
+                            <span id="c-display" class="text-xs font-mono font-bold text-brand-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/80 px-2.5 py-0.5 rounded">1 Caller</span>
                         </div>
                         <input id="c-slider" type="range" min="1" max="5" value="1" step="1" class="w-full accent-brand-600 cursor-pointer h-2 bg-slate-200 dark:bg-slate-800 rounded-lg">
                     </div>
@@ -548,20 +626,20 @@
                     <div>
                         <div class="flex justify-between items-center mb-1.5">
                             <label class="text-xs font-bold text-slate-900 dark:text-white uppercase">Average Contract Value / mo</label>
-                            <span id="v-display" class="text-xs font-mono font-bold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded">$2,500/mo</span>
+                            <span id="v-display" class="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/80 px-2.5 py-0.5 rounded">$2,500/mo</span>
                         </div>
                         <input id="v-slider" type="range" min="1000" max="8000" value="2500" step="250" class="w-full accent-emerald-600 cursor-pointer h-2 bg-slate-200 dark:bg-slate-800 rounded-lg">
                     </div>
                 </div>
 
-                <div class="md:col-span-5 bg-slate-900 text-white p-6 rounded-2xl text-center space-y-4">
+                <div class="md:col-span-5 bg-slate-950 dark:bg-slate-900/90 border border-slate-800 text-white p-5 sm:p-6 rounded-2xl text-center space-y-3.5">
                     <div>
                         <span class="text-[10px] font-mono text-slate-400 uppercase font-bold block">Monthly Walkthroughs</span>
-                        <span id="walk-out" class="text-3xl font-extrabold text-brand-400 font-heading">12 - 16</span>
+                        <span id="walk-out" class="text-2xl sm:text-3xl font-extrabold text-brand-400 font-heading">12 - 16</span>
                     </div>
                     <div class="pt-3 border-t border-slate-800">
                         <span class="text-[10px] font-mono text-slate-400 uppercase font-bold block">Projected New MRR</span>
-                        <span id="rev-out" class="text-2xl font-extrabold text-emerald-400 font-heading">+$7,500/mo</span>
+                        <span id="rev-out" class="text-xl sm:text-2xl font-extrabold text-emerald-400 font-heading">+$7,500/mo</span>
                     </div>
                     <a href="#contact" class="block w-full py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider text-white bg-brand-600 hover:bg-brand-700 transition-all">
                         Schedule Consultation
@@ -571,65 +649,67 @@
         </div>
     </section>
 
-    <!-- Contact & RFP Proposal Form -->
-    <section id="contact" class="py-16 bg-white dark:bg-slate-900">
+    <!-- ============================================================ -->
+    <!-- 8. CONTACT & RFP PROPOSAL FORM -->
+    <!-- ============================================================ -->
+    <section id="contact" class="py-12 sm:py-16 bg-white dark:bg-slate-900 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-10 items-start">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 items-start">
                 
                 <div class="lg:col-span-5 space-y-4">
-                    <span class="text-xs font-bold font-mono uppercase tracking-widest text-brand-600">Official Routing</span>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-heading">
+                    <span class="text-xs font-bold font-mono uppercase tracking-widest text-brand-600 dark:text-blue-400">Official Routing</span>
+                    <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-heading">
                         Connect with NexaPoint BPO
                     </h2>
-                    <p class="text-xs text-slate-500 leading-relaxed">
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
                         Feasibility reports and territory mapping delivered within 4 business hours.
                     </p>
 
                     <div class="space-y-2.5 pt-2">
-                        <a href="mailto:info@nexapointbpo.com" class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs hover:border-brand-600 transition-colors">
-                            <span class="text-slate-500 font-medium">General Inquiries</span>
-                            <span class="font-bold text-slate-900 dark:text-white">info@nexapointbpo.com</span>
+                        <a href="mailto:info@nexapointbpo.com" class="p-3 sm:p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/70 flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs hover:border-brand-600 dark:hover:border-brand-500 transition-colors">
+                            <span class="text-slate-500 dark:text-slate-400 font-medium">General Inquiries</span>
+                            <span class="font-bold text-slate-900 dark:text-white break-all sm:break-normal">info@nexapointbpo.com</span>
                         </a>
-                        <a href="mailto:sales@nexapointbpo.com" class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs hover:border-brand-600 transition-colors">
-                            <span class="text-slate-500 font-medium">Campaign Strategy</span>
-                            <span class="font-bold text-slate-900 dark:text-white">sales@nexapointbpo.com</span>
+                        <a href="mailto:sales@nexapointbpo.com" class="p-3 sm:p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/70 flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs hover:border-brand-600 dark:hover:border-brand-500 transition-colors">
+                            <span class="text-slate-500 dark:text-slate-400 font-medium">Campaign Strategy</span>
+                            <span class="font-bold text-slate-900 dark:text-white break-all sm:break-normal">sales@nexapointbpo.com</span>
                         </a>
-                        <a href="mailto:admin@nexapointbpo.com" class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs hover:border-brand-600 transition-colors">
-                            <span class="text-slate-500 font-medium">Administration</span>
-                            <span class="font-bold text-slate-900 dark:text-white">admin@nexapointbpo.com</span>
+                        <a href="mailto:admin@nexapointbpo.com" class="p-3 sm:p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/70 flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs hover:border-brand-600 dark:hover:border-brand-500 transition-colors">
+                            <span class="text-slate-500 dark:text-slate-400 font-medium">Administration</span>
+                            <span class="font-bold text-slate-900 dark:text-white break-all sm:break-normal">admin@nexapointbpo.com</span>
                         </a>
-                        <a href="mailto:careers@nexapointbpo.com" class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs hover:border-brand-600 transition-colors">
-                            <span class="text-slate-500 font-medium">Careers Hub</span>
-                            <span class="font-bold text-slate-900 dark:text-white">careers@nexapointbpo.com</span>
+                        <a href="mailto:careers@nexapointbpo.com" class="p-3 sm:p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/70 flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs hover:border-brand-600 dark:hover:border-brand-500 transition-colors">
+                            <span class="text-slate-500 dark:text-slate-400 font-medium">Careers Hub</span>
+                            <span class="font-bold text-slate-900 dark:text-white break-all sm:break-normal">careers@nexapointbpo.com</span>
                         </a>
                     </div>
                 </div>
 
                 <!-- Form -->
-                <div class="lg:col-span-7 bg-slate-50 dark:bg-slate-850 p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800">
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading mb-1">Request a Campaign Proposal</h3>
-                    <p class="text-xs text-slate-500 mb-5">Receive territory feasibility data and caller pricing.</p>
+                <div class="lg:col-span-7 bg-slate-50 dark:bg-slate-800/40 p-5 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 dark:border-slate-700/70">
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white font-heading mb-1">Request a Campaign Proposal</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 mb-5">Receive territory feasibility data and caller pricing.</p>
 
                     <form id="public-lead-form" class="space-y-3.5">
-                        <div class="grid sm:grid-cols-2 gap-3">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
-                                <label class="block text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">Your Name *</label>
-                                <input type="text" id="lead-name" required placeholder="Alex Turner" class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600">
+                                <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Your Name *</label>
+                                <input type="text" id="lead-name" required placeholder="Alex Turner" class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-600">
                             </div>
                             <div>
-                                <label class="block text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">Business Email *</label>
-                                <input type="email" id="lead-email" required placeholder="alex@cleaningltd.co.uk" class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600">
+                                <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Business Email *</label>
+                                <input type="email" id="lead-email" required placeholder="alex@cleaningltd.co.uk" class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-600">
                             </div>
                         </div>
 
-                        <div class="grid sm:grid-cols-2 gap-3">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
-                                <label class="block text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">Company Name *</label>
-                                <input type="text" id="lead-company" required placeholder="Prime Commercial Janitorial" class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600">
+                                <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Company Name *</label>
+                                <input type="text" id="lead-company" required placeholder="Prime Commercial Janitorial" class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-600">
                             </div>
                             <div>
-                                <label class="block text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">Target Market *</label>
-                                <select id="lead-market" required class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600">
+                                <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Target Market *</label>
+                                <select id="lead-market" required class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600">
                                     <option value="United Kingdom">United Kingdom</option>
                                     <option value="Canada">Canada</option>
                                     <option value="New Zealand">New Zealand</option>
@@ -640,14 +720,14 @@
                         </div>
 
                         <div>
-                            <label class="block text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">Target Cities & Goals</label>
-                            <textarea id="lead-message" rows="2" placeholder="e.g. Manchester & Leeds, 15 walkthroughs/month desired for offices over 10,000 sq ft..." class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600"></textarea>
+                            <label class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase mb-1">Target Cities & Goals</label>
+                            <textarea id="lead-message" rows="2" placeholder="e.g. Manchester & Leeds, 15 walkthroughs/month desired for offices over 10,000 sq ft..." class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-600"></textarea>
                         </div>
 
-                        <button type="submit" class="w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider text-white bg-brand-600 hover:bg-brand-700 shadow-md shadow-brand-600/20 transition-all">
+                        <button type="submit" class="w-full py-3 sm:py-3.5 rounded-xl font-bold text-xs sm:text-sm uppercase tracking-wider text-white bg-brand-600 hover:bg-brand-700 shadow-md shadow-brand-600/20 transition-all">
                             Submit Proposal Request
                         </button>
-                        <p id="lead-form-status" class="text-[10px] text-center text-slate-400 hidden"></p>
+                        <p id="lead-form-status" class="text-xs text-center hidden font-semibold"></p>
                     </form>
                 </div>
 
@@ -655,10 +735,12 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+    <!-- ============================================================ -->
+    <!-- 9. FOOTER -->
+    <!-- ============================================================ -->
+    <footer class="bg-slate-950 text-slate-400 py-10 sm:py-12 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-xs">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-xs">
                 <div class="space-y-3">
                     <div class="flex items-center gap-2">
                         <img src="assets/logo.jpg" alt="NexaPoint BPO" class="h-8 w-auto rounded bg-white p-0.5">
@@ -671,10 +753,10 @@
                 <div>
                     <h5 class="font-bold text-white uppercase mb-3">Navigation</h5>
                     <ul class="space-y-1.5">
-                        <li><a href="#pipeline" class="hover:text-white">Outbound Pipeline</a></li>
-                        <li><a href="#comparison" class="hover:text-white">Cost Arbitrage</a></li>
-                        <li><a href="#facilities" class="hover:text-white">Target Facilities</a></li>
-                        <li><a href="#hubs" class="hover:text-white">Global Hubs</a></li>
+                        <li><a href="#pipeline" class="hover:text-white transition-colors">Outbound Pipeline</a></li>
+                        <li><a href="#comparison" class="hover:text-white transition-colors">Cost Arbitrage</a></li>
+                        <li><a href="#facilities" class="hover:text-white transition-colors">Target Facilities</a></li>
+                        <li><a href="#hubs" class="hover:text-white transition-colors">Global Hubs</a></li>
                     </ul>
                 </div>
                 <div>
@@ -691,8 +773,8 @@
                     <h5 class="font-bold text-white uppercase mb-3">Staff & Admin Access</h5>
                     <ul class="space-y-1.5">
                         <li><button type="button" onclick="openLoginModal()" class="text-brand-400 hover:underline font-bold">Admin CMS & Mail Portal →</button></li>
-                        <li><a href="mailto:info@nexapointbpo.com" class="hover:text-white">info@nexapointbpo.com</a></li>
-                        <li><a href="mailto:admin@nexapointbpo.com" class="hover:text-white">admin@nexapointbpo.com</a></li>
+                        <li><a href="mailto:info@nexapointbpo.com" class="hover:text-white transition-colors">info@nexapointbpo.com</a></li>
+                        <li><a href="mailto:admin@nexapointbpo.com" class="hover:text-white transition-colors">admin@nexapointbpo.com</a></li>
                     </ul>
                 </div>
             </div>
@@ -707,12 +789,12 @@
     </footer>
 
     <!-- ============================================================ -->
-    <!-- NORMAL LOGIN MODAL (Email + Password Authentication) -->
+    <!-- 10. LOGIN MODAL (Email + Password Authentication) -->
     <!-- ============================================================ -->
-    <div id="login-modal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4 hidden">
-        <div class="relative bg-white dark:bg-slate-900 rounded-3xl p-7 sm:p-9 max-w-md w-full border border-slate-200 dark:border-slate-800 shadow-2xl space-y-6">
+    <div id="login-modal" class="fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 hidden">
+        <div class="relative bg-white dark:bg-slate-900 rounded-2xl sm:rounded-3xl p-5 sm:p-8 max-w-md w-full border border-slate-200 dark:border-slate-800 shadow-2xl space-y-5 max-h-[95vh] overflow-y-auto">
             
-            <button onclick="closeLoginModal()" class="absolute top-5 right-5 p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Close login modal">
+            <button onclick="closeLoginModal()" class="absolute top-4 right-4 p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Close login modal">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
 
@@ -725,27 +807,27 @@
             </div>
 
             <!-- Login Form -->
-            <form id="portal-login-form" class="space-y-4">
+            <form id="portal-login-form" class="space-y-3.5">
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">Official Email</label>
-                    <input type="email" id="login-email" required value="admin@nexapointbpo.com" placeholder="admin@nexapointbpo.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm font-semibold text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600">
+                    <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">Official Email</label>
+                    <input type="email" id="login-email" required value="admin@nexapointbpo.com" placeholder="admin@nexapointbpo.com" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm font-semibold text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600">
                 </div>
 
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">Password</label>
+                    <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">Password</label>
                     <div class="relative">
-                        <input type="password" id="login-password" required placeholder="Enter your password" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm font-semibold text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600 pr-10">
-                        <button type="button" onclick="togglePasswordVisibility()" class="absolute right-3 top-3.5 text-slate-400 hover:text-slate-600 dark:hover:text-white">
+                        <input type="password" id="login-password" required placeholder="Enter your password" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm font-semibold text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600 pr-10">
+                        <button type="button" onclick="togglePasswordVisibility()" class="absolute right-3 top-3 text-slate-400 hover:text-slate-600 dark:hover:text-white">
                             <svg id="eye-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                         </button>
                     </div>
                 </div>
 
-                <div id="login-error" class="hidden p-3 rounded-xl bg-rose-50 dark:bg-rose-950/80 border border-rose-200 dark:border-rose-800 text-rose-600 dark:text-rose-400 text-xs font-semibold">
+                <div id="login-error" class="hidden p-2.5 rounded-xl bg-rose-50 dark:bg-rose-950/80 border border-rose-200 dark:border-rose-800 text-rose-600 dark:text-rose-400 text-xs font-semibold">
                     Invalid credentials. Please verify your email and password.
                 </div>
 
-                <button type="submit" class="w-full py-3.5 rounded-xl font-bold text-sm uppercase tracking-wider text-white bg-brand-600 hover:bg-brand-700 shadow-md shadow-brand-600/25 transition-all">
+                <button type="submit" class="w-full py-3 rounded-xl font-bold text-xs sm:text-sm uppercase tracking-wider text-white bg-brand-600 hover:bg-brand-700 shadow-md shadow-brand-600/25 transition-all">
                     Sign In to Portal
                 </button>
             </form>
@@ -759,62 +841,62 @@
     </div>
 
     <!-- ============================================================ -->
-    <!-- ADMIN CMS & CORPORATE MAILBOX HUB (Full Screen Dashboard) -->
+    <!-- 11. ADMIN CMS & CORPORATE MAILBOX HUB (Full Screen Dashboard) -->
     <!-- ============================================================ -->
-    <div id="admin-dashboard" class="fixed inset-0 z-50 bg-slate-900/95 backdrop-blur-md flex flex-col hidden overflow-y-auto">
+    <div id="admin-dashboard" class="fixed inset-0 z-50 bg-slate-950/98 backdrop-blur-md flex flex-col hidden overflow-y-auto">
         
         <!-- Dashboard Top Header -->
-        <div class="bg-slate-950 border-b border-slate-800 px-6 py-4 flex items-center justify-between flex-shrink-0">
+        <div class="bg-slate-950 border-b border-slate-800 px-4 sm:px-6 py-3.5 sm:py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shrink-0">
             <div class="flex items-center gap-3">
-                <img src="assets/logo.jpg" alt="NexaPoint BPO" class="h-10 w-auto rounded bg-white p-0.5">
+                <img src="assets/logo.jpg" alt="NexaPoint BPO" class="h-9 w-auto rounded bg-white p-0.5">
                 <div>
-                    <h3 class="text-sm font-bold text-white font-heading">NexaPoint BPO Admin & Mail Hub</h3>
+                    <h3 class="text-xs sm:text-sm font-bold text-white font-heading">NexaPoint BPO Admin & Mail Hub</h3>
                     <p class="text-[10px] font-mono text-emerald-400">Logged in: <span id="admin-user-display">admin@nexapointbpo.com</span></p>
                 </div>
             </div>
 
-            <div class="flex items-center gap-3">
-                <button onclick="closeAdminDashboard()" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-200 hover:bg-slate-700 text-xs font-bold transition-colors">
+            <div class="flex items-center gap-2 sm:gap-3">
+                <button onclick="closeAdminDashboard()" class="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-slate-800 text-slate-200 hover:bg-slate-700 text-xs font-bold transition-colors">
                     View Live Site
                 </button>
-                <button onclick="logoutAdmin()" class="px-4 py-2 rounded-xl bg-rose-600/80 hover:bg-rose-600 text-white text-xs font-bold transition-colors">
+                <button onclick="logoutAdmin()" class="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-rose-600/80 hover:bg-rose-600 text-white text-xs font-bold transition-colors">
                     Log Out
                 </button>
             </div>
         </div>
 
         <!-- Dashboard Content -->
-        <div class="max-w-7xl mx-auto w-full p-6 sm:p-8 space-y-8 flex-1">
+        <div class="max-w-7xl mx-auto w-full p-4 sm:p-8 space-y-6 sm:space-y-8 flex-1">
             
             <!-- Dashboard Navigation Tabs -->
-            <div class="flex border-b border-slate-800 gap-6 text-sm font-bold">
-                <button onclick="switchAdminTab('mail')" id="tab-btn-mail" class="pb-3 text-brand-400 border-b-2 border-brand-500">
+            <div class="flex overflow-x-auto whitespace-nowrap scrollbar-none border-b border-slate-800 gap-4 sm:gap-6 text-xs sm:text-sm font-bold pb-1">
+                <button onclick="switchAdminTab('mail')" id="tab-btn-mail" class="pb-3 text-brand-400 border-b-2 border-brand-500 shrink-0">
                     Mail Center (Inbox & Outbox)
                 </button>
-                <button onclick="switchAdminTab('cms')" id="tab-btn-cms" class="pb-3 text-slate-400 hover:text-white border-b-2 border-transparent">
+                <button onclick="switchAdminTab('cms')" id="tab-btn-cms" class="pb-3 text-slate-400 hover:text-white border-b-2 border-transparent shrink-0">
                     Dynamic CMS Live Editor
                 </button>
-                <button onclick="switchAdminTab('leads')" id="tab-btn-leads" class="pb-3 text-slate-400 hover:text-white border-b-2 border-transparent">
+                <button onclick="switchAdminTab('leads')" id="tab-btn-leads" class="pb-3 text-slate-400 hover:text-white border-b-2 border-transparent shrink-0">
                     Client Inquiries (<span id="inquiry-count">0</span>)
                 </button>
             </div>
 
             <!-- TAB 1: MAIL CENTER (THE BIG BOX OF MAIL INBOX AND OUTBOX) -->
-            <div id="tab-content-mail" class="space-y-6">
+            <div id="tab-content-mail" class="space-y-5 sm:space-y-6">
                 
                 <!-- Big Mailbox Overview Card -->
-                <div class="bg-slate-950 rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-6">
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-6 border-b border-slate-800">
+                <div class="bg-slate-900/90 rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-slate-800 space-y-6">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-5 border-b border-slate-800">
                         <div>
                             <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest font-bold">Connected Email Engine</span>
-                            <h2 class="text-2xl font-extrabold text-white mt-0.5">Corporate Mailbox Hub</h2>
+                            <h2 class="text-xl sm:text-2xl font-extrabold text-white mt-0.5">Corporate Mailbox Hub</h2>
                             <p class="text-xs text-slate-400 mt-1">Directly integrated with Zoho Mail encrypted mail servers.</p>
                         </div>
 
                         <!-- Mailbox Account Selector -->
-                        <div class="flex items-center gap-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-2 w-full sm:w-auto">
                             <span class="text-xs font-bold text-slate-400 uppercase">Mailbox:</span>
-                            <select id="active-mailbox-select" class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs font-bold focus:outline-none focus:ring-2 focus:ring-brand-500">
+                            <select id="active-mailbox-select" class="w-full sm:w-auto px-3.5 py-2 rounded-xl bg-slate-800 border border-slate-700 text-white text-xs font-bold focus:outline-none focus:ring-2 focus:ring-brand-500">
                                 <option value="info@nexapointbpo.com">info@nexapointbpo.com (Primary General)</option>
                                 <option value="admin@nexapointbpo.com" selected>admin@nexapointbpo.com (Administration)</option>
                                 <option value="hr@nexapointbpo.com">hr@nexapointbpo.com (Human Resources)</option>
@@ -824,42 +906,42 @@
                     </div>
 
                     <!-- Visual Inbox & Outbox Stats Box -->
-                    <div class="grid sm:grid-cols-3 gap-4">
-                        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4">
+                        <div class="p-4 sm:p-5 rounded-2xl bg-slate-950 border border-slate-800">
                             <span class="text-[10px] font-mono uppercase text-slate-400 font-bold block">Active Inbound Queue</span>
-                            <span id="mail-stat-inbox" class="text-3xl font-extrabold text-white mt-1 block">3 Inquiries</span>
+                            <span id="mail-stat-inbox" class="text-2xl sm:text-3xl font-extrabold text-white mt-1 block">0 Inquiries</span>
                             <span class="text-xs text-emerald-400">Ready for review</span>
                         </div>
-                        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+                        <div class="p-4 sm:p-5 rounded-2xl bg-slate-950 border border-slate-800">
                             <span class="text-[10px] font-mono uppercase text-slate-400 font-bold block">Outbox Proposals</span>
-                            <span class="text-3xl font-extrabold text-brand-400 mt-1 block">18 Sent</span>
+                            <span class="text-2xl sm:text-3xl font-extrabold text-brand-400 mt-1 block">18 Sent</span>
                             <span class="text-xs text-slate-400">Dispatched this month</span>
                         </div>
-                        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+                        <div class="p-4 sm:p-5 rounded-2xl bg-slate-950 border border-slate-800">
                             <span class="text-[10px] font-mono uppercase text-slate-400 font-bold block">Mail Infrastructure</span>
-                            <span class="text-3xl font-extrabold text-emerald-400 mt-1 block">Active</span>
+                            <span class="text-2xl sm:text-3xl font-extrabold text-emerald-400 mt-1 block">Active</span>
                             <span class="text-xs text-slate-400">Zoho MX + Brevo SMTP</span>
                         </div>
                     </div>
 
                     <!-- Direct Zoho Action Buttons (Big Boxes) -->
-                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
-                        <button onclick="launchZohoMailbox('inbox')" class="p-6 rounded-2xl bg-brand-600 hover:bg-brand-500 text-white text-left transition-all shadow-lg shadow-brand-600/25 flex justify-between items-center group">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 pt-2">
+                        <button onclick="launchZohoMailbox('inbox')" class="p-5 sm:p-6 rounded-2xl bg-brand-600 hover:bg-brand-500 text-white text-left transition-all shadow-lg shadow-brand-600/25 flex justify-between items-center group">
                             <div>
-                                <span class="text-[11px] font-mono uppercase tracking-wider block text-blue-100 font-bold">Direct Access</span>
-                                <h4 class="text-lg font-extrabold mt-1">Open Full Zoho Mail Inbox</h4>
+                                <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider block text-blue-100 font-bold">Direct Access</span>
+                                <h4 class="text-base sm:text-lg font-extrabold mt-1">Open Full Zoho Mail Inbox</h4>
                                 <p class="text-xs text-blue-100 mt-0.5">Launches encrypted webmail with selected address pre-filled.</p>
                             </div>
-                            <svg class="w-6 h-6 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6 transform group-hover:translate-x-1 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                         </button>
 
-                        <button onclick="launchZohoMailbox('outbox')" class="p-6 rounded-2xl bg-slate-900 hover:bg-slate-850 border border-slate-800 text-white text-left transition-all flex justify-between items-center group">
+                        <button onclick="launchZohoMailbox('outbox')" class="p-5 sm:p-6 rounded-2xl bg-slate-950 hover:bg-slate-800 border border-slate-800 text-white text-left transition-all flex justify-between items-center group">
                             <div>
-                                <span class="text-[11px] font-mono uppercase tracking-wider block text-emerald-400 font-bold">New Message</span>
-                                <h4 class="text-lg font-extrabold mt-1">Launch Zoho Outbox & Compose</h4>
+                                <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider block text-emerald-400 font-bold">New Message</span>
+                                <h4 class="text-base sm:text-lg font-extrabold mt-1">Launch Zoho Outbox & Compose</h4>
                                 <p class="text-xs text-slate-400 mt-0.5">Send new client proposals and walk-through confirmations.</p>
                             </div>
-                            <svg class="w-6 h-6 text-slate-400 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-slate-400 transform group-hover:translate-x-1 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                         </button>
                     </div>
 
@@ -868,53 +950,53 @@
             </div>
 
             <!-- TAB 2: DYNAMIC CMS LIVE CONTROLLER -->
-            <div id="tab-content-cms" class="hidden space-y-6">
+            <div id="tab-content-cms" class="hidden space-y-5 sm:space-y-6">
                 
-                <div class="bg-slate-950 rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-6">
+                <div class="bg-slate-900/90 rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-slate-800 space-y-6">
                     <div>
                         <span class="text-xs font-mono text-brand-400 uppercase tracking-widest font-bold">Live Website Control</span>
-                        <h2 class="text-2xl font-extrabold text-white mt-0.5">Dynamic Content Management System (CMS)</h2>
+                        <h2 class="text-xl sm:text-2xl font-extrabold text-white mt-0.5">Dynamic Content Management System (CMS)</h2>
                         <p class="text-xs text-slate-400 mt-1">Edit what users see on the live website. Changes apply immediately upon saving.</p>
                     </div>
 
                     <form id="cms-editor-form" class="space-y-4">
-                        <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                             <div>
                                 <label class="block text-xs font-bold text-slate-400 uppercase mb-1.5">Announcement Ticker Notice</label>
-                                <input type="text" id="cms-input-ticker" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs focus:ring-2 focus:ring-brand-500">
+                                <input type="text" id="cms-input-ticker" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-xs focus:ring-2 focus:ring-brand-500">
                             </div>
                             <div>
                                 <label class="block text-xs font-bold text-slate-400 uppercase mb-1.5">Monthly Dials Stat</label>
-                                <input type="text" id="cms-input-dials" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs focus:ring-2 focus:ring-brand-500">
+                                <input type="text" id="cms-input-dials" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-xs focus:ring-2 focus:ring-brand-500">
                             </div>
                         </div>
 
                         <div>
                             <label class="block text-xs font-bold text-slate-400 uppercase mb-1.5">Hero Headline Title</label>
-                            <input type="text" id="cms-input-title" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-sm focus:ring-2 focus:ring-brand-500">
+                            <input type="text" id="cms-input-title" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-xs sm:text-sm focus:ring-2 focus:ring-brand-500">
                         </div>
 
                         <div>
                             <label class="block text-xs font-bold text-slate-400 uppercase mb-1.5">Hero Subtitle Text</label>
-                            <textarea id="cms-input-sub" rows="3" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs focus:ring-2 focus:ring-brand-500"></textarea>
+                            <textarea id="cms-input-sub" rows="3" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-xs focus:ring-2 focus:ring-brand-500"></textarea>
                         </div>
 
-                        <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                             <div>
                                 <label class="block text-xs font-bold text-slate-400 uppercase mb-1.5">Cost Savings Stat</label>
-                                <input type="text" id="cms-input-savings" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs focus:ring-2 focus:ring-brand-500">
+                                <input type="text" id="cms-input-savings" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-xs focus:ring-2 focus:ring-brand-500">
                             </div>
                             <div>
                                 <label class="block text-xs font-bold text-slate-400 uppercase mb-1.5">Attendance Stat</label>
-                                <input type="text" id="cms-input-attendance" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs focus:ring-2 focus:ring-brand-500">
+                                <input type="text" id="cms-input-attendance" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-xs focus:ring-2 focus:ring-brand-500">
                             </div>
                         </div>
 
-                        <div class="flex gap-3 pt-3">
-                            <button type="submit" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all shadow-md">
+                        <div class="flex flex-col sm:flex-row gap-3 pt-3">
+                            <button type="submit" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all shadow-md">
                                 Save CMS Live Changes
                             </button>
-                            <button type="button" onclick="resetCmsDefaults()" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold transition-all">
+                            <button type="button" onclick="resetCmsDefaults()" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold transition-all">
                                 Reset to Factory Defaults
                             </button>
                         </div>
@@ -924,13 +1006,13 @@
             </div>
 
             <!-- TAB 3: CLIENT INQUIRIES LOG -->
-            <div id="tab-content-leads" class="hidden space-y-6">
+            <div id="tab-content-leads" class="hidden space-y-5 sm:space-y-6">
                 
-                <div class="bg-slate-950 rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-4">
+                <div class="bg-slate-900/90 rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-slate-800 space-y-4">
                     <div class="flex justify-between items-center pb-4 border-b border-slate-800">
                         <div>
                             <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest font-bold">Client Submissions</span>
-                            <h2 class="text-2xl font-extrabold text-white mt-0.5">Website Proposal Inquiries</h2>
+                            <h2 class="text-xl sm:text-2xl font-extrabold text-white mt-0.5">Website Proposal Inquiries</h2>
                         </div>
                         <button onclick="clearInquiries()" class="text-xs text-rose-400 hover:underline">Clear Log</button>
                     </div>
@@ -946,45 +1028,77 @@
     </div>
 
     <!-- Floating Admin Indicator (Visible when logged in) -->
-    <div id="admin-floating-pill" class="fixed bottom-5 right-5 z-40 hidden">
-        <button onclick="openAdminDashboard()" class="px-4 py-2.5 rounded-full bg-slate-900 text-white border border-brand-500 shadow-xl text-xs font-bold flex items-center gap-2 hover:scale-105 transition-transform">
+    <div id="admin-floating-pill" class="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-40 hidden">
+        <button onclick="openAdminDashboard()" class="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-slate-900 text-white border border-brand-500 shadow-xl text-xs font-bold flex items-center gap-2 hover:scale-105 transition-transform">
             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
             <span>Admin CMS & Mailbox Active</span>
         </button>
     </div>
 
-    <!-- Interactive Scripts -->
+    <!-- ============================================================ -->
+    <!-- 12. INTERACTIVE JAVASCRIPT LOGIC -->
+    <!-- ============================================================ -->
     <script>
-        // 1. Theme Toggle
+        // 1. Theme Toggle Logic (Full Dark Mode Compatibility)
         const themeToggleBtn = document.getElementById('theme-toggle');
-        themeToggleBtn.addEventListener('click', () => {
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.theme = 'light';
-            } else {
+        const sunIcon = document.getElementById('theme-icon-sun');
+        const moonIcon = document.getElementById('theme-icon-moon');
+
+        function applyTheme(isDark) {
+            if (isDark) {
                 document.documentElement.classList.add('dark');
                 localStorage.theme = 'dark';
+                if (sunIcon) sunIcon.classList.remove('hidden');
+                if (moonIcon) moonIcon.classList.add('hidden');
+            } else {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+                if (sunIcon) sunIcon.classList.add('hidden');
+                if (moonIcon) moonIcon.classList.remove('hidden');
             }
+        }
+
+        // Initialize Theme Icons on Load
+        const initialIsDark = document.documentElement.classList.contains('dark');
+        applyTheme(initialIsDark);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const nextDark = !document.documentElement.classList.contains('dark');
+            applyTheme(nextDark);
         });
 
-        // 2. Mobile Menu
+        // 2. Mobile Menu Drawer
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
         mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileMenu.classList.add('hidden')));
 
-        // 3. Live World Clocks
+        // 3. Live World Clocks (Rolling Marquee Continuous Sync)
         function updateClocks() {
-            const fmt = (tz) => new Intl.DateTimeFormat('en-GB', { timeZone: tz, hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date());
-            document.getElementById('t-lon').textContent = fmt('Europe/London') + ' GMT';
-            document.getElementById('t-tor').textContent = fmt('America/Toronto') + ' EST';
-            document.getElementById('t-akl').textContent = fmt('Pacific/Auckland') + ' NZT';
-            document.getElementById('t-sat').textContent = fmt('America/Chicago') + ' CST';
-            document.getElementById('t-syd').textContent = fmt('Australia/Sydney') + ' AEST';
-            document.getElementById('t-dhk').textContent = fmt('Asia/Dhaka') + ' BST';
+            const fmt = (tz) => new Intl.DateTimeFormat('en-GB', { 
+                timeZone: tz, 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit', 
+                hour12: false 
+            }).format(new Date());
+
+            const lon = fmt('Europe/London') + ' GMT';
+            const tor = fmt('America/Toronto') + ' EST';
+            const akl = fmt('Pacific/Auckland') + ' NZT';
+            const sat = fmt('America/Chicago') + ' CST';
+            const syd = fmt('Australia/Sydney') + ' AEST';
+            const dhk = fmt('Asia/Dhaka') + ' BST';
+
+            document.querySelectorAll('.t-lon').forEach(el => el.textContent = lon);
+            document.querySelectorAll('.t-tor').forEach(el => el.textContent = tor);
+            document.querySelectorAll('.t-akl').forEach(el => el.textContent = akl);
+            document.querySelectorAll('.t-sat').forEach(el => el.textContent = sat);
+            document.querySelectorAll('.t-syd').forEach(el => el.textContent = syd);
+            document.querySelectorAll('.t-dhk').forEach(el => el.textContent = dhk);
         }
         updateClocks();
-        setInterval(updateClocks, 30000);
+        setInterval(updateClocks, 1000);
 
         // 4. ROI Calculator
         const cSlider = document.getElementById('c-slider');
@@ -1100,7 +1214,7 @@
 
         // 8. Dynamic CMS Live Editor Logic
         const defaultCMS = {
-            title: "Fill Your Calendar with High-Value Commercial Cleaning Contracts",
+            title: "Fill Your Calendar with High-Value <span class=\"text-brand-600 dark:text-blue-500\">Commercial Cleaning Contracts</span>",
             sub: "Dedicated offshore cold calling pods connecting your cleaning business with corporate facility decision-makers across the UK, Canada, New Zealand, Australia, and the USA.",
             ticker: "Delivery Operations Center: Pabna, Bangladesh",
             dials: "60,000+",
@@ -1119,7 +1233,7 @@
         function applyCmsToDOM(cms) {
             if (document.getElementById('cms-hero-title')) document.getElementById('cms-hero-title').innerHTML = cms.title;
             if (document.getElementById('cms-hero-sub')) document.getElementById('cms-hero-sub').textContent = cms.sub;
-            if (document.getElementById('cms-ticker-text')) document.getElementById('cms-ticker-text').textContent = cms.ticker;
+            document.querySelectorAll('.cms-ticker-text').forEach(el => el.textContent = cms.ticker);
             if (document.getElementById('cms-stat-dials')) document.getElementById('cms-stat-dials').textContent = cms.dials;
             if (document.getElementById('cms-stat-savings')) document.getElementById('cms-stat-savings').textContent = cms.savings;
             if (document.getElementById('cms-stat-attendance')) document.getElementById('cms-stat-attendance').textContent = cms.attendance;
@@ -1207,12 +1321,12 @@
             }
 
             container.innerHTML = leads.map(l => `
-                <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-xs space-y-1">
+                <div class="p-3.5 sm:p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs space-y-1">
                     <div class="flex justify-between items-center">
                         <strong class="text-white">${l.name} (${l.company})</strong>
                         <span class="text-[10px] font-mono text-slate-400">${l.date}</span>
                     </div>
-                    <p class="text-brand-400">${l.email} • Target: ${l.market}</p>
+                    <p class="text-brand-400 font-medium">${l.email} • Target: ${l.market}</p>
                     <p class="text-slate-300 mt-1">${l.message || 'No additional notes.'}</p>
                 </div>
             `).join('');
