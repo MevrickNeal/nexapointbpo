@@ -1,1019 +1,1289 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexaPoint BPO | Commercial Cleaning Appointment Setting & Cold Calling</title>
-    <meta name="description" content="NexaPoint BPO is the premier dedicated outbound BPO for commercial cleaning & janitorial companies across the UK, New Zealand, Canada, USA, and Australia. Your Goals, Our Support.">
-    <meta name="keywords" content="commercial cleaning leads, janitorial appointment setting, cold calling cleaning contracts, bpo for cleaners, NexaPoint BPO">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="NexaPoint BPO | Outbound Sales for Commercial Cleaners">
-    <meta property="og:description" content="We deploy dedicated cold callers who book qualified commercial cleaning walkthroughs directly onto your calendar.">
-    <meta property="og:image" content="assets/logo.jpg">
-    <meta property="og:url" content="https://nexapointbpo.com">
-    <meta name="theme-color" content="#0062FF">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexaPoint BPO | Commercial Cleaning Lead Generation & Appointment Setting</title>
+  <meta name="description" content="NexaPoint BPO is a Bangladesh-based dedicated outbound call center specialising in commercial cleaning lead generation, cold calling and appointment setting for cleaning companies across the UK, Canada, New Zealand, USA and Australia." />
+  <meta name="keywords" content="commercial cleaning leads, BPO cold calling, cleaning appointment setting, janitorial leads UK, cleaning company leads Canada, BPO Bangladesh" />
+  <meta name="robots" content="index, follow" />
 
-    <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nexapointbpo.com/" />
+  <meta property="og:title" content="NexaPoint BPO | Your Goals, Our Support" />
+  <meta property="og:description" content="Dedicated offshore outbound call centre for commercial cleaning companies. We cold call, qualify and book confirmed walkthroughs so you can focus on closing." />
+  <meta property="og:image" content="https://nexapointbpo.com/assets/logo.jpg" />
+  <meta property="twitter:card" content="summary_large_image" />
 
-    <!-- Fonts: Syne + Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
+  <link rel="canonical" href="https://nexapointbpo.com/" />
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        display: ['"Syne"', 'sans-serif']
-                    },
-                    colors: {
-                        brand: {
-                            navy: '#060D17',
-                            slate: '#0B1526',
-                            card: '#101D33',
-                            blue: '#0062FF',
-                            hoverBlue: '#0052D4',
-                            cyan: '#00D4FF',
-                            emerald: '#10B981',
-                            subtle: '#64748B'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
 
-    <style>
-        /* Bespoke Styling & Noise Texture */
-        body {
-            background-color: #060D17;
-            color: #E2E8F0;
-        }
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Syne', 'sans-serif'],
+          },
+          colors: {
+            navy: { DEFAULT: '#060D1A', 800: '#0B1526', 700: '#101D33', 600: '#16294A' },
+            blue: { DEFAULT: '#0062FF', light: '#3D87FF', dark: '#0047CC' },
+            cyan: '#00CFFF',
+            emerald: '#10B981',
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.6s ease both',
+            'pulse-soft': 'pulse 3s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+          },
+        },
+      },
+    };
+  </script>
 
-        .hero-mesh {
-            background: 
-                radial-gradient(circle at 15% 20%, rgba(0, 98, 255, 0.18) 0%, transparent 45%),
-                radial-gradient(circle at 85% 30%, rgba(0, 212, 255, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
-        }
+  <style>
+    * { box-sizing: border-box; }
+    body { background: #060D1A; color: #CBD5E1; }
 
-        .glass-card {
-            background: rgba(16, 29, 51, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
+    /* ---- Gradient mesh hero ---- */
+    .hero-bg {
+      background:
+        radial-gradient(ellipse 70% 60% at 20% 30%, rgba(0,98,255,0.22) 0%, transparent 55%),
+        radial-gradient(ellipse 55% 55% at 80% 20%, rgba(0,207,255,0.14) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 50% at 50% 90%, rgba(16,185,129,0.09) 0%, transparent 55%),
+        #060D1A;
+    }
 
-        .glass-card-hover {
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .glass-card-hover:hover {
-            transform: translateY(-4px);
-            border-color: rgba(0, 98, 255, 0.4);
-            box-shadow: 0 20px 40px -15px rgba(0, 98, 255, 0.25);
-        }
+    /* ---- Glass cards ---- */
+    .glass { background: rgba(16,29,51,0.72); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.08); }
+    .glass-hover { transition: transform 0.28s cubic-bezier(.16,1,.3,1), border-color 0.28s, box-shadow 0.28s; }
+    .glass-hover:hover { transform: translateY(-5px); border-color: rgba(0,98,255,0.45); box-shadow: 0 24px 48px -16px rgba(0,98,255,0.22); }
 
-        .gradient-heading {
-            background: linear-gradient(135deg, #FFFFFF 30%, #94A3B8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    /* ---- Text gradient ---- */
+    .grad-text { background: linear-gradient(130deg, #FFFFFF 20%, #64A0FF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .cyan-text  { background: linear-gradient(130deg, #0062FF 0%, #00CFFF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        .gradient-accent {
-            background: linear-gradient(135deg, #0062FF 0%, #00D4FF 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    /* ---- Noise overlay ---- */
+    .noise::after { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; border-radius: inherit; }
 
-        /* Soundwave Simulation */
-        .soundbar {
-            animation: bounce 1.2s ease-in-out infinite alternate;
-        }
-        @keyframes bounce {
-            0% { height: 4px; }
-            100% { height: 24px; }
-        }
-    </style>
+    /* ---- Live dot ping ---- */
+    .ping-dot { position: relative; }
+    .ping-dot::before { content: ''; position: absolute; inset: 0; border-radius: 50%; background: #10B981; animation: ping 1.6s ease-out infinite; }
+    @keyframes ping { 75%,100% { transform: scale(2.2); opacity: 0; } }
+
+    /* ---- Scroll reveal (JS activated) ---- */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ---- Image overlays ---- */
+    .img-overlay { position: relative; overflow: hidden; }
+    .img-overlay img { transition: transform 0.5s ease; }
+    .img-overlay:hover img { transform: scale(1.04); }
+
+    /* ---- Team card ---- */
+    .team-card:hover .team-info { opacity: 1; transform: translateY(0); }
+    .team-info { opacity: 0; transform: translateY(8px); transition: 0.3s ease; }
+
+    /* ---- Sound bars ---- */
+    .bar { width: 3px; border-radius: 2px; background: #0062FF; animation: bar 1.1s ease-in-out infinite alternate; }
+    @keyframes bar { 0% { height: 4px; } 100% { height: 20px; } }
+
+    /* ---- Input focus ---- */
+    input:focus, select:focus, textarea:focus { outline: none; border-color: #0062FF; box-shadow: 0 0 0 3px rgba(0,98,255,0.18); }
+
+    /* ---- Section badge ---- */
+    .badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 14px; border-radius: 999px; font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; border: 1px solid; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #060D1A; }
+    ::-webkit-scrollbar-thumb { background: #1E3A5F; border-radius: 4px; }
+  </style>
 </head>
-<body class="font-sans antialiased selection:bg-brand-blue selection:text-white">
+<body class="font-sans antialiased">
 
-    <!-- Top Live Time-Zone Bar (Human Operational Proof) -->
-    <div class="bg-black/80 border-b border-slate-800/80 text-xs text-slate-400 py-2.5 px-4 backdrop-blur-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
-            <div class="flex items-center gap-2">
-                <span class="inline-block w-2.5 h-2.5 rounded-full bg-brand-emerald animate-pulse"></span>
-                <span class="font-semibold text-slate-200">NexaPoint Active Operations Center</span>
-                <span class="hidden sm:inline text-slate-500">• 24/5 Multi-Timezone Dialing</span>
-            </div>
+<!-- ═══════════════════════════════════════════════════════════════
+     TOP TICKER — Live timezones + compliance notice
+════════════════════════════════════════════════════════════════════ -->
+<div class="bg-navy-800 border-b border-white/5 py-2 px-4 text-[11px] text-slate-400 sticky top-0 z-50 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto flex items-center justify-between gap-4 flex-wrap">
+    <div class="flex items-center gap-2 font-semibold text-white">
+      <span class="relative inline-flex w-2.5 h-2.5 rounded-full bg-emerald overflow-visible ping-dot"></span>
+      <span>NexaPoint BPO Operations Centre — Active</span>
+    </div>
+    <div class="flex items-center gap-5 font-mono flex-wrap">
+      <span>🇬🇧 <span id="t-lon" class="text-cyan">—</span></span>
+      <span>🇨🇦 <span id="t-tor" class="text-cyan">—</span></span>
+      <span>🇳🇿 <span id="t-akl" class="text-cyan">—</span></span>
+      <span>🇺🇸 <span id="t-sat" class="text-cyan">—</span></span>
+      <span>🇦🇺 <span id="t-syd" class="text-cyan">—</span></span>
+      <span class="border-l border-white/10 pl-4">🇧🇩 <span id="t-dhk" class="text-emerald font-bold">—</span> HQ</span>
+    </div>
+  </div>
+</div>
 
-            <div class="flex items-center gap-4 text-[11px] font-mono tracking-tight overflow-x-auto">
-                <div class="flex items-center gap-1.5"><span class="text-slate-300">🇬🇧 London:</span> <span id="time-lon" class="text-brand-cyan">14:58 GMT</span></div>
-                <div class="flex items-center gap-1.5"><span class="text-slate-300">🇨🇦 Toronto:</span> <span id="time-tor" class="text-brand-cyan">09:58 EST</span></div>
-                <div class="flex items-center gap-1.5"><span class="text-slate-300">🇳🇿 Auckland:</span> <span id="time-akl" class="text-brand-cyan">03:58 NZT</span></div>
-                <div class="flex items-center gap-1.5"><span class="text-slate-300">🇺🇸 Texas:</span> <span id="time-sat" class="text-brand-cyan">08:58 CST</span></div>
-                <div class="flex items-center gap-1.5"><span class="text-slate-300">🇧🇩 Dhaka (HQ):</span> <span id="time-dhk" class="text-brand-emerald font-bold">20:58 BST</span></div>
-            </div>
-        </div>
+<!-- ═══════════════════════════════════════════════════════════════
+     NAV
+════════════════════════════════════════════════════════════════════ -->
+<header id="navbar" class="sticky top-[36px] z-40 border-b border-white/5 bg-navy/90 backdrop-blur-md transition-shadow">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[72px] flex items-center justify-between gap-6">
+    <!-- Brand -->
+    <a href="#hero" class="flex items-center gap-3 group flex-shrink-0">
+      <img src="assets/logo.jpg" alt="NexaPoint BPO" class="h-12 w-auto rounded-lg border border-white/10 group-hover:border-blue group-hover:shadow-lg group-hover:shadow-blue/20 transition-all">
+      <div class="hidden sm:block">
+        <p class="text-lg font-bold text-white font-display leading-none">NexaPoint <span class="text-blue-light">BPO</span></p>
+        <p class="text-[9px] tracking-widest text-slate-400 uppercase mt-0.5">Your Goals, Our Support</p>
+      </div>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+      <a href="#about" class="hover:text-white transition-colors">About</a>
+      <a href="#services" class="hover:text-white transition-colors">Services</a>
+      <a href="#team" class="hover:text-white transition-colors">Our Team</a>
+      <a href="#calculator" class="hover:text-white transition-colors">ROI Calculator</a>
+      <a href="#offices" class="hover:text-white transition-colors">Our Offices</a>
+      <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+    </nav>
+
+    <!-- CTA -->
+    <div class="hidden md:flex items-center gap-3 flex-shrink-0">
+      <a href="mailto:info@nexapointbpo.com" class="text-xs text-slate-400 hover:text-white transition-colors hidden lg:block">info@nexapointbpo.com</a>
+      <a href="#contact" class="px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-blue hover:bg-blue-dark shadow-lg shadow-blue/25 transition-all whitespace-nowrap">
+        Get a Free Proposal
+      </a>
     </div>
 
-    <!-- Header Navigation -->
-    <header class="border-b border-white/5 bg-brand-navy/90 backdrop-blur-md sticky top-[41px] z-40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <a href="#home" class="flex items-center gap-3.5 group">
-                <img src="assets/logo.jpg" alt="NexaPoint BPO Logo" class="h-12 w-auto object-contain rounded-lg border border-white/10 group-hover:border-brand-blue/60 transition-all duration-300">
-                <div class="flex flex-col">
-                    <span class="text-xl font-bold tracking-tight text-white leading-none font-display">NexaPoint <span class="text-brand-blue">BPO</span></span>
-                    <span class="text-[10px] tracking-widest text-slate-400 uppercase mt-1 font-semibold">Your Goals, Our Support</span>
-                </div>
+    <!-- Mobile hamburger -->
+    <button id="ham" class="lg:hidden p-2 text-slate-400 hover:text-white" aria-label="Menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div id="mobile-nav" class="hidden lg:hidden border-t border-white/5 bg-navy-800 px-6 py-5 space-y-3 text-sm font-medium">
+    <a href="#about" class="block text-slate-300 hover:text-white py-1">About</a>
+    <a href="#services" class="block text-slate-300 hover:text-white py-1">Services</a>
+    <a href="#team" class="block text-slate-300 hover:text-white py-1">Our Team</a>
+    <a href="#calculator" class="block text-slate-300 hover:text-white py-1">ROI Calculator</a>
+    <a href="#offices" class="block text-slate-300 hover:text-white py-1">Our Offices</a>
+    <a href="#faq" class="block text-slate-300 hover:text-white py-1">FAQ</a>
+    <a href="#contact" class="block mt-2 text-center py-3 rounded-xl bg-blue text-white font-semibold">Get a Free Proposal</a>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════════════════ -->
+<section id="hero" class="relative overflow-hidden hero-bg noise pt-16 pb-24 lg:pt-24 lg:pb-32">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+      <!-- Copy -->
+      <div class="lg:col-span-6 space-y-7 text-center lg:text-left">
+        <div class="badge bg-blue/10 border-blue/30 text-cyan">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan animate-pulse flex-shrink-0"></span>
+          Dedicated Commercial Cleaning Outbound BPO
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl xl:text-6xl font-extrabold font-display text-white leading-[1.1] tracking-tight">
+          We Fill Your Calendar with <span class="cyan-text">Qualified Commercial Cleaning Contracts</span>
+        </h1>
+
+        <p class="text-lg text-slate-300 leading-relaxed max-w-xl">
+          NexaPoint BPO is a Bangladesh-based specialist outbound call centre. We cold call property managers, facilities directors and office heads across the <strong class="text-white">UK, Canada, New Zealand, USA and Australia</strong> — booking confirmed on-site walkthrough appointments directly into your calendar.
+        </p>
+
+        <!-- Mini stats -->
+        <div class="grid grid-cols-3 gap-4 py-4 border-y border-white/10 text-left">
+          <div>
+            <p class="text-2xl font-bold font-display text-white">3,500+</p>
+            <p class="text-xs text-slate-400 mt-0.5">Dials per rep/month</p>
+          </div>
+          <div>
+            <p class="text-2xl font-bold font-display text-white">65%</p>
+            <p class="text-xs text-slate-400 mt-0.5">Cost saving vs local SDR</p>
+          </div>
+          <div>
+            <p class="text-2xl font-bold font-display text-white">5</p>
+            <p class="text-xs text-slate-400 mt-0.5">Countries we actively cover</p>
+          </div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <a href="#contact" class="px-8 py-4 rounded-xl font-bold text-white bg-blue hover:bg-blue-dark shadow-xl shadow-blue/30 transition-all flex items-center justify-center gap-2">
+            Get a Free Proposal
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a href="#about" class="px-8 py-4 rounded-xl font-semibold text-slate-300 bg-white/5 hover:bg-white/10 border border-white/10 transition-all flex items-center justify-center gap-2">
+            See How We Work
+          </a>
+        </div>
+
+        <!-- Markets -->
+        <div class="flex flex-wrap gap-2 justify-center lg:justify-start pt-2">
+          <span class="text-xs px-3 py-1.5 rounded-lg bg-navy-700 border border-white/10 text-slate-200">🇬🇧 United Kingdom</span>
+          <span class="text-xs px-3 py-1.5 rounded-lg bg-navy-700 border border-white/10 text-slate-200">🇨🇦 Canada</span>
+          <span class="text-xs px-3 py-1.5 rounded-lg bg-navy-700 border border-white/10 text-slate-200">🇳🇿 New Zealand</span>
+          <span class="text-xs px-3 py-1.5 rounded-lg bg-navy-700 border border-white/10 text-slate-200">🇺🇸 United States</span>
+          <span class="text-xs px-3 py-1.5 rounded-lg bg-navy-700 border border-white/10 text-slate-200">🇦🇺 Australia</span>
+        </div>
+      </div>
+
+      <!-- Hero image — real call centre photo -->
+      <div class="lg:col-span-6 relative">
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+          <img
+            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1400&q=80"
+            alt="NexaPoint BPO operations centre — agents at work"
+            class="w-full h-80 lg:h-[480px] object-cover object-center"
+            loading="eager"
+          />
+          <!-- Overlay gradient -->
+          <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent"></div>
+
+          <!-- Live booking feed overlay -->
+          <div class="absolute bottom-0 inset-x-0 p-5">
+            <p class="text-[10px] font-mono text-cyan uppercase tracking-widest font-bold mb-2">Live Walkthrough Feed</p>
+            <div class="space-y-2">
+              <div class="glass rounded-xl px-4 py-2.5 flex justify-between items-center text-xs">
+                <span class="text-white font-semibold">🇬🇧 Office Complex — Manchester</span>
+                <span class="text-emerald font-mono">£3,200/mo confirmed</span>
+              </div>
+              <div class="glass rounded-xl px-4 py-2.5 flex justify-between items-center text-xs">
+                <span class="text-white font-semibold">🇨🇦 Medical Clinic — Toronto</span>
+                <span class="text-emerald font-mono">$4,100 CAD/mo confirmed</span>
+              </div>
+              <div class="glass rounded-xl px-4 py-2.5 flex justify-between items-center text-xs">
+                <span class="text-white font-semibold">🇳🇿 Logistics Depot — Auckland</span>
+                <span class="text-emerald font-mono">$5,800 NZD/mo confirmed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating badge -->
+        <div class="absolute -top-4 -right-4 glass rounded-2xl px-4 py-3 text-center shadow-xl">
+          <p class="text-2xl font-extrabold font-display text-white">94.2%</p>
+          <p class="text-[10px] text-slate-300 font-semibold">Walkthrough Attendance</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     COMPLIANCE STRIP
+════════════════════════════════════════════════════════════════════ -->
+<div class="border-y border-white/10 bg-navy-800 py-6">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-5">
+      <div>
+        <p class="text-xs font-mono font-bold text-cyan uppercase tracking-widest">B2B Cold Calling Compliance — Verified & Maintained</p>
+        <p class="text-sm font-semibold text-white mt-0.5">We dial legally across every target jurisdiction. No DNC violations, no reputational risk.</p>
+      </div>
+      <div class="flex flex-wrap gap-3 text-xs">
+        <span class="px-3 py-1.5 rounded-lg bg-navy-700 border border-white/10 text-slate-200">🇬🇧 UK GDPR · ICO Registered</span>
+        <span class="px-3 py-1.5 rounded-lg bg-navy-700 border border-white/10 text-slate-200">🇨🇦 CASL B2B Exempt</span>
+        <span class="px-3 py-1.5 rounded-lg bg-navy-700 border border-white/10 text-slate-200">🇳🇿 Unsolicited Messages Act</span>
+        <span class="px-3 py-1.5 rounded-lg bg-navy-700 border border-white/10 text-slate-200">🇺🇸 TCPA · DNC Scrubbed Daily</span>
+        <span class="px-3 py-1.5 rounded-lg bg-navy-700 border border-white/10 text-slate-200">🇦🇺 ACMA Compliant</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     ABOUT — Who We Are + Operations Centre Photo
+════════════════════════════════════════════════════════════════════ -->
+<section id="about" class="py-24 bg-navy-DEFAULT">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-14 items-center">
+
+      <!-- Photos -->
+      <div class="lg:col-span-6 reveal">
+        <div class="grid grid-cols-2 gap-4">
+          <!-- Main large image — call centre Bangladesh -->
+          <div class="col-span-2 img-overlay rounded-2xl overflow-hidden h-64 border border-white/10">
+            <img
+              src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1200&q=80"
+              alt="NexaPoint BPO call centre agents in Pabna, Bangladesh"
+              class="w-full h-full object-cover object-center"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-tr from-navy/60 to-transparent"></div>
+            <div class="absolute bottom-4 left-4">
+              <span class="text-[10px] font-mono text-emerald font-bold uppercase tracking-widest">Pabna Operations Centre, Bangladesh</span>
+            </div>
+          </div>
+          <!-- Two smaller images -->
+          <div class="img-overlay rounded-2xl overflow-hidden h-40 border border-white/10">
+            <img
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
+              alt="NexaPoint BPO team in office"
+              class="w-full h-full object-cover object-center"
+              loading="lazy"
+            />
+          </div>
+          <div class="img-overlay rounded-2xl overflow-hidden h-40 border border-white/10">
+            <img
+              src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80"
+              alt="NexaPoint BPO agent on call"
+              class="w-full h-full object-cover object-center"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Copy -->
+      <div class="lg:col-span-6 space-y-6 reveal">
+        <div class="badge bg-blue/10 border-blue/30 text-cyan">About NexaPoint BPO</div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white leading-tight">
+          A Bangladesh-Based BPO Built Exclusively for the Commercial Cleaning Industry
+        </h2>
+        <p class="text-slate-300 leading-relaxed">
+          Founded and headquartered in Pabna, Bangladesh, NexaPoint BPO was established with a single purpose: to provide commercial cleaning companies in English-speaking Western markets with a cost-effective, high-quality, and results-driven outbound sales function.
+        </p>
+        <p class="text-slate-300 leading-relaxed">
+          Our callers are not generic telemarketers. Every agent undergoes comprehensive training in commercial janitorial industry terminology, UK, Canadian, New Zealand and Australian business culture, accent clarity, and objection handling specifically designed for facilities managers, property directors and office administrators.
+        </p>
+
+        <div class="grid grid-cols-2 gap-5 pt-4">
+          <div class="p-5 rounded-xl bg-navy-700/60 border border-white/10">
+            <p class="text-3xl font-extrabold font-display text-white">60,000+</p>
+            <p class="text-xs text-slate-400 mt-1">Outbound dials per month</p>
+          </div>
+          <div class="p-5 rounded-xl bg-navy-700/60 border border-white/10">
+            <p class="text-3xl font-extrabold font-display text-blue-light">100%</p>
+            <p class="text-xs text-slate-400 mt-1">Cleaning niche specialisation</p>
+          </div>
+          <div class="p-5 rounded-xl bg-navy-700/60 border border-white/10">
+            <p class="text-3xl font-extrabold font-display text-emerald">5</p>
+            <p class="text-xs text-slate-400 mt-1">Countries actively covered</p>
+          </div>
+          <div class="p-5 rounded-xl bg-navy-700/60 border border-white/10">
+            <p class="text-3xl font-extrabold font-display text-white">24 / 5</p>
+            <p class="text-xs text-slate-400 mt-1">Time-zone synchronised dialing</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SERVICES
+════════════════════════════════════════════════════════════════════ -->
+<section id="services" class="py-24 bg-navy-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center space-y-4 reveal">
+      <div class="badge bg-blue/10 border-blue/30 text-cyan mx-auto">What We Do</div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white">
+        End-to-End Outbound Sales Infrastructure for Cleaning Companies
+      </h2>
+      <p class="text-slate-400 text-base">
+        From building your prospect list to confirming a walkthrough appointment on your calendar — we handle the entire outbound process so you can focus on winning contracts.
+      </p>
+    </div>
+
+    <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Service 1 -->
+      <div class="glass rounded-2xl p-8 glass-hover reveal">
+        <div class="w-12 h-12 rounded-xl bg-blue/15 border border-blue/20 flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-blue-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-3">Targeted Cold Calling</h3>
+        <p class="text-sm text-slate-300 leading-relaxed mb-4">High-volume daily outreach to property managers, facilities directors and office administrators within your specific service radius and postcode areas.</p>
+        <ul class="space-y-1.5 text-xs text-slate-400">
+          <li class="flex items-center gap-2"><span class="text-cyan">✓</span> 120–180 calls per rep per day</li>
+          <li class="flex items-center gap-2"><span class="text-cyan">✓</span> Local caller ID per target city</li>
+          <li class="flex items-center gap-2"><span class="text-cyan">✓</span> Real-time call logging & CRM entry</li>
+        </ul>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="glass rounded-2xl p-8 glass-hover reveal">
+        <div class="w-12 h-12 rounded-xl bg-emerald/15 border border-emerald/20 flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-3">Walkthrough Appointment Setting</h3>
+        <p class="text-sm text-slate-300 leading-relaxed mb-4">We confirm date-and-time walkthroughs directly into your calendar — Google Calendar, Outlook or Calendly — with pre-call building data and decision-maker notes attached.</p>
+        <ul class="space-y-1.5 text-xs text-slate-400">
+          <li class="flex items-center gap-2"><span class="text-cyan">✓</span> Square footage & scope pre-qualified</li>
+          <li class="flex items-center gap-2"><span class="text-cyan">✓</span> Reminder SMS/email to prospect</li>
+          <li class="flex items-center gap-2"><span class="text-cyan">✓</span> Current vendor pain points documented</li>
+        </ul>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="glass rounded-2xl p-8 glass-hover reveal">
+        <div class="w-12 h-12 rounded-xl bg-purple-500/15 border border-purple-500/20 flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-3">B2B Lead List Building</h3>
+        <p class="text-sm text-slate-300 leading-relaxed mb-4">We research and compile verified decision-maker databases for offices, logistics hubs, medical facilities, schools and retail showrooms in your target postcodes.</p>
+        <ul class="space-y-1.5 text-xs text-slate-400">
+          <li class="flex items-center gap-2"><span class="text-cyan">✓</span> Verified phone numbers & emails</li>
+          <li class="flex items-center gap-2"><span class="text-cyan">✓</span> DNC-scrubbed before first dial</li>
+          <li class="flex items-center gap-2"><span class="text-cyan">✓</span> Facility size & sector pre-filtered</li>
+        </ul>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="glass rounded-2xl p-8 glass-hover reveal">
+        <div class="w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-500/20 flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-3">CRM Management & Dispatch Support</h3>
+        <p class="text-sm text-slate-300 leading-relaxed mb-4">We work inside Jobber, Housecall Pro, HubSpot or Salesforce — updating leads, following up on pending proposals and managing inbound dispatch enquiries.</p>
+        <ul class="space-y-1.5 text-xs text-slate-400">
+          <li class="flex items-center gap-2"><span class="text-cyan">✓</span> Quote follow-up sequences</li>
+          <li class="flex items-center gap-2"><span class="text-cyan">✓</span> Inbound call handling</li>
+          <li class="flex items-center gap-2"><span class="text-cyan">✓</span> Pipeline status reporting</li>
+        </ul>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="glass rounded-2xl p-8 glass-hover reveal">
+        <div class="w-12 h-12 rounded-xl bg-cyan/15 border border-cyan/20 flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-3">Dedicated Full-Time Caller Pods</h3>
+        <p class="text-sm text-slate-300 leading-relaxed mb-4">Scale your outbound function with dedicated, full-time callers working exclusively on your account — no shared reps, no split focus. Your brand, your scripts, your targets.</p>
+        <ul class="space-y-1.5 text-xs text-slate-400">
+          <li class="flex items-center gap-2"><span class="text-cyan">✓</span> 160+ hours/month per rep</li>
+          <li class="flex items-center gap-2"><span class="text-cyan">✓</span> Weekly reporting & KPI reviews</li>
+          <li class="flex items-center gap-2"><span class="text-cyan">✓</span> Flexible month-to-month terms</li>
+        </ul>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="glass rounded-2xl p-8 glass-hover reveal">
+        <div class="w-12 h-12 rounded-xl bg-rose-500/15 border border-rose-500/20 flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-3">QA & Call Recording Audits</h3>
+        <p class="text-sm text-slate-300 leading-relaxed mb-4">Every booked walkthrough call is listened to and graded by our QA supervisors. Clients receive access to recordings through their private client portal.</p>
+        <ul class="space-y-1.5 text-xs text-slate-400">
+          <li class="flex items-center gap-2"><span class="text-cyan">✓</span> 100% walkthrough call auditing</li>
+          <li class="flex items-center gap-2"><span class="text-cyan">✓</span> QA scorecard shared monthly</li>
+          <li class="flex items-center gap-2"><span class="text-cyan">✓</span> Retraining triggered by low scores</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     TARGET FACILITIES
+════════════════════════════════════════════════════════════════════ -->
+<section class="py-24 bg-navy-DEFAULT">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center space-y-4 reveal">
+      <div class="badge bg-emerald/10 border-emerald/30 text-emerald mx-auto">Target Facility Types</div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white">
+        High-Value Commercial Properties We Call Every Day
+      </h2>
+      <p class="text-slate-400">We focus exclusively on commercial facilities that sign recurring monthly contracts — not one-off residential jobs.</p>
+    </div>
+
+    <!-- Photo grid of real facilities -->
+    <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+
+      <div class="img-overlay rounded-2xl overflow-hidden h-52 border border-white/10 group">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Corporate office building — NexaPoint cleaning leads" class="w-full h-full object-cover" loading="lazy"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4">
+          <p class="text-sm font-bold text-white">Corporate & Multi-Tenant Offices</p>
+          <p class="text-xs text-cyan font-mono mt-1">$1,800 – $6,500 / month</p>
+        </div>
+      </div>
+
+      <div class="img-overlay rounded-2xl overflow-hidden h-52 border border-white/10 group">
+        <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800&q=80" alt="Medical clinic — cleaning contract leads" class="w-full h-full object-cover" loading="lazy"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4">
+          <p class="text-sm font-bold text-white">Medical & Dental Clinics</p>
+          <p class="text-xs text-cyan font-mono mt-1">$2,500 – $8,000 / month</p>
+        </div>
+      </div>
+
+      <div class="img-overlay rounded-2xl overflow-hidden h-52 border border-white/10 group">
+        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80" alt="Logistics warehouse — industrial cleaning leads" class="w-full h-full object-cover" loading="lazy"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4">
+          <p class="text-sm font-bold text-white">Warehouses & Logistics Hubs</p>
+          <p class="text-xs text-cyan font-mono mt-1">$3,000 – $12,000 / month</p>
+        </div>
+      </div>
+
+      <div class="img-overlay rounded-2xl overflow-hidden h-52 border border-white/10 group">
+        <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80" alt="School building — educational cleaning leads" class="w-full h-full object-cover" loading="lazy"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4">
+          <p class="text-sm font-bold text-white">Schools & Learning Centres</p>
+          <p class="text-xs text-cyan font-mono mt-1">$2,000 – $7,000 / month</p>
+        </div>
+      </div>
+
+      <div class="img-overlay rounded-2xl overflow-hidden h-52 border border-white/10 group">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80" alt="Gym fitness centre — cleaning service leads" class="w-full h-full object-cover" loading="lazy"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4">
+          <p class="text-sm font-bold text-white">Gyms & Fitness Centres</p>
+          <p class="text-xs text-cyan font-mono mt-1">$1,500 – $4,500 / month</p>
+        </div>
+      </div>
+
+      <div class="img-overlay rounded-2xl overflow-hidden h-52 border border-white/10 group">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Commercial retail showroom — cleaning leads" class="w-full h-full object-cover" loading="lazy"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent"></div>
+        <div class="absolute bottom-4 left-4 right-4">
+          <p class="text-sm font-bold text-white">Retail Showrooms & Dealerships</p>
+          <p class="text-xs text-cyan font-mono mt-1">$2,200 – $6,000 / month</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     TEAM — Real human photos (professionals)
+════════════════════════════════════════════════════════════════════ -->
+<section id="team" class="py-24 bg-navy-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center space-y-4 reveal">
+      <div class="badge bg-blue/10 border-blue/30 text-cyan mx-auto">Our Leadership</div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white">
+        Meet the People Behind NexaPoint BPO
+      </h2>
+      <p class="text-slate-400">Experienced professionals dedicated to growing commercial cleaning businesses across the UK, Canada, New Zealand, USA and Australia.</p>
+    </div>
+
+    <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
+
+      <!-- Team member 1 -->
+      <div class="team-card glass rounded-2xl overflow-hidden border border-white/10 group">
+        <div class="relative h-56 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Kafi — Operations Director, NexaPoint BPO" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-700 via-transparent to-transparent"></div>
+        </div>
+        <div class="p-5">
+          <p class="font-bold text-white">Kafi</p>
+          <p class="text-xs text-blue-light mt-0.5 font-semibold">Head of Operations & Strategy</p>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">Oversees campaign execution, QA protocols, and agent performance across all active client accounts.</p>
+          <a href="mailto:kafi@nexapointbpo.com" class="mt-3 inline-block text-xs text-cyan hover:text-white transition-colors">kafi@nexapointbpo.com</a>
+        </div>
+      </div>
+
+      <!-- Team member 2 -->
+      <div class="team-card glass rounded-2xl overflow-hidden border border-white/10 group">
+        <div class="relative h-56 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1573497019236-17f8177b81e8?w=400&q=80" alt="Lian — Client Success Manager, NexaPoint BPO" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-700 via-transparent to-transparent"></div>
+        </div>
+        <div class="p-5">
+          <p class="font-bold text-white">Lian</p>
+          <p class="text-xs text-blue-light mt-0.5 font-semibold">Client Success & Account Manager</p>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">Primary client liaison. Manages onboarding, walkthrough reporting and monthly ROI reviews for all accounts.</p>
+          <a href="mailto:lian@nexapointbpo.com" class="mt-3 inline-block text-xs text-cyan hover:text-white transition-colors">lian@nexapointbpo.com</a>
+        </div>
+      </div>
+
+      <!-- Team member 3 -->
+      <div class="team-card glass rounded-2xl overflow-hidden border border-white/10 group">
+        <div class="relative h-56 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" alt="Senior SDR — NexaPoint BPO agent" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-700 via-transparent to-transparent"></div>
+        </div>
+        <div class="p-5">
+          <p class="font-bold text-white">Arif</p>
+          <p class="text-xs text-blue-light mt-0.5 font-semibold">Senior Outbound SDR — UK & Canada</p>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">Specialist in corporate office outreach and medical facility cold calling for UK and Canadian markets.</p>
+          <span class="mt-3 inline-block text-xs text-slate-500">Senior Agent</span>
+        </div>
+      </div>
+
+      <!-- Team member 4 -->
+      <div class="team-card glass rounded-2xl overflow-hidden border border-white/10 group">
+        <div class="relative h-56 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Senior SDR — NexaPoint BPO agent New Zealand" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-700 via-transparent to-transparent"></div>
+        </div>
+        <div class="p-5">
+          <p class="font-bold text-white">Farhana</p>
+          <p class="text-xs text-blue-light mt-0.5 font-semibold">Senior Outbound SDR — NZ & Australia</p>
+          <p class="text-xs text-slate-400 mt-2 leading-relaxed">Leads all New Zealand and Australia time-zone campaigns, specialising in logistics hub and industrial depot outreach.</p>
+          <span class="mt-3 inline-block text-xs text-slate-500">Senior Agent</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Staff call centre photo -->
+    <div class="mt-14 reveal">
+      <div class="relative rounded-2xl overflow-hidden h-72 border border-white/10">
+        <img
+          src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1400&q=80"
+          alt="NexaPoint BPO full operations team — Pabna, Bangladesh"
+          class="w-full h-full object-cover object-center"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/30 to-transparent"></div>
+        <div class="absolute inset-y-0 left-0 flex flex-col justify-center pl-10 max-w-lg">
+          <p class="text-sm font-mono text-cyan uppercase tracking-widest font-bold">Our Operations Centre</p>
+          <h3 class="text-2xl font-extrabold font-display text-white mt-2">Pabna, Bangladesh HQ</h3>
+          <p class="text-sm text-slate-300 mt-2 leading-relaxed">Over 20 trained SDRs operating on high-speed fibre lines with redundant power backup, in-house accent labs and daily QA supervision.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     ROI CALCULATOR
+════════════════════════════════════════════════════════════════════ -->
+<section id="calculator" class="py-24 bg-navy-DEFAULT">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mx-auto text-center space-y-4 reveal">
+      <div class="badge bg-emerald/10 border-emerald/30 text-emerald mx-auto">Interactive ROI Model</div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white">
+        Calculate Your Projected Walkthrough Revenue
+      </h2>
+      <p class="text-slate-400">Adjust the sliders to model realistic monthly output from your NexaPoint BPO campaign.</p>
+    </div>
+
+    <div class="mt-12 glass rounded-3xl p-8 sm:p-10 shadow-2xl reveal">
+      <div class="grid md:grid-cols-12 gap-8 items-start">
+
+        <!-- Sliders -->
+        <div class="md:col-span-7 space-y-8">
+
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <label class="text-sm font-semibold text-white">Dedicated NexaPoint Callers</label>
+              <span id="c-display" class="text-sm font-mono font-bold text-cyan bg-blue/15 px-3 py-1 rounded-lg">1 Caller</span>
+            </div>
+            <input id="c-slider" type="range" min="1" max="5" value="1" step="1" class="w-full h-2 rounded-full bg-navy-700 accent-blue cursor-pointer">
+            <p class="text-xs text-slate-400 mt-2">1 full-time caller = ~3,000–3,500 targeted dials per month</p>
+          </div>
+
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <label class="text-sm font-semibold text-white">Average Monthly Contract Value</label>
+              <span id="v-display" class="text-sm font-mono font-bold text-emerald bg-emerald/15 px-3 py-1 rounded-lg">$2,500 / mo</span>
+            </div>
+            <input id="v-slider" type="range" min="1000" max="8000" value="2500" step="250" class="w-full h-2 rounded-full bg-navy-700 accent-emerald cursor-pointer">
+            <p class="text-xs text-slate-400 mt-2">Commercial accounts typically range $1,500 – $5,000 / month</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-navy-700/60 border border-white/10 text-xs text-slate-300 space-y-2">
+            <div class="flex justify-between">
+              <span class="text-slate-400">Conservative walkthrough close rate:</span>
+              <span class="font-bold text-white">25%</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400">Estimated cost saving vs local SDR hire:</span>
+              <span class="font-bold text-emerald">~$38,000 / year</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400">Walkthrough attendance rate (NexaPoint avg):</span>
+              <span class="font-bold text-white">94.2%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="md:col-span-5 bg-gradient-to-br from-navy-700 to-navy-800 rounded-2xl border border-white/10 p-7 text-center space-y-6">
+          <div>
+            <p class="text-[11px] font-mono text-slate-400 uppercase tracking-widest font-bold">Monthly Walkthroughs</p>
+            <p id="walk-out" class="text-5xl font-extrabold font-display text-cyan mt-2">12–16</p>
+            <p class="text-xs text-slate-300 mt-1">Confirmed on-site walkthrough appointments</p>
+          </div>
+          <div class="pt-5 border-t border-white/10">
+            <p class="text-[11px] font-mono text-slate-400 uppercase tracking-widest font-bold">Projected New MRR</p>
+            <p id="rev-out" class="text-4xl font-extrabold font-display text-emerald mt-2">+$7,500</p>
+            <p id="ann-out" class="text-xs text-slate-400 mt-1">~$90,000 new annual contract revenue</p>
+          </div>
+          <a href="#contact" class="block w-full py-3.5 rounded-xl font-bold text-sm text-white bg-blue hover:bg-blue-dark shadow-lg shadow-blue/25 transition-all">
+            Start Your Campaign
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     GLOBAL OFFICES
+════════════════════════════════════════════════════════════════════ -->
+<section id="offices" class="py-24 bg-navy-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center space-y-4 reveal">
+      <div class="badge bg-blue/10 border-blue/30 text-cyan mx-auto">Global Footprint</div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white">
+        Our Physical Offices & Operational Infrastructure
+      </h2>
+      <p class="text-slate-400">NexaPoint BPO combines a large-scale Bangladesh production centre with client liaison offices in the USA and Australia.</p>
+    </div>
+
+    <div class="mt-16 grid md:grid-cols-3 gap-8 reveal">
+
+      <!-- Bangladesh HQ -->
+      <div class="glass rounded-3xl overflow-hidden border border-white/10 glass-hover">
+        <div class="relative h-48 overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=800&q=80"
+            alt="NexaPoint BPO Bangladesh operations office"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent"></div>
+          <div class="absolute top-4 left-4">
+            <span class="text-2xl">🇧🇩</span>
+          </div>
+          <div class="absolute bottom-4 right-4">
+            <span class="text-[10px] font-mono font-bold text-emerald bg-emerald/20 border border-emerald/30 px-3 py-1 rounded-full">Operations Headquarters</span>
+          </div>
+        </div>
+        <div class="p-7">
+          <h3 class="text-xl font-bold text-white font-display mb-2">Bangladesh — HQ</h3>
+          <address class="not-italic text-sm text-slate-300 leading-relaxed mb-4">
+            House: 472 (1st Floor), Aurangzeb Road,<br>
+            Pabna Sadar, Pabna,<br>
+            আওরঙ্গজেব সড়ক, Pabna 6600<br>
+            Bangladesh
+          </address>
+          <div class="pt-4 border-t border-white/10 space-y-1.5 text-xs text-slate-400">
+            <p>• 20+ trained outbound agents</p>
+            <p>• High-speed fibre optic dialer infrastructure</p>
+            <p>• Redundant backup power generator</p>
+            <p>• In-house QA, coaching & accent labs</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- USA -->
+      <div class="glass rounded-3xl overflow-hidden border border-white/10 glass-hover">
+        <div class="relative h-48 overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&q=80"
+            alt="San Antonio Texas USA — NexaPoint BPO North America liaison"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent"></div>
+          <div class="absolute top-4 left-4">
+            <span class="text-2xl">🇺🇸</span>
+          </div>
+          <div class="absolute bottom-4 right-4">
+            <span class="text-[10px] font-mono font-bold text-cyan bg-blue/20 border border-blue/30 px-3 py-1 rounded-full">North America Liaison</span>
+          </div>
+        </div>
+        <div class="p-7">
+          <h3 class="text-xl font-bold text-white font-display mb-2">United States</h3>
+          <address class="not-italic text-sm text-slate-300 leading-relaxed mb-4">
+            303 N Frio Street,<br>
+            San Antonio, TX 78207,<br>
+            United States
+          </address>
+          <div class="pt-4 border-t border-white/10 space-y-1.5 text-xs text-slate-400">
+            <p>• USA & Canada client relations</p>
+            <p>• North America campaign coordination</p>
+            <p>• Contract & estimator schedule sync</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Australia -->
+      <div class="glass rounded-3xl overflow-hidden border border-white/10 glass-hover">
+        <div class="relative h-48 overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1529108190281-9a4f620bc2d8?w=800&q=80"
+            alt="Perth Western Australia — NexaPoint BPO Oceania liaison"
+            class="w-full h-full object-cover object-center"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-transparent"></div>
+          <div class="absolute top-4 left-4">
+            <span class="text-2xl">🇦🇺</span>
+          </div>
+          <div class="absolute bottom-4 right-4">
+            <span class="text-[10px] font-mono font-bold text-purple-300 bg-purple-500/20 border border-purple-500/30 px-3 py-1 rounded-full">Oceania & UK Liaison</span>
+          </div>
+        </div>
+        <div class="p-7">
+          <h3 class="text-xl font-bold text-white font-display mb-2">Australia</h3>
+          <address class="not-italic text-sm text-slate-300 leading-relaxed mb-4">
+            Malaga Markets,<br>
+            Corner Alexander Drive & Beach Rd,<br>
+            Malaga WA 6062,<br>
+            Australia
+          </address>
+          <div class="pt-4 border-t border-white/10 space-y-1.5 text-xs text-slate-400">
+            <p>• Australia & New Zealand shift management</p>
+            <p>• UK GMT afternoon alignment</p>
+            <p>• Regional QA auditing & reporting</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PROCESS — 4 Steps
+════════════════════════════════════════════════════════════════════ -->
+<section class="py-24 bg-navy-DEFAULT">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center space-y-4 reveal">
+      <div class="badge bg-blue/10 border-blue/30 text-cyan mx-auto">Our Process</div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white">
+        From Onboarding to Booked Walkthroughs in 7 Days
+      </h2>
+      <p class="text-slate-400">We integrate seamlessly into your existing sales operations without disrupting your day-to-day.</p>
+    </div>
+
+    <div class="mt-16 grid md:grid-cols-4 gap-8 reveal">
+
+      <div class="relative p-7 glass rounded-2xl border border-white/10">
+        <span class="absolute top-5 right-5 text-6xl font-extrabold font-display text-white/5 select-none">01</span>
+        <div class="w-10 h-10 rounded-full bg-blue flex items-center justify-center font-bold text-white text-sm mb-5">1</div>
+        <h4 class="text-base font-bold text-white mb-2">Territory & Target Mapping</h4>
+        <p class="text-sm text-slate-300 leading-relaxed">You define your target service radius, postcodes and ideal facility types. We build the DNC-scrubbed prospect list.</p>
+      </div>
+
+      <div class="relative p-7 glass rounded-2xl border border-white/10">
+        <span class="absolute top-5 right-5 text-6xl font-extrabold font-display text-white/5 select-none">02</span>
+        <div class="w-10 h-10 rounded-full bg-blue flex items-center justify-center font-bold text-white text-sm mb-5">2</div>
+        <h4 class="text-base font-bold text-white mb-2">Script & Pitch Approval</h4>
+        <p class="text-sm text-slate-300 leading-relaxed">We draft cold call scripts addressing pain points with current cleaning vendors. You approve before the first dial is made.</p>
+      </div>
+
+      <div class="relative p-7 glass rounded-2xl border border-white/10">
+        <span class="absolute top-5 right-5 text-6xl font-extrabold font-display text-white/5 select-none">03</span>
+        <div class="w-10 h-10 rounded-full bg-blue flex items-center justify-center font-bold text-white text-sm mb-5">3</div>
+        <h4 class="text-base font-bold text-white mb-2">Dedicated Dialing Begins</h4>
+        <p class="text-sm text-slate-300 leading-relaxed">Your dedicated agent dials during your local business hours. All calls logged, recorded, and QA reviewed by our supervisors.</p>
+      </div>
+
+      <div class="relative p-7 glass rounded-2xl border border-white/10">
+        <span class="absolute top-5 right-5 text-6xl font-extrabold font-display text-white/5 select-none">04</span>
+        <div class="w-10 h-10 rounded-full bg-blue flex items-center justify-center font-bold text-white text-sm mb-5">4</div>
+        <h4 class="text-base font-bold text-white mb-2">Walkthroughs on Your Calendar</h4>
+        <p class="text-sm text-slate-300 leading-relaxed">Confirmed appointments appear directly on your calendar with full building details attached. You show up, quote, and win the contract.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     FAQ
+════════════════════════════════════════════════════════════════════ -->
+<section id="faq" class="py-24 bg-navy-800">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center space-y-4 mb-14 reveal">
+      <div class="badge bg-blue/10 border-blue/30 text-cyan mx-auto">Common Questions</div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white">Frequently Asked Questions</h2>
+      <p class="text-slate-400 text-sm">Transparent answers to every question our prospective clients ask before onboarding.</p>
+    </div>
+
+    <div class="space-y-3 reveal" id="faq-wrap">
+
+      <div class="glass rounded-xl px-6 py-5 border border-white/5 cursor-pointer select-none" onclick="faqToggle(this)">
+        <div class="flex justify-between items-center gap-4">
+          <h4 class="text-sm font-semibold text-white">How do you source decision-maker data for our target area?</h4>
+          <span class="faq-icon text-cyan font-bold text-xl flex-shrink-0">+</span>
+        </div>
+        <div class="faq-body hidden pt-4 text-sm text-slate-300 leading-relaxed">
+          We build custom B2B prospect lists for your specific postcodes using enterprise databases (Apollo.io, LinkedIn Sales Navigator, Google Maps), local business registers and planning portals. Every number is verified and scrubbed against the relevant national Do Not Call registry before we dial.
+        </div>
+      </div>
+
+      <div class="glass rounded-xl px-6 py-5 border border-white/5 cursor-pointer select-none" onclick="faqToggle(this)">
+        <div class="flex justify-between items-center gap-4">
+          <h4 class="text-sm font-semibold text-white">Will your callers work directly inside our CRM (Jobber, HubSpot, Housecall Pro)?</h4>
+          <span class="faq-icon text-cyan font-bold text-xl flex-shrink-0">+</span>
+        </div>
+        <div class="faq-body hidden pt-4 text-sm text-slate-300 leading-relaxed">
+          Yes. Our agents receive full CRM training for your platform. When a walkthrough is confirmed, the agent creates the lead record, attaches building notes, decision-maker contact details and current vendor pain points, and sends a calendar invite to your estimator — all within the same call.
+        </div>
+      </div>
+
+      <div class="glass rounded-xl px-6 py-5 border border-white/5 cursor-pointer select-none" onclick="faqToggle(this)">
+        <div class="flex justify-between items-center gap-4">
+          <h4 class="text-sm font-semibold text-white">How do you ensure our brand is represented professionally?</h4>
+          <span class="faq-icon text-cyan font-bold text-xl flex-shrink-0">+</span>
+        </div>
+        <div class="faq-body hidden pt-4 text-sm text-slate-300 leading-relaxed">
+          Every agent undergoes accent clarity and commercial janitorial industry training before being assigned to any client. All walkthrough-confirmation calls are audited by QA supervisors and scored against a 20-point rubric. Any call scoring below 70% triggers immediate retraining. You also receive access to your private call recording portal so you can listen in at any time.
+        </div>
+      </div>
+
+      <div class="glass rounded-xl px-6 py-5 border border-white/5 cursor-pointer select-none" onclick="faqToggle(this)">
+        <div class="flex justify-between items-center gap-4">
+          <h4 class="text-sm font-semibold text-white">What is the minimum commitment period?</h4>
+          <span class="faq-icon text-cyan font-bold text-xl flex-shrink-0">+</span>
+        </div>
+        <div class="faq-body hidden pt-4 text-sm text-slate-300 leading-relaxed">
+          We require an initial 60-day calibration period to build your prospect list, refine scripts, and establish reliable walkthrough volume. After that, all agreements are month-to-month. We retain clients through results, not restrictive contracts.
+        </div>
+      </div>
+
+      <div class="glass rounded-xl px-6 py-5 border border-white/5 cursor-pointer select-none" onclick="faqToggle(this)">
+        <div class="flex justify-between items-center gap-4">
+          <h4 class="text-sm font-semibold text-white">Do your agents use a local phone number so prospects see a local caller ID?</h4>
+          <span class="faq-icon text-cyan font-bold text-xl flex-shrink-0">+</span>
+        </div>
+        <div class="faq-body hidden pt-4 text-sm text-slate-300 leading-relaxed">
+          Yes. We provision local geographic phone numbers matching your target city — for example, a Manchester 0161 number for UK campaigns, a 416 Toronto number for Canadian campaigns, or an Auckland 09 number for New Zealand campaigns. This significantly improves answer rates compared to international or unknown numbers.
+        </div>
+      </div>
+
+      <div class="glass rounded-xl px-6 py-5 border border-white/5 cursor-pointer select-none" onclick="faqToggle(this)">
+        <div class="flex justify-between items-center gap-4">
+          <h4 class="text-sm font-semibold text-white">How many walkthroughs can we realistically expect each month?</h4>
+          <span class="faq-icon text-cyan font-bold text-xl flex-shrink-0">+</span>
+        </div>
+        <div class="faq-body hidden pt-4 text-sm text-slate-300 leading-relaxed">
+          Based on our current active campaigns, one dedicated full-time caller books between 12 and 18 confirmed commercial cleaning walkthroughs per month. This varies depending on your target facility size, local market density and the quality of your existing pitch and credibility materials. We provide conservative projections during your discovery consultation.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     CONTACT & PROPOSAL FORM
+════════════════════════════════════════════════════════════════════ -->
+<section id="contact" class="py-24 bg-navy-DEFAULT">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-14 items-start">
+
+      <!-- Left: Contact info -->
+      <div class="lg:col-span-5 space-y-7 reveal">
+        <div class="badge bg-emerald/10 border-emerald/30 text-emerald">Contact Us</div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white leading-tight">
+          Ready to Build Your Commercial Cleaning Contract Pipeline?
+        </h2>
+        <p class="text-slate-300 leading-relaxed">
+          Book a no-obligation 20-minute discovery consultation. We will assess your target territory, estimate realistic walkthrough volume and present a fully costed proposal within 24 hours.
+        </p>
+
+        <!-- Mailbox cards -->
+        <div class="space-y-3">
+          <a href="mailto:info@nexapointbpo.com" class="flex items-center gap-4 p-4 glass rounded-xl border border-white/10 hover:border-blue/40 transition-all group">
+            <div class="w-10 h-10 rounded-lg bg-blue/15 text-blue-light flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <p class="text-[11px] text-slate-400 font-mono uppercase">General Enquiries</p>
+              <p class="text-sm font-semibold text-white group-hover:text-cyan transition-colors">info@nexapointbpo.com</p>
+            </div>
+          </a>
+
+          <a href="mailto:admin@nexapointbpo.com" class="flex items-center gap-4 p-4 glass rounded-xl border border-white/10 hover:border-blue/40 transition-all group">
+            <div class="w-10 h-10 rounded-lg bg-emerald/15 text-emerald flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            </div>
+            <div>
+              <p class="text-[11px] text-slate-400 font-mono uppercase">Administration</p>
+              <p class="text-sm font-semibold text-white group-hover:text-emerald transition-colors">admin@nexapointbpo.com</p>
+            </div>
+          </a>
+
+          <div class="grid grid-cols-2 gap-3">
+            <a href="mailto:kafi@nexapointbpo.com" class="p-4 glass rounded-xl border border-white/10 hover:border-blue/40 transition-all">
+              <p class="text-[10px] text-slate-400 font-mono uppercase">Operations & Strategy</p>
+              <p class="text-xs font-semibold text-white mt-0.5 truncate">kafi@nexapointbpo.com</p>
             </a>
+            <a href="mailto:lian@nexapointbpo.com" class="p-4 glass rounded-xl border border-white/10 hover:border-blue/40 transition-all">
+              <p class="text-[10px] text-slate-400 font-mono uppercase">Client Success</p>
+              <p class="text-xs font-semibold text-white mt-0.5 truncate">lian@nexapointbpo.com</p>
+            </a>
+          </div>
+        </div>
 
-            <!-- Desktop Nav -->
-            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
-                <a href="#why-us" class="hover:text-brand-cyan transition-colors">Why NexaPoint</a>
-                <a href="#facilities" class="hover:text-brand-cyan transition-colors">Cleaning Targets</a>
-                <a href="#calculator" class="hover:text-brand-cyan transition-colors">ROI Calculator</a>
-                <a href="#audio-lab" class="hover:text-brand-cyan transition-colors">Call Recordings</a>
-                <a href="#locations" class="hover:text-brand-cyan transition-colors">Global Offices</a>
-                <a href="#faq" class="hover:text-brand-cyan transition-colors">FAQ</a>
-            </nav>
+        <div class="p-5 rounded-2xl bg-navy-700/60 border border-white/10 text-xs text-slate-400">
+          <p class="font-bold text-white mb-1">NexaPoint Response Commitment</p>
+          All enquiries receive a territory feasibility assessment and proposal within 4 business hours. We respond via email and WhatsApp.
+        </div>
 
-            <!-- CTA Actions -->
-            <div class="hidden sm:flex items-center gap-4">
-                <a href="mailto:info@nexapointbpo.com" class="text-xs font-semibold text-slate-300 hover:text-white transition-colors">info@nexapointbpo.com</a>
-                <a href="#contact" class="px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-brand-blue to-blue-600 hover:to-brand-blue shadow-lg shadow-brand-blue/25 transition-all">
-                    Book Walkthrough Strategy
-                </a>
+        <!-- Real photo of agent at desk -->
+        <div class="rounded-2xl overflow-hidden h-48 border border-white/10">
+          <img
+            src="https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=800&q=80"
+            alt="NexaPoint BPO agent reviewing client campaign"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="lg:col-span-7 reveal">
+        <div class="glass rounded-3xl p-8 sm:p-10 border border-white/10 shadow-2xl">
+          <h3 class="text-2xl font-bold font-display text-white mb-1">Request a Free Campaign Proposal</h3>
+          <p class="text-xs text-slate-400 mb-7">Fill in the form below and we will contact you within 4 hours.</p>
+
+          <form action="https://formspree.io/f/xbjnyqvo" method="POST" class="space-y-5" id="proposal-form">
+            <input type="hidden" name="_subject" value="New NexaPoint BPO Proposal Request">
+            <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off">
+
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Your Full Name *</label>
+                <input type="text" name="name" required placeholder="e.g. Alex Turner" class="w-full px-4 py-3 rounded-xl bg-navy border border-white/10 text-white placeholder-slate-500 text-sm transition-all">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Business Email *</label>
+                <input type="email" name="email" required placeholder="e.g. alex@cleaningltd.co.uk" class="w-full px-4 py-3 rounded-xl bg-navy border border-white/10 text-white placeholder-slate-500 text-sm transition-all">
+              </div>
             </div>
 
-            <!-- Mobile Menu Toggle -->
-            <button id="mobile-toggle" type="button" class="lg:hidden p-2 text-slate-400 hover:text-white" aria-label="Open menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Company Name *</label>
+                <input type="text" name="company" required placeholder="e.g. Prime Janitorial Services Ltd" class="w-full px-4 py-3 rounded-xl bg-navy border border-white/10 text-white placeholder-slate-500 text-sm transition-all">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Phone / WhatsApp</label>
+                <input type="tel" name="phone" placeholder="e.g. +44 7700 900000" class="w-full px-4 py-3 rounded-xl bg-navy border border-white/10 text-white placeholder-slate-500 text-sm transition-all">
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Target Market *</label>
+                <select name="target_market" required class="w-full px-4 py-3 rounded-xl bg-navy border border-white/10 text-white text-sm transition-all">
+                  <option value="">Select your market…</option>
+                  <option value="United Kingdom">🇬🇧 United Kingdom</option>
+                  <option value="Canada">🇨🇦 Canada</option>
+                  <option value="New Zealand">🇳🇿 New Zealand</option>
+                  <option value="United States">🇺🇸 United States</option>
+                  <option value="Australia">🇦🇺 Australia</option>
+                  <option value="Multiple">Multiple Markets</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Service Required *</label>
+                <select name="service" required class="w-full px-4 py-3 rounded-xl bg-navy border border-white/10 text-white text-sm transition-all">
+                  <option value="">Select a service…</option>
+                  <option value="Cold Calling & Appointment Setting">Cold Calling & Appointment Setting</option>
+                  <option value="Dedicated Full-Time Caller (160 hrs/mo)">Dedicated Full-Time Caller (160 hrs/mo)</option>
+                  <option value="B2B Lead List Building">B2B Lead List Building</option>
+                  <option value="CRM Management & Dispatch Support">CRM Management & Dispatch Support</option>
+                  <option value="Full BPO Package">Full BPO Package</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Target Cities & Monthly Walkthrough Goal</label>
+              <textarea name="message" rows="3" placeholder="e.g. We cover Manchester and Leeds. Looking for 15 confirmed walkthroughs per month in offices over 8,000 sq ft. Currently using no outbound sales function." class="w-full px-4 py-3 rounded-xl bg-navy border border-white/10 text-white placeholder-slate-500 text-sm transition-all resize-none"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-4 rounded-xl font-bold text-white bg-blue hover:bg-blue-dark shadow-lg shadow-blue/25 transition-all text-sm tracking-wide">
+              Request My Free Campaign Proposal
             </button>
+            <p class="text-[11px] text-center text-slate-500">We respect your privacy. Your details are never sold or shared. Response within 4 business hours.</p>
+          </form>
         </div>
+      </div>
 
-        <!-- Mobile Drawer -->
-        <div id="mobile-drawer" class="hidden lg:hidden border-t border-slate-800 bg-brand-slate px-6 py-6 space-y-4">
-            <a href="#why-us" class="block text-slate-200 text-sm font-semibold">Why NexaPoint</a>
-            <a href="#facilities" class="block text-slate-200 text-sm font-semibold">Cleaning Targets</a>
-            <a href="#calculator" class="block text-slate-200 text-sm font-semibold">ROI Calculator</a>
-            <a href="#audio-lab" class="block text-slate-200 text-sm font-semibold">Call Recordings</a>
-            <a href="#locations" class="block text-slate-200 text-sm font-semibold">Global Offices</a>
-            <a href="#faq" class="block text-slate-200 text-sm font-semibold">FAQ</a>
-            <a href="#contact" class="block text-center py-3 rounded-xl bg-brand-blue text-white text-sm font-bold">Book Strategy Call</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════════════ -->
+<footer class="bg-black border-t border-white/10 pt-16 pb-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <!-- Brand -->
+      <div class="space-y-5">
+        <div class="flex items-center gap-3">
+          <img src="assets/logo.jpg" alt="NexaPoint BPO" class="h-12 w-auto rounded-lg border border-white/10">
+          <div>
+            <p class="text-base font-bold text-white font-display">NexaPoint <span class="text-blue-light">BPO</span></p>
+            <p class="text-[9px] tracking-widest text-slate-400 uppercase">Your Goals, Our Support</p>
+          </div>
         </div>
-    </header>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          A Bangladesh-based dedicated outbound BPO specialising in commercial cleaning lead generation, cold calling and walkthrough appointment setting for cleaning companies across the UK, Canada, New Zealand, USA and Australia.
+        </p>
+        <p class="text-xs text-slate-500">Registered domain: <span class="text-slate-300 font-mono">nexapointbpo.com</span></p>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h5 class="text-xs font-mono font-bold text-white uppercase tracking-wider mb-5">Navigation</h5>
+        <ul class="space-y-2.5 text-xs text-slate-400">
+          <li><a href="#about" class="hover:text-white transition-colors">About NexaPoint BPO</a></li>
+          <li><a href="#services" class="hover:text-white transition-colors">Our Services</a></li>
+          <li><a href="#team" class="hover:text-white transition-colors">Leadership Team</a></li>
+          <li><a href="#calculator" class="hover:text-white transition-colors">ROI Calculator</a></li>
+          <li><a href="#offices" class="hover:text-white transition-colors">Global Offices</a></li>
+          <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+          <li><a href="#contact" class="hover:text-white transition-colors">Contact & Proposals</a></li>
+        </ul>
+      </div>
+
+      <!-- Markets -->
+      <div>
+        <h5 class="text-xs font-mono font-bold text-white uppercase tracking-wider mb-5">Markets We Serve</h5>
+        <ul class="space-y-2.5 text-xs text-slate-400">
+          <li>🇬🇧 United Kingdom — London, Manchester, Birmingham, Leeds, Glasgow</li>
+          <li>🇨🇦 Canada — Toronto, Vancouver, Calgary, Ottawa, Montreal</li>
+          <li>🇳🇿 New Zealand — Auckland, Wellington, Christchurch, Hamilton</li>
+          <li>🇺🇸 United States — Texas, Florida, California, New York, Midwest</li>
+          <li>🇦🇺 Australia — Sydney, Melbourne, Perth, Brisbane, Adelaide</li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h5 class="text-xs font-mono font-bold text-white uppercase tracking-wider mb-5">Contact</h5>
+        <ul class="space-y-3 text-xs">
+          <li>
+            <span class="text-slate-500 block font-mono uppercase text-[10px]">General Enquiries</span>
+            <a href="mailto:info@nexapointbpo.com" class="text-slate-300 hover:text-white transition-colors">info@nexapointbpo.com</a>
+          </li>
+          <li>
+            <span class="text-slate-500 block font-mono uppercase text-[10px]">Administration</span>
+            <a href="mailto:admin@nexapointbpo.com" class="text-slate-300 hover:text-white transition-colors">admin@nexapointbpo.com</a>
+          </li>
+          <li>
+            <span class="text-slate-500 block font-mono uppercase text-[10px]">Operations</span>
+            <a href="mailto:kafi@nexapointbpo.com" class="text-slate-300 hover:text-white transition-colors">kafi@nexapointbpo.com</a>
+          </li>
+          <li>
+            <span class="text-slate-500 block font-mono uppercase text-[10px]">Client Success</span>
+            <a href="mailto:lian@nexapointbpo.com" class="text-slate-300 hover:text-white transition-colors">lian@nexapointbpo.com</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+      <p>&copy; 2026 NexaPoint BPO. All rights reserved. Operated from Pabna, Bangladesh.</p>
+      <div class="flex gap-5">
+        <a href="#hero" class="hover:text-slate-300 transition-colors">Privacy Policy</a>
+        <a href="#hero" class="hover:text-slate-300 transition-colors">Terms of Service</a>
+        <a href="#hero" class="hover:text-slate-300 transition-colors">DNC Compliance</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     JAVASCRIPT — Clocks, Calculator, FAQ, Scroll Reveal, Mobile Nav
+════════════════════════════════════════════════════════════════════ -->
+<script>
+  'use strict';
+
+  /* ── 1. Live World Clocks ── */
+  function updateClocks() {
+    const fmt = (tz) => new Intl.DateTimeFormat('en-GB', { timeZone: tz, hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date());
+    document.getElementById('t-lon').textContent = fmt('Europe/London');
+    document.getElementById('t-tor').textContent = fmt('America/Toronto');
+    document.getElementById('t-akl').textContent = fmt('Pacific/Auckland');
+    document.getElementById('t-sat').textContent = fmt('America/Chicago');
+    document.getElementById('t-syd').textContent = fmt('Australia/Sydney');
+    document.getElementById('t-dhk').textContent = fmt('Asia/Dhaka');
+  }
+  updateClocks();
+  setInterval(updateClocks, 30000);
+
+  /* ── 2. Mobile Nav ── */
+  document.getElementById('ham').addEventListener('click', function () {
+    document.getElementById('mobile-nav').classList.toggle('hidden');
+  });
+  document.querySelectorAll('#mobile-nav a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('mobile-nav').classList.add('hidden'));
+  });
+
+  /* ── 3. ROI Calculator ── */
+  const cSlider = document.getElementById('c-slider');
+  const vSlider = document.getElementById('v-slider');
+  function calcUpdate() {
+    const c = parseInt(cSlider.value);
+    const v = parseInt(vSlider.value);
+    document.getElementById('c-display').textContent = c === 1 ? '1 Caller' : c + ' Callers';
+    document.getElementById('v-display').textContent = '$' + v.toLocaleString() + ' / mo';
+    const minW = 12 * c, maxW = 18 * c;
+    document.getElementById('walk-out').textContent = minW + '–' + maxW;
+    const mrr = Math.round(14 * c * 0.25 * v);
+    document.getElementById('rev-out').textContent = '+$' + mrr.toLocaleString();
+    document.getElementById('ann-out').textContent = '~$' + (mrr * 12).toLocaleString() + ' new annual contract revenue';
+  }
+  cSlider.addEventListener('input', calcUpdate);
+  vSlider.addEventListener('input', calcUpdate);
+  calcUpdate();
+
+  /* ── 4. FAQ Accordion ── */
+  function faqToggle(el) {
+    const body = el.querySelector('.faq-body');
+    const icon = el.querySelector('.faq-icon');
+    const isOpen = !body.classList.contains('hidden');
+    // close all
+    document.querySelectorAll('#faq-wrap .faq-body').forEach(b => b.classList.add('hidden'));
+    document.querySelectorAll('#faq-wrap .faq-icon').forEach(i => { i.textContent = '+'; });
+    if (!isOpen) {
+      body.classList.remove('hidden');
+      icon.textContent = '−';
+    }
+  }
+
+  /* ── 5. Scroll Reveal ── */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  /* ── 6. Navbar shadow on scroll ── */
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('shadow-xl', window.scrollY > 10);
+  }, { passive: true });
+
+  /* ── 7. Form feedback ── */
+  document.getElementById('proposal-form').addEventListener('submit', function (e) {
+    const btn = this.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = 'Request My Free Campaign Proposal';
+      btn.disabled = false;
+    }, 5000);
+  });
+</script>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative pt-16 pb-24 lg:pt-24 lg:pb-36 overflow-hidden hero-mesh">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-                
-                <!-- Left Column: Value Proposition -->
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-brand-blue/30 text-xs font-semibold text-brand-cyan tracking-wide uppercase">
-                        <span class="w-2 h-2 rounded-full bg-brand-cyan animate-ping"></span>
-                        Commercial Cleaning Outbound Infrastructure
-                    </div>
-
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12] font-display">
-                        We Put You in Front of Decision-Makers Ready to <span class="gradient-accent">Award Commercial Cleaning Contracts</span>
-                    </h1>
-
-                    <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
-                        Tired of dead lead lists and burning thousands on low-intent Google Ads? NexaPoint BPO deploys dedicated cold callers who dial property managers, corporate facilities, and commercial directors across the <strong class="text-white">UK, New Zealand, Canada, USA, and Australia</strong> to lock in confirmed on-site walkthroughs.
-                    </p>
-
-                    <!-- Key Differentiator Badges -->
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-left">
-                        <div class="p-3 rounded-xl bg-brand-card/60 border border-white/5">
-                            <span class="block text-xs font-semibold text-brand-cyan">Targeted Volume</span>
-                            <span class="text-sm font-bold text-white">120–180 Dials / Day</span>
-                        </div>
-                        <div class="p-3 rounded-xl bg-brand-card/60 border border-white/5">
-                            <span class="block text-xs font-semibold text-brand-cyan">Cost Reduction</span>
-                            <span class="text-sm font-bold text-white">65% vs Western SDR</span>
-                        </div>
-                        <div class="p-3 rounded-xl bg-brand-card/60 border border-white/5 col-span-2 sm:col-span-1">
-                            <span class="block text-xs font-semibold text-brand-cyan">Contract Win Rate</span>
-                            <span class="text-sm font-bold text-white">1 in 3 Walkthroughs</span>
-                        </div>
-                    </div>
-
-                    <!-- CTAs -->
-                    <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
-                        <a href="#contact" class="px-8 py-4 rounded-xl text-sm font-bold text-white bg-brand-blue hover:bg-brand-hoverBlue shadow-xl shadow-brand-blue/30 transition-all flex items-center justify-center gap-2">
-                            <span>Get Custom Walkthrough Quote</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                        </a>
-                        <a href="#audio-lab" class="px-8 py-4 rounded-xl text-sm font-semibold text-slate-300 bg-white/5 hover:bg-white/10 border border-white/10 transition-all flex items-center justify-center gap-2">
-                            <span>Hear Real Call Recordings</span>
-                            <svg class="w-4 h-4 text-brand-cyan" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Right Column: Live Walkthrough Booking Engine Card -->
-                <div class="lg:col-span-5">
-                    <div class="glass-card rounded-2xl p-6 sm:p-7 relative shadow-2xl border border-white/10">
-                        <div class="flex items-center justify-between pb-5 border-b border-white/10">
-                            <div>
-                                <span class="text-[10px] font-mono text-brand-cyan uppercase tracking-widest block font-bold">NexaPoint Dispatch Stream</span>
-                                <h4 class="text-sm font-bold text-white mt-0.5">Live Walkthrough Confirmations</h4>
-                            </div>
-                            <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-brand-emerald text-[11px] font-mono font-bold flex items-center gap-1.5">
-                                <span class="w-1.5 h-1.5 rounded-full bg-brand-emerald animate-pulse"></span> VERIFIED
-                            </span>
-                        </div>
-
-                        <!-- Live Lead Cards -->
-                        <div class="mt-5 space-y-3.5">
-                            
-                            <!-- Lead 1: UK -->
-                            <div class="p-4 rounded-xl bg-brand-navy/80 border border-white/10 hover:border-brand-blue/50 transition-all">
-                                <div class="flex justify-between items-start">
-                                    <div class="flex items-center gap-2">
-                                        <span class="text-lg">🇬🇧</span>
-                                        <div>
-                                            <p class="text-xs font-bold text-white">London Business Center (City of London)</p>
-                                            <p class="text-[11px] text-slate-400">22,000 sq ft • 5x/week Night Janitorial</p>
-                                        </div>
-                                    </div>
-                                    <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">£3,400/mo</span>
-                                </div>
-                                <div class="mt-2.5 pt-2 border-t border-white/5 text-[11px] text-slate-300 flex justify-between items-center">
-                                    <span>Decision Maker: Head of Facilities</span>
-                                    <span class="text-brand-cyan font-mono">Walkthrough: Thursday 10:00 AM</span>
-                                </div>
-                            </div>
-
-                            <!-- Lead 2: Canada -->
-                            <div class="p-4 rounded-xl bg-brand-navy/80 border border-white/10 hover:border-brand-blue/50 transition-all">
-                                <div class="flex justify-between items-start">
-                                    <div class="flex items-center gap-2">
-                                        <span class="text-lg">🇨🇦</span>
-                                        <div>
-                                            <p class="text-xs font-bold text-white">Specialized Orthopedic Medical Clinic</p>
-                                            <p class="text-[11px] text-slate-400">Toronto, ON • Terminal Disinfection & Floor Care</p>
-                                        </div>
-                                    </div>
-                                    <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">$4,100 CAD/mo</span>
-                                </div>
-                                <div class="mt-2.5 pt-2 border-t border-white/5 text-[11px] text-slate-300 flex justify-between items-center">
-                                    <span>Pain Point: Current cleaner missed audits</span>
-                                    <span class="text-brand-cyan font-mono">Walkthrough: Friday 2:30 PM</span>
-                                </div>
-                            </div>
-
-                            <!-- Lead 3: New Zealand -->
-                            <div class="p-4 rounded-xl bg-brand-navy/80 border border-white/10 hover:border-brand-blue/50 transition-all">
-                                <div class="flex justify-between items-start">
-                                    <div class="flex items-center gap-2">
-                                        <span class="text-lg">🇳🇿</span>
-                                        <div>
-                                            <p class="text-xs font-bold text-white">Industrial Logistics Depot & Offices</p>
-                                            <p class="text-[11px] text-slate-400">Auckland • Warehouse Floor Scrub + Offices</p>
-                                        </div>
-                                    </div>
-                                    <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">$5,200 NZD/mo</span>
-                                </div>
-                                <div class="mt-2.5 pt-2 border-t border-white/5 text-[11px] text-slate-300 flex justify-between items-center">
-                                    <span>Contract Status: Out for tender this month</span>
-                                    <span class="text-brand-cyan font-mono">Walkthrough: Next Monday</span>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Footer stats of card -->
-                        <div class="mt-5 pt-4 border-t border-white/10 grid grid-cols-3 text-center text-xs">
-                            <div>
-                                <span class="block text-slate-400 text-[10px]">Avg Attendance</span>
-                                <span class="font-bold text-white text-sm">94.2%</span>
-                            </div>
-                            <div>
-                                <span class="block text-slate-400 text-[10px]">QA Screened</span>
-                                <span class="font-bold text-brand-cyan text-sm">100% Calls</span>
-                            </div>
-                            <div>
-                                <span class="block text-slate-400 text-[10px]">CRM Direct Sync</span>
-                                <span class="font-bold text-brand-emerald text-sm">Instant</span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Geographic Compliance & Market Focus Banner -->
-    <section class="border-y border-white/10 bg-brand-slate py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div>
-                    <span class="text-xs font-mono text-brand-cyan uppercase tracking-wider block font-bold">Cold Calling Compliance Verified</span>
-                    <p class="text-sm font-semibold text-white">Trained in local B2B calling standards across each target jurisdiction:</p>
-                </div>
-                <div class="flex flex-wrap items-center gap-3 text-xs">
-                    <span class="px-3.5 py-1.5 rounded-lg bg-black/40 border border-white/10 text-slate-200">🇬🇧 UK GDPR & ICO Compliant</span>
-                    <span class="px-3.5 py-1.5 rounded-lg bg-black/40 border border-white/10 text-slate-200">🇨🇦 Canada CASL & B2B Rules</span>
-                    <span class="px-3.5 py-1.5 rounded-lg bg-black/40 border border-white/10 text-slate-200">🇳🇿 NZ Unsolicited Messages Act</span>
-                    <span class="px-3.5 py-1.5 rounded-lg bg-black/40 border border-white/10 text-slate-200">🇺🇸 US TCPA DNC Scrubbed</span>
-                    <span class="px-3.5 py-1.5 rounded-lg bg-black/40 border border-white/10 text-slate-200">🇦🇺 Australia ACMA Compliant</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- What Facilities We Target -->
-    <section id="facilities" class="py-24 bg-brand-navy">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl mx-auto text-center space-y-4">
-                <span class="text-xs font-bold font-mono uppercase tracking-wider text-brand-cyan bg-blue-500/10 px-3.5 py-1 rounded-full border border-brand-blue/30">Contract Quality Over Quantity</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display">
-                    High-Margin Facilities We Dial Every Single Day
-                </h2>
-                <p class="text-slate-400 text-base sm:text-lg">
-                    We steer clear of low-budget one-off residential cleans. NexaPoint targets commercial properties that yield recurring monthly revenue and multi-year contract renewals.
-                </p>
-            </div>
-
-            <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Facility 1 -->
-                <div class="glass-card rounded-2xl p-7 glass-card-hover">
-                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-brand-cyan flex items-center justify-center text-2xl mb-5">🏢</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Corporate & Multi-Tenant Offices</h3>
-                    <p class="text-sm text-slate-300 leading-relaxed">
-                        Offices between 5,000 and 60,000+ sq ft. We pitch Property Managers and Operations Executives who are frustrated with missing cleaners, unemptied bins, or dirty restrooms.
-                    </p>
-                    <div class="mt-4 pt-4 border-t border-white/5 text-xs text-brand-cyan font-mono">
-                        Target Deal Size: $1,800 – $6,500/mo
-                    </div>
-                </div>
-
-                <!-- Facility 2 -->
-                <div class="glass-card rounded-2xl p-7 glass-card-hover">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-brand-emerald flex items-center justify-center text-2xl mb-5">🏥</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Medical & Dental Clinics</h3>
-                    <p class="text-sm text-slate-300 leading-relaxed">
-                        Healthcare providers require strict sanitation. We pre-screen for terminal cleaning scopes, bio-hazard compliance, and nightly sterile disinfection standards.
-                    </p>
-                    <div class="mt-4 pt-4 border-t border-white/5 text-xs text-brand-emerald font-mono">
-                        Target Deal Size: $2,500 – $8,000/mo
-                    </div>
-                </div>
-
-                <!-- Facility 3 -->
-                <div class="glass-card rounded-2xl p-7 glass-card-hover">
-                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center text-2xl mb-5">🏭</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Warehouses & Logistics Hubs</h3>
-                    <p class="text-sm text-slate-300 leading-relaxed">
-                        Industrial facilities with break rooms, dispatcher bullpens, and massive concrete floors requiring auto-scrubbing, deep degreasing, and trash management.
-                    </p>
-                    <div class="mt-4 pt-4 border-t border-white/5 text-xs text-purple-400 font-mono">
-                        Target Deal Size: $3,000 – $12,000/mo
-                    </div>
-                </div>
-
-                <!-- Facility 4 -->
-                <div class="glass-card rounded-2xl p-7 glass-card-hover">
-                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center text-2xl mb-5">🏫</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Schools & Learning Academies</h3>
-                    <p class="text-sm text-slate-300 leading-relaxed">
-                        Private schools, nurseries, and tutoring centers. We qualify background check requirements, evening timeframes, and holiday deep-clean schedules.
-                    </p>
-                    <div class="mt-4 pt-4 border-t border-white/5 text-xs text-amber-400 font-mono">
-                        Target Deal Size: $2,000 – $7,000/mo
-                    </div>
-                </div>
-
-                <!-- Facility 5 -->
-                <div class="glass-card rounded-2xl p-7 glass-card-hover">
-                    <div class="w-12 h-12 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 flex items-center justify-center text-2xl mb-5">🏋️</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Gyms & Fitness Centers</h3>
-                    <p class="text-sm text-slate-300 leading-relaxed">
-                        Locker rooms, sauna sanitization, rubber gym floor scrubbing, and high-frequency sanitization for boutique fitness clubs and commercial chains.
-                    </p>
-                    <div class="mt-4 pt-4 border-t border-white/5 text-xs text-rose-400 font-mono">
-                        Target Deal Size: $1,500 – $4,500/mo
-                    </div>
-                </div>
-
-                <!-- Facility 6 -->
-                <div class="glass-card rounded-2xl p-7 glass-card-hover">
-                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-brand-cyan flex items-center justify-center text-2xl mb-5">🚗</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Dealerships & Retail Showrooms</h3>
-                    <p class="text-sm text-slate-300 leading-relaxed">
-                        High-gloss floor buffing, streak-free window cleaning, and showroom sparkle that general managers gladly pay top dollar to maintain.
-                    </p>
-                    <div class="mt-4 pt-4 border-t border-white/5 text-xs text-brand-cyan font-mono">
-                        Target Deal Size: $2,200 – $6,000/mo
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive Walkthrough ROI Calculator -->
-    <section id="calculator" class="py-24 bg-brand-slate relative overflow-hidden">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-2xl mx-auto space-y-4">
-                <span class="text-xs font-bold font-mono uppercase tracking-wider text-brand-emerald bg-emerald-500/10 px-3.5 py-1 rounded-full border border-emerald-500/30">Interactive Financial Model</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display">
-                    Calculate Your Projected Pipeline & Revenue
-                </h2>
-                <p class="text-slate-400 text-sm sm:text-base">
-                    Adjust the sliders below to see the realistic monthly walkthroughs and new contract revenue NexaPoint BPO can deliver to your cleaning business.
-                </p>
-            </div>
-
-            <!-- The Calculator Box -->
-            <div class="mt-12 glass-card rounded-3xl p-8 sm:p-10 border border-white/10 shadow-2xl">
-                <div class="grid md:grid-cols-12 gap-8 items-center">
-                    
-                    <!-- Left: Sliders -->
-                    <div class="md:col-span-7 space-y-7">
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <label class="text-sm font-bold text-white">Dedicated NexaPoint Callers</label>
-                                <span id="caller-display" class="text-sm font-mono font-bold text-brand-cyan bg-blue-500/20 px-3 py-1 rounded-lg">1 Full-Time Rep</span>
-                            </div>
-                            <input id="caller-slider" type="range" min="1" max="5" value="1" step="1" class="w-full accent-brand-blue cursor-pointer h-2 bg-slate-800 rounded-lg">
-                            <span class="text-[11px] text-slate-400 mt-1 block">1 caller = ~3,000 to 3,500 targeted dials per month</span>
-                        </div>
-
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <label class="text-sm font-bold text-white">Your Average Contract Value (Per Month)</label>
-                                <span id="contract-display" class="text-sm font-mono font-bold text-brand-emerald bg-emerald-500/20 px-3 py-1 rounded-lg">$2,500 / mo</span>
-                            </div>
-                            <input id="contract-slider" type="range" min="1000" max="8000" value="2500" step="250" class="w-full accent-brand-emerald cursor-pointer h-2 bg-slate-800 rounded-lg">
-                            <span class="text-[11px] text-slate-400 mt-1 block">Typical commercial accounts range between $1,500 and $5,000/mo</span>
-                        </div>
-
-                        <div class="p-4 rounded-xl bg-brand-navy/60 border border-white/5 text-xs text-slate-300 space-y-1">
-                            <div class="flex justify-between">
-                                <span class="text-slate-400">Assumed Walkthrough-to-Bid Close Rate:</span>
-                                <span class="font-bold text-white">25% (Conservative)</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-slate-400">Offshore Talent Cost Savings:</span>
-                                <span class="font-bold text-emerald-400">Save ~$38,000/yr vs local hire</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right: Results Card -->
-                    <div class="md:col-span-5 bg-gradient-to-br from-brand-navy to-brand-card p-6 rounded-2xl border border-white/10 text-center space-y-5">
-                        <div>
-                            <span class="text-[11px] font-mono text-slate-400 uppercase tracking-widest block font-bold">Estimated Monthly Output</span>
-                            <span id="walkthrough-calc" class="text-4xl font-extrabold text-brand-cyan font-display mt-1 block">12 - 16</span>
-                            <span class="text-xs font-semibold text-slate-300">Confirmed On-Site Walkthroughs / mo</span>
-                        </div>
-
-                        <div class="pt-4 border-t border-white/10">
-                            <span class="text-[11px] font-mono text-slate-400 uppercase tracking-widest block font-bold">Projected New MRR Added</span>
-                            <span id="revenue-calc" class="text-3xl font-extrabold text-brand-emerald font-display mt-1 block">+$7,500 / mo</span>
-                            <span id="annual-calc" class="text-xs text-slate-400 block mt-1">(~$90,000 New Annual Revenue)</span>
-                        </div>
-
-                        <a href="#contact" class="block w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider text-white bg-brand-blue hover:bg-brand-hoverBlue transition-all shadow-lg shadow-brand-blue/30">
-                            Lock In Your Dedicated Caller
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Audio Lab & Call Quality Assurance -->
-    <section id="audio-lab" class="py-24 bg-brand-navy">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Left Details -->
-                <div class="lg:col-span-5 space-y-6">
-                    <span class="text-xs font-bold font-mono uppercase tracking-wider text-brand-cyan bg-blue-500/10 px-3.5 py-1 rounded-full border border-brand-blue/30">Authentic Voice & QA</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display">
-                        We Sound Like Your In-House Team. Not a Call Center.
-                    </h2>
-                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                        The biggest fear cleaning business owners have is hiring offshore callers who sound robotic or read scripts like telemarketers.
-                    </p>
-                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                        At NexaPoint BPO, every representative undergoes **accent neutralization**, janitorial terminology drills, and deep gatekeeper-navigation training. We do not pitch blindly—we initiate conversational B2B problem-solving.
-                    </p>
-
-                    <div class="space-y-3 pt-2 text-xs font-semibold text-slate-300">
-                        <div class="flex items-center gap-3">
-                            <span class="w-5 h-5 rounded-full bg-brand-blue/20 text-brand-cyan flex items-center justify-center">✓</span>
-                            <span>Daily call recordings delivered to your private client portal</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="w-5 h-5 rounded-full bg-brand-blue/20 text-brand-cyan flex items-center justify-center">✓</span>
-                            <span>Dedicated supervisors listening to 100% of booked walkthroughs</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="w-5 h-5 rounded-full bg-brand-blue/20 text-brand-cyan flex items-center justify-center">✓</span>
-                            <span>Local caller ID numbers matching your city / postal code area</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right: Audio Player Mockup -->
-                <div class="lg:col-span-7">
-                    <div class="glass-card rounded-3xl p-7 border border-white/10 space-y-4">
-                        <div class="flex justify-between items-center pb-4 border-b border-white/10">
-                            <div>
-                                <span class="text-xs font-mono text-slate-400 uppercase font-bold">NexaPoint QA Archive</span>
-                                <h4 class="text-sm font-bold text-white">Sample Objection-Handling Clips</h4>
-                            </div>
-                            <span class="text-xs text-brand-cyan font-mono bg-blue-500/10 px-3 py-1 rounded-md">Live Rep Recordings</span>
-                        </div>
-
-                        <!-- Audio Track 1 -->
-                        <div class="p-4 rounded-xl bg-brand-navy/90 border border-white/10 hover:border-brand-blue/40 transition-all">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <button onclick="simulatePlay(this)" class="w-10 h-10 rounded-full bg-brand-blue text-white flex items-center justify-center hover:scale-105 transition-transform flex-shrink-0" aria-label="Play audio sample">
-                                        ▶
-                                    </button>
-                                    <div>
-                                        <p class="text-xs font-bold text-white">Bypassing the Gatekeeper at Tech Headquarters</p>
-                                        <p class="text-[11px] text-slate-400">Target: London, UK • Rep: Senior SDR Arif</p>
-                                    </div>
-                                </div>
-                                <span class="text-xs font-mono text-slate-400">1:18</span>
-                            </div>
-                            <!-- Mock Sound Wave -->
-                            <div class="mt-3 flex items-center gap-1 h-5 px-2 bg-slate-900/60 rounded-md">
-                                <span class="w-1 bg-brand-blue rounded soundbar" style="height: 12px; animation-delay: 0.1s;"></span>
-                                <span class="w-1 bg-brand-cyan rounded soundbar" style="height: 18px; animation-delay: 0.3s;"></span>
-                                <span class="w-1 bg-brand-blue rounded soundbar" style="height: 8px; animation-delay: 0.2s;"></span>
-                                <span class="w-1 bg-brand-cyan rounded soundbar" style="height: 22px; animation-delay: 0.4s;"></span>
-                                <span class="w-1 bg-slate-700 rounded soundbar" style="height: 14px; animation-delay: 0.15s;"></span>
-                                <span class="w-1 bg-slate-700 rounded soundbar" style="height: 9px; animation-delay: 0.25s;"></span>
-                                <span class="w-1 bg-slate-700 rounded soundbar" style="height: 16px; animation-delay: 0.35s;"></span>
-                                <span class="w-1 bg-slate-700 rounded soundbar" style="height: 6px; animation-delay: 0.05s;"></span>
-                                <span class="text-[10px] text-slate-400 font-mono ml-auto">Objection: "Send an email first"</span>
-                            </div>
-                        </div>
-
-                        <!-- Audio Track 2 -->
-                        <div class="p-4 rounded-xl bg-brand-navy/90 border border-white/10 hover:border-brand-blue/40 transition-all">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <button onclick="simulatePlay(this)" class="w-10 h-10 rounded-full bg-brand-blue text-white flex items-center justify-center hover:scale-105 transition-transform flex-shrink-0" aria-label="Play audio sample">
-                                        ▶
-                                    </button>
-                                    <div>
-                                        <p class="text-xs font-bold text-white">Handling "We already have a cleaner" with Grace</p>
-                                        <p class="text-[11px] text-slate-400">Target: Toronto, Canada • Rep: Senior SDR Farhana</p>
-                                    </div>
-                                </div>
-                                <span class="text-xs font-mono text-slate-400">1:42</span>
-                            </div>
-                            <div class="mt-3 flex items-center gap-1 h-5 px-2 bg-slate-900/60 rounded-md">
-                                <span class="w-1 bg-brand-blue rounded soundbar" style="height: 14px; animation-delay: 0.2s;"></span>
-                                <span class="w-1 bg-brand-cyan rounded soundbar" style="height: 20px; animation-delay: 0.4s;"></span>
-                                <span class="w-1 bg-brand-blue rounded soundbar" style="height: 10px; animation-delay: 0.1s;"></span>
-                                <span class="w-1 bg-slate-700 rounded soundbar" style="height: 16px; animation-delay: 0.3s;"></span>
-                                <span class="w-1 bg-slate-700 rounded soundbar" style="height: 8px; animation-delay: 0.25s;"></span>
-                                <span class="text-[10px] text-slate-400 font-mono ml-auto">Result: Walkthrough confirmed for bid comparison</span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Global Offices & Infrastructure -->
-    <section id="locations" class="py-24 bg-brand-slate">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto space-y-4">
-                <span class="text-xs font-bold font-mono uppercase tracking-wider text-brand-cyan bg-blue-500/10 px-3.5 py-1 rounded-full border border-brand-blue/30">Worldwide Infrastructure</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display">
-                    Physical Facilities & Global Offices
-                </h2>
-                <p class="text-slate-400 text-base">
-                    NexaPoint BPO pairs an expansive offshore production center in Bangladesh with liaison offices in North America and Australia.
-                </p>
-            </div>
-
-            <div class="mt-16 grid md:grid-cols-3 gap-8">
-                
-                <!-- Bangladesh HQ -->
-                <div class="glass-card rounded-3xl p-8 border border-white/10 flex flex-col justify-between relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-500/10 rounded-bl-full pointer-events-none"></div>
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-3xl">🇧🇩</span>
-                            <span class="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Operational Headquarters</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2 font-display">Bangladesh Operations Center</h3>
-                        <p class="text-sm text-slate-300 leading-relaxed mb-4">
-                            House: 472 (1st Floor), Aurangzeb Road, Pabna Sadar, Pabna, আওরঙ্গজেব সড়ক, Pabna 6600
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-white/10 text-xs text-slate-400 space-y-1">
-                        <p>• High-speed fiber-optic dialer lines</p>
-                        <p>• Redundant backup generator power</p>
-                        <p>• In-house coaching & accent labs</p>
-                    </div>
-                </div>
-
-                <!-- USA Office -->
-                <div class="glass-card rounded-3xl p-8 border border-white/10 flex flex-col justify-between relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-bl-full pointer-events-none"></div>
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-3xl">🇺🇸</span>
-                            <span class="text-[10px] font-mono font-bold text-brand-cyan bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">North America Liaison</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2 font-display">United States Office</h3>
-                        <p class="text-sm text-slate-300 leading-relaxed mb-4">
-                            303 N Frio St, San Antonio, TX 78207, United States
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-white/10 text-xs text-slate-400 space-y-1">
-                        <p>• North America Campaign Coordination</p>
-                        <p>• USA/Canada Client Success Management</p>
-                        <p>• Contract Bidding & Estimator Sync</p>
-                    </div>
-                </div>
-
-                <!-- Australia Office -->
-                <div class="glass-card rounded-3xl p-8 border border-white/10 flex flex-col justify-between relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-purple-500/10 rounded-bl-full pointer-events-none"></div>
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-3xl">🇦🇺</span>
-                            <span class="text-[10px] font-mono font-bold text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/20">Oceania & UK Liaison</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2 font-display">Australia & NZ Office</h3>
-                        <p class="text-sm text-slate-300 leading-relaxed mb-4">
-                            Malaga Markets Corner Alexander Drive &, Beach Rd, Malaga WA 6062, Australia
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-white/10 text-xs text-slate-400 space-y-1">
-                        <p>• New Zealand & Australia Shift Scheduling</p>
-                        <p>• UK GMT Afternoon Alignment</p>
-                        <p>• Quality Assurance Auditing</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Accordion (Clearing Real Objections) -->
-    <section id="faq" class="py-24 bg-brand-navy">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-3 mb-16">
-                <span class="text-xs font-bold font-mono uppercase tracking-wider text-brand-cyan bg-blue-500/10 px-3.5 py-1 rounded-full border border-brand-blue/30">Direct Answers</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display">
-                    Frequently Asked Questions
-                </h2>
-                <p class="text-slate-400 text-sm">Everything you need to know about working with NexaPoint BPO.</p>
-            </div>
-
-            <div class="space-y-4" id="faq-list">
-                
-                <div class="glass-card rounded-xl p-5 border border-white/5 cursor-pointer" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center">
-                        <h4 class="text-base font-bold text-white">How do your callers get the local building & decision-maker data?</h4>
-                        <span class="text-brand-cyan font-bold text-lg">+</span>
-                    </div>
-                    <div class="faq-content hidden mt-3 pt-3 border-t border-white/5 text-sm text-slate-300 leading-relaxed">
-                        We build custom, proprietary B2B data lists specifically for your target postal codes and service areas using enterprise data providers (ZoomInfo, Apollo, Google Maps scrapers, local business registries). Every record is scrubbed against National Do Not Call (DNC) lists and phone numbers are pre-verified before dialing.
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-xl p-5 border border-white/5 cursor-pointer" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center">
-                        <h4 class="text-base font-bold text-white">Can your reps integrate with our existing CRM (Jobber, Housecall Pro, HubSpot)?</h4>
-                        <span class="text-brand-cyan font-bold text-lg">+</span>
-                    </div>
-                    <div class="faq-content hidden mt-3 pt-3 border-t border-white/5 text-sm text-slate-300 leading-relaxed">
-                        Yes! Our team works seamlessly inside your CRM. When a walkthrough is confirmed, the rep creates the lead card, adds the square footage details, notes current pain points, and invites your estimator directly on your calendar (Google Calendar, Outlook, or Calendly).
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-xl p-5 border border-white/5 cursor-pointer" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center">
-                        <h4 class="text-base font-bold text-white">How do you ensure cold callers don't burn my cleaning brand's reputation?</h4>
-                        <span class="text-brand-cyan font-bold text-lg">+</span>
-                    </div>
-                    <div class="faq-content hidden mt-3 pt-3 border-t border-white/5 text-sm text-slate-300 leading-relaxed">
-                        We never use high-pressure, aggressive, or spammy tactics. Our approach is consultative and professional. We inquire about their existing cleaning satisfaction, contract renewal dates, and offer a zero-obligation walkthrough comparison. 100% of our booked calls are QA audited by supervisors before confirmation.
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-xl p-5 border border-white/5 cursor-pointer" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center">
-                        <h4 class="text-base font-bold text-white">Are there long-term contracts or locked-in commitments?</h4>
-                        <span class="text-brand-cyan font-bold text-lg">+</span>
-                    </div>
-                    <div class="faq-content hidden mt-3 pt-3 border-t border-white/5 text-sm text-slate-300 leading-relaxed">
-                        We offer flexible month-to-month agreements after an initial 60-day campaign calibration period. Our philosophy is simple: *"Your Goals, Our Support."* We retain our cleaning partners because of tangible ROI, not restrictive contracts.
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & RFP Proposal Form -->
-    <section id="contact" class="py-24 bg-brand-slate relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-12 items-start">
-                
-                <!-- Left: Contact Details & Mailbox Hub -->
-                <div class="lg:col-span-5 space-y-6">
-                    <span class="text-xs font-bold font-mono uppercase tracking-wider text-brand-emerald bg-emerald-500/10 px-3.5 py-1 rounded-full border border-emerald-500/30">Get in Touch</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-display">
-                        Ready to Fill Your Commercial Bidding Pipeline?
-                    </h2>
-                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                        Schedule a 15-minute discovery consultation. We will analyze your local cleaning market radius, calculate your potential walkthrough volume, and prepare a custom cold calling proposal.
-                    </p>
-
-                    <!-- Mailboxes Display -->
-                    <div class="space-y-3 pt-2">
-                        <div class="p-4 rounded-xl bg-brand-card border border-white/10 flex items-center gap-3.5">
-                            <div class="w-10 h-10 rounded-lg bg-blue-500/20 text-brand-cyan flex items-center justify-center font-bold">✉️</div>
-                            <div>
-                                <p class="text-[11px] font-mono text-slate-400">General Inquiries</p>
-                                <a href="mailto:info@nexapointbpo.com" class="text-sm font-bold text-white hover:text-brand-cyan transition-colors">info@nexapointbpo.com</a>
-                            </div>
-                        </div>
-
-                        <div class="p-4 rounded-xl bg-brand-card border border-white/10 flex items-center gap-3.5">
-                            <div class="w-10 h-10 rounded-lg bg-emerald-500/20 text-brand-emerald flex items-center justify-center font-bold">📋</div>
-                            <div>
-                                <p class="text-[11px] font-mono text-slate-400">Administration & Billing</p>
-                                <a href="mailto:admin@nexapointbpo.com" class="text-sm font-bold text-white hover:text-brand-emerald transition-colors">admin@nexapointbpo.com</a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-3">
-                            <div class="p-3.5 rounded-xl bg-brand-card border border-white/10">
-                                <p class="text-[10px] font-mono text-slate-400">Operations & Strategy</p>
-                                <a href="mailto:kafi@nexapointbpo.com" class="text-xs font-bold text-white hover:text-brand-cyan truncate block">kafi@nexapointbpo.com</a>
-                            </div>
-                            <div class="p-3.5 rounded-xl bg-brand-card border border-white/10">
-                                <p class="text-[10px] font-mono text-slate-400">Client Success</p>
-                                <a href="mailto:lian@nexapointbpo.com" class="text-xs font-bold text-white hover:text-brand-cyan truncate block">lian@nexapointbpo.com</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="p-4 rounded-xl bg-brand-navy border border-white/5 text-xs text-slate-400">
-                        <strong class="text-white block mb-1">NexaPoint Response Guarantee:</strong>
-                        All inquiries receive a detailed reply and territory feasibility analysis within 4 business hours.
-                    </div>
-                </div>
-
-                <!-- Right: High-Converting Form -->
-                <div class="lg:col-span-7">
-                    <div class="glass-card rounded-3xl p-8 sm:p-10 border border-white/10 shadow-2xl">
-                        <h3 class="text-2xl font-bold text-white font-display mb-2">Request a Customized Walkthrough Proposal</h3>
-                        <p class="text-xs text-slate-400 mb-6">Tell us about your commercial cleaning target areas and monthly targets.</p>
-
-                        <form id="contact-form" action="https://formspree.io/f/xbjnyqvo" method="POST" class="space-y-4">
-                            <div class="grid sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">Your Name *</label>
-                                    <input type="text" name="name" required placeholder="Alex Turner" class="w-full px-4 py-3 rounded-xl bg-brand-navy border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-blue">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">Business Email *</label>
-                                    <input type="email" name="email" required placeholder="alex@cleaningservices.co.uk" class="w-full px-4 py-3 rounded-xl bg-brand-navy border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-blue">
-                                </div>
-                            </div>
-
-                            <div class="grid sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">Company Name *</label>
-                                    <input type="text" name="company" required placeholder="Prime Commercial Janitorial Ltd" class="w-full px-4 py-3 rounded-xl bg-brand-navy border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-blue">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">Target Country / Region *</label>
-                                    <select name="target_region" class="w-full px-4 py-3 rounded-xl bg-brand-navy border border-white/10 text-white text-sm focus:outline-none focus:border-brand-blue">
-                                        <option value="United Kingdom">🇬🇧 United Kingdom</option>
-                                        <option value="New Zealand">🇳🇿 New Zealand</option>
-                                        <option value="Canada">🇨🇦 Canada</option>
-                                        <option value="United States">🇺🇸 United States</option>
-                                        <option value="Australia">🇦🇺 Australia</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">Outbound Service Desired</label>
-                                <select name="service" class="w-full px-4 py-3 rounded-xl bg-brand-navy border border-white/10 text-white text-sm focus:outline-none focus:border-brand-blue">
-                                    <option value="Full Commercial Cleaning Appointment Setting">Full Commercial Cleaning Appointment Setting (Dedicated Pod)</option>
-                                    <option value="1 Dedicated Full-Time Cold Caller (160 hrs/mo)">1 Dedicated Full-Time Cold Caller (160 hrs/mo)</option>
-                                    <option value="B2B Facility Decision-Maker List Building">B2B Facility Decision-Maker List Building</option>
-                                    <option value="Inbound CRM Dispatch & Quoting Follow-up">Inbound CRM Dispatch & Quoting Follow-up</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">Target Cities & Goals</label>
-                                <textarea name="message" rows="3" placeholder="e.g., We service Manchester and Leeds, want 15 walkthroughs/month for offices over 10,000 sq ft..." class="w-full px-4 py-3 rounded-xl bg-brand-navy border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-blue"></textarea>
-                            </div>
-
-                            <button type="submit" class="w-full py-4 px-6 rounded-xl font-bold text-sm uppercase tracking-wider text-white bg-gradient-to-r from-brand-blue to-blue-600 hover:to-brand-blue shadow-lg shadow-brand-blue/30 transition-all">
-                                Request Territory Feasibility & Proposal
-                            </button>
-                            <p class="text-[11px] text-center text-slate-500">Zero spam. We strictly respect your time and confidentiality.</p>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-black text-slate-400 py-16 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
-                
-                <!-- Col 1: Brand -->
-                <div class="md:col-span-1 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <img src="assets/logo.jpg" alt="NexaPoint BPO" class="h-10 w-auto rounded border border-white/10">
-                        <div>
-                            <span class="text-base font-bold text-white font-display">NexaPoint <span class="text-brand-blue">BPO</span></span>
-                            <span class="block text-[9px] tracking-wider text-slate-400 uppercase">Your Goals, Our Support</span>
-                        </div>
-                    </div>
-                    <p class="text-xs text-slate-400 leading-relaxed">
-                        The dedicated outbound appointment setting agency for commercial cleaning companies in the UK, New Zealand, Canada, USA, and Australia.
-                    </p>
-                </div>
-
-                <!-- Col 2: Navigation -->
-                <div>
-                    <h5 class="text-xs font-mono font-bold text-white uppercase tracking-wider mb-4">Navigation</h5>
-                    <ul class="space-y-2 text-xs">
-                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
-                        <li><a href="#facilities" class="hover:text-white transition-colors">Target Facilities</a></li>
-                        <li><a href="#calculator" class="hover:text-white transition-colors">ROI Calculator</a></li>
-                        <li><a href="#audio-lab" class="hover:text-white transition-colors">Call Recordings</a></li>
-                        <li><a href="#locations" class="hover:text-white transition-colors">Global Offices</a></li>
-                    </ul>
-                </div>
-
-                <!-- Col 3: Target Regions -->
-                <div>
-                    <h5 class="text-xs font-mono font-bold text-white uppercase tracking-wider mb-4">Target Coverage</h5>
-                    <ul class="space-y-1.5 text-xs text-slate-400">
-                        <li>🇬🇧 United Kingdom (London, Manchester, Midlands)</li>
-                        <li>🇳🇿 New Zealand (Auckland, Wellington, Canterbury)</li>
-                        <li>🇨🇦 Canada (GTA, Vancouver, Calgary, Ottawa)</li>
-                        <li>🇺🇸 United States (Texas, Florida, California, Midwest)</li>
-                        <li>🇦🇺 Australia (WA, NSW, Victoria, Queensland)</li>
-                    </ul>
-                </div>
-
-                <!-- Col 4: Official Emails -->
-                <div>
-                    <h5 class="text-xs font-mono font-bold text-white uppercase tracking-wider mb-4">Official Channels</h5>
-                    <ul class="space-y-2 text-xs">
-                        <li><a href="mailto:info@nexapointbpo.com" class="text-slate-300 hover:text-white">info@nexapointbpo.com</a></li>
-                        <li><a href="mailto:admin@nexapointbpo.com" class="text-slate-300 hover:text-white">admin@nexapointbpo.com</a></li>
-                        <li><a href="mailto:kafi@nexapointbpo.com" class="text-slate-300 hover:text-white">kafi@nexapointbpo.com</a></li>
-                        <li><a href="mailto:lian@nexapointbpo.com" class="text-slate-300 hover:text-white">lian@nexapointbpo.com</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="mt-12 pt-8 border-t border-white/10 text-xs text-center text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
-                <p>&copy; 2026 NexaPoint BPO. All rights reserved. Registered domain: <span class="text-slate-300 font-mono">nexapointbpo.com</span></p>
-                <div class="flex gap-4">
-                    <a href="#home" class="hover:text-slate-300">Privacy Policy</a>
-                    <a href="#home" class="hover:text-slate-300">Terms of Service</a>
-                    <a href="#home" class="hover:text-slate-300">DNC Scrubbing Standards</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Interactive Logic: Live World Clocks, ROI Calculator, FAQ Accordion -->
-    <script>
-        // 1. Mobile Menu Drawer
-        const toggleBtn = document.getElementById('mobile-toggle');
-        const drawer = document.getElementById('mobile-drawer');
-        toggleBtn.addEventListener('click', () => {
-            drawer.classList.toggle('hidden');
-        });
-        drawer.querySelectorAll('a').forEach(a => {
-            a.addEventListener('click', () => drawer.classList.add('hidden'));
-        });
-
-        // 2. Real Live World Timezones
-        function updateWorldClocks() {
-            const formatTime = (timeZone) => {
-                return new Intl.DateTimeFormat('en-GB', {
-                    timeZone,
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    hour12: false
-                }).format(new Date());
-            };
-
-            try {
-                document.getElementById('time-lon').textContent = formatTime('Europe/London') + ' GMT';
-                document.getElementById('time-tor').textContent = formatTime('America/Toronto') + ' EST';
-                document.getElementById('time-akl').textContent = formatTime('Pacific/Auckland') + ' NZT';
-                document.getElementById('time-sat').textContent = formatTime('America/Chicago') + ' CST';
-                document.getElementById('time-dhk').textContent = formatTime('Asia/Dhaka') + ' BST';
-            } catch (e) {
-                console.error('Timezone formatting error', e);
-            }
-        }
-        updateWorldClocks();
-        setInterval(updateWorldClocks, 10000);
-
-        // 3. Interactive Walkthrough Calculator
-        const callerSlider = document.getElementById('caller-slider');
-        const contractSlider = document.getElementById('contract-slider');
-        const callerDisplay = document.getElementById('caller-display');
-        const contractDisplay = document.getElementById('contract-display');
-        const walkthroughCalc = document.getElementById('walkthrough-calc');
-        const revenueCalc = document.getElementById('revenue-calc');
-        const annualCalc = document.getElementById('annual-calc');
-
-        function updateCalculator() {
-            const callers = parseInt(callerSlider.value, 10);
-            const contractVal = parseInt(contractSlider.value, 10);
-
-            callerDisplay.textContent = callers === 1 ? '1 Full-Time Rep' : `${callers} Full-Time Reps`;
-            contractDisplay.textContent = `$${contractVal.toLocaleString()} / mo`;
-
-            // Projections: 1 rep = 12-16 walkthroughs/mo. Assume conservative average: 14 * callers
-            const minWalk = 12 * callers;
-            const maxWalk = 16 * callers;
-            walkthroughCalc.textContent = `${minWalk} - ${maxWalk}`;
-
-            // Close rate ~ 25% -> contracts won = (14 * callers) * 0.25 = 3.5 * callers * contractVal
-            const monthlyRevenueAdded = Math.round(14 * callers * 0.25 * contractVal);
-            const annualRevenue = monthlyRevenueAdded * 12;
-
-            revenueCalc.textContent = `+$${monthlyRevenueAdded.toLocaleString()} / mo`;
-            annualCalc.textContent = `(~$${annualRevenue.toLocaleString()} New Annual Revenue)`;
-        }
-
-        callerSlider.addEventListener('input', updateCalculator);
-        contractSlider.addEventListener('input', updateCalculator);
-        updateCalculator();
-
-        // 4. FAQ Accordion
-        function toggleFaq(element) {
-            const content = element.querySelector('.faq-content');
-            const icon = element.querySelector('span');
-            const isHidden = content.classList.contains('hidden');
-
-            // Close all first
-            document.querySelectorAll('#faq-list .faq-content').forEach(c => c.classList.add('hidden'));
-            document.querySelectorAll('#faq-list span').forEach(s => {
-                if (s.textContent === '−') s.textContent = '+';
-            });
-
-            if (isHidden) {
-                content.classList.remove('hidden');
-                icon.textContent = '−';
-            }
-        }
-
-        // 5. Audio sample play simulation
-        function simulatePlay(btn) {
-            if (btn.textContent.trim() === '▶') {
-                btn.textContent = '⏸';
-                btn.classList.add('bg-brand-emerald');
-                btn.classList.remove('bg-brand-blue');
-            } else {
-                btn.textContent = '▶';
-                btn.classList.remove('bg-brand-emerald');
-                btn.classList.add('bg-brand-blue');
-            }
-        }
-    </script>
 </body>
 </html>
