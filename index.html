@@ -3,23 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexaPoint BPO | Enterprise Outbound & Appointment Setting Solutions</title>
-    <meta name="description" content="NexaPoint BPO is an offshore Business Process Outsourcing provider headquartered in Pabna, Bangladesh. We deliver dedicated outbound cold calling and appointment setting teams for commercial cleaning companies across the UK, Canada, New Zealand, USA, and Australia.">
-    <meta name="keywords" content="BPO Bangladesh, commercial cleaning leads, appointment setting, cold calling agency, ITES Bangladesh, NexaPoint BPO">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="NexaPoint BPO | Your Goals, Our Support">
-    <meta property="og:description" content="Dedicated outbound sales and appointment setting infrastructure for commercial cleaning companies worldwide.">
-    <meta property="og:image" content="assets/logo.jpg">
-    <meta property="og:url" content="https://nexapointbpo.com">
+    <title>NexaPoint BPO | Commercial Cleaning Outbound & Appointment Setting</title>
+    <meta name="description" content="NexaPoint BPO delivers dedicated outbound cold calling and appointment setting pods for commercial cleaning companies in the UK, Canada, New Zealand, USA, and Australia.">
     <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
 
-    <!-- Fonts: Inter & Plus Jakarta Sans -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Tailwind CSS with Dark Mode Class support -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -47,19 +40,15 @@
     </script>
 
     <style>
-        /* Modern corporate typography rhythm */
-        body {
-            font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+        .stat-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-        .theme-transition {
-            transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
-        }
-        .stat-glow {
-            box-shadow: 0 10px 25px -5px rgba(0, 102, 255, 0.08);
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px -10px rgba(0, 102, 255, 0.15);
         }
     </style>
 
-    <!-- Theme Initialization Script (Avoids flash of wrong theme) -->
     <script>
         if (localStorage.theme === 'dark') {
             document.documentElement.classList.add('dark');
@@ -68,14 +57,14 @@
         }
     </script>
 </head>
-<body class="bg-white dark:bg-slate-950 text-slate-700 dark:text-slate-300 font-sans theme-transition antialiased selection:bg-brand-600 selection:text-white">
+<body class="bg-white dark:bg-slate-950 text-slate-700 dark:text-slate-300 font-sans antialiased selection:bg-brand-600 selection:text-white">
 
     <!-- Top Operational Ticker Bar -->
     <div class="bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 text-[11px] text-slate-600 dark:text-slate-400 py-2 px-4">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
             <div class="flex items-center gap-2">
                 <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span class="font-medium text-slate-800 dark:text-slate-200">Delivery Operations Center: Pabna, Bangladesh</span>
+                <span id="cms-ticker-text" class="font-medium text-slate-800 dark:text-slate-200">Delivery Operations Center: Pabna, Bangladesh</span>
                 <span class="text-slate-400 dark:text-slate-600">|</span>
                 <span class="hidden sm:inline">24/5 International Shift Alignment</span>
             </div>
@@ -91,13 +80,13 @@
         </div>
     </div>
 
-    <!-- Main Navigation Bar -->
+    <!-- Navigation Header -->
     <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
             <!-- Brand Logo -->
             <a href="#home" class="flex items-center gap-3.5 group">
-                <img src="assets/logo.jpg" alt="NexaPoint BPO Logo" class="h-12 w-auto object-contain rounded-lg border border-slate-200 dark:border-slate-800 group-hover:border-brand-600 transition-colors">
+                <img src="assets/logo.jpg" alt="NexaPoint BPO" class="h-12 w-auto object-contain rounded-lg border border-slate-200 dark:border-slate-800 group-hover:border-brand-600 transition-colors">
                 <div class="flex flex-col">
                     <span class="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-none font-heading">
                         NexaPoint <span class="text-brand-600">BPO</span>
@@ -110,38 +99,36 @@
 
             <!-- Navigation Links -->
             <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-700 dark:text-slate-300">
-                <a href="#solutions" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Solutions</a>
-                <a href="#cleaning-niche" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Cleaning Niche</a>
-                <a href="#why-bangladesh" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Why Bangladesh</a>
+                <a href="#pipeline" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Outbound Pipeline</a>
+                <a href="#comparison" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Cost Arbitrage</a>
+                <a href="#facilities" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Target Facilities</a>
                 <a href="#hubs" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Global Hubs</a>
-                <a href="#calculator" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">ROI Calculator</a>
-                <a href="#faq" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">FAQ</a>
+                <a href="#calculator" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">ROI Model</a>
+                <a href="#contact" class="hover:text-brand-600 dark:hover:text-brand-500 transition-colors">Contact</a>
             </nav>
 
-            <!-- Actions: Day/Night Toggle + RFP Button -->
-            <div class="flex items-center gap-4">
+            <!-- Actions: Day/Night Toggle + Admin/Staff Login + Consultation -->
+            <div class="flex items-center gap-3">
                 
                 <!-- Day / Night Mode Switcher Button -->
                 <button id="theme-toggle" type="button" aria-label="Toggle theme" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-500 transition-colors">
-                    <!-- Sun Icon (Shown in Dark Mode) -->
                     <svg id="theme-icon-sun" class="w-4 h-4 hidden dark:block text-amber-400" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/>
                     </svg>
-                    <!-- Moon Icon (Shown in Light Mode) -->
                     <svg id="theme-icon-moon" class="w-4 h-4 block dark:hidden text-slate-700" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
                     </svg>
                 </button>
 
-                <!-- Staff Webmail Portal Button -->
-                <button id="open-webmail-btn" type="button" class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-xs font-bold text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 hover:border-brand-600 dark:hover:border-brand-500 transition-all shadow-sm">
-                    <svg class="w-4 h-4 text-brand-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                    <span>Staff Webmail</span>
+                <!-- Admin & Staff Portal Login Button -->
+                <button id="nav-login-btn" type="button" class="inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-xs font-bold text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 hover:border-brand-600 transition-all shadow-sm">
+                    <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                    <span id="nav-login-label">Portal Login</span>
                 </button>
 
                 <!-- Primary CTA -->
                 <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider text-white bg-brand-600 hover:bg-brand-700 shadow-md shadow-brand-600/20 transition-all">
-                    Schedule Consultation
+                    Schedule Audit
                 </a>
 
                 <!-- Mobile Menu Button -->
@@ -151,127 +138,141 @@
             </div>
         </div>
 
-        <!-- Mobile Menu Drawer -->
+        <!-- Mobile Drawer -->
         <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-6 py-6 space-y-4">
-            <a href="#solutions" class="block font-semibold text-slate-800 dark:text-slate-200">Solutions</a>
-            <a href="#cleaning-niche" class="block font-semibold text-slate-800 dark:text-slate-200">Cleaning Niche</a>
-            <a href="#why-bangladesh" class="block font-semibold text-slate-800 dark:text-slate-200">Why Bangladesh</a>
+            <a href="#pipeline" class="block font-semibold text-slate-800 dark:text-slate-200">Outbound Pipeline</a>
+            <a href="#comparison" class="block font-semibold text-slate-800 dark:text-slate-200">Cost Arbitrage</a>
+            <a href="#facilities" class="block font-semibold text-slate-800 dark:text-slate-200">Target Facilities</a>
             <a href="#hubs" class="block font-semibold text-slate-800 dark:text-slate-200">Global Hubs</a>
-            <a href="#calculator" class="block font-semibold text-slate-800 dark:text-slate-200">ROI Calculator</a>
-            <a href="#faq" class="block font-semibold text-slate-800 dark:text-slate-200">FAQ</a>
-            <button id="mobile-webmail-btn" type="button" class="w-full py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-bold text-xs flex items-center justify-center gap-2">
-                <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                <span>Staff Webmail Portal</span>
+            <a href="#calculator" class="block font-semibold text-slate-800 dark:text-slate-200">ROI Model</a>
+            <button id="mobile-login-btn" type="button" class="w-full py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-bold text-xs flex items-center justify-center gap-2">
+                <svg class="w-4 h-4 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                <span>Portal Login / CMS</span>
             </button>
-            <a href="#contact" class="block text-center py-3 rounded-xl bg-brand-600 text-white font-bold text-sm">Schedule Consultation</a>
+            <a href="#contact" class="block text-center py-3 rounded-xl bg-brand-600 text-white font-bold text-sm">Schedule Audit</a>
         </div>
     </header>
 
-    <!-- Hero Section (Corporate BPO Layout) -->
-    <section id="home" class="relative pt-16 pb-20 lg:pt-24 lg:pb-32 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+    <!-- Hero Section with Infographic Dashboard -->
+    <section id="home" class="relative pt-12 pb-16 lg:pt-16 lg:pb-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
                 
-                <!-- Left: Headline & Core BPO Offer -->
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-xs font-bold text-brand-600 dark:text-blue-400 tracking-wide uppercase">
-                        <span class="w-2 h-2 rounded-full bg-brand-600 dark:bg-blue-400"></span>
-                        BPO & ITES Delivery Center • Pabna, Bangladesh
+                <!-- Left: Punchy Core Pitch -->
+                <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-xs font-bold text-brand-600 dark:text-blue-400 uppercase">
+                        <span class="w-2 h-2 rounded-full bg-brand-600"></span>
+                        Commercial Cleaning Outbound Center • Pabna, Bangladesh
                     </div>
 
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.12] font-heading">
-                        Enterprise Outbound Sales & Appointment Setting for <span class="text-brand-600">Commercial Cleaners</span>
+                    <h1 id="cms-hero-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight font-heading">
+                        Fill Your Calendar with High-Value <span class="text-brand-600">Commercial Cleaning Contracts</span>
                     </h1>
 
-                    <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
-                        NexaPoint BPO operates high-performance dedicated outbound calling pods from Bangladesh. We connect cleaning and janitorial companies with decision-makers in the <strong>UK, New Zealand, Canada, United States, and Australia</strong> to secure qualified commercial contract walkthroughs.
+                    <p id="cms-hero-sub" class="text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
+                        Dedicated offshore cold calling pods connecting your cleaning business with corporate facility decision-makers across the UK, Canada, New Zealand, Australia, and the USA.
                     </p>
 
-                    <!-- Trust Checklist -->
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-left">
-                        <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-glow">
-                            <span class="block text-xs font-semibold text-brand-600 dark:text-blue-400 uppercase">Cost Arbitrage</span>
-                            <span class="text-base font-extrabold text-slate-900 dark:text-white">60%–70% Savings</span>
+                    <!-- KPI Metric Infographic Row -->
+                    <div class="grid grid-cols-3 gap-3 pt-2 text-left">
+                        <div class="p-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
+                            <span class="text-[10px] font-mono uppercase text-slate-400 font-bold block">Monthly Dials</span>
+                            <span id="cms-stat-dials" class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white mt-0.5 block">60,000+</span>
+                            <span class="text-[10px] text-emerald-600 font-bold">120-180/day/rep</span>
                         </div>
-                        <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-glow">
-                            <span class="block text-xs font-semibold text-brand-600 dark:text-blue-400 uppercase">Dedicated Reps</span>
-                            <span class="text-base font-extrabold text-slate-900 dark:text-white">160+ Hrs / Month</span>
+                        <div class="p-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
+                            <span class="text-[10px] font-mono uppercase text-slate-400 font-bold block">Cost Arbitrage</span>
+                            <span id="cms-stat-savings" class="text-xl sm:text-2xl font-extrabold text-brand-600 dark:text-blue-400 mt-0.5 block">65%–70%</span>
+                            <span class="text-[10px] text-slate-400">vs Onshore SDR</span>
                         </div>
-                        <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-glow col-span-2 sm:col-span-1">
-                            <span class="block text-xs font-semibold text-brand-600 dark:text-blue-400 uppercase">QA Compliance</span>
-                            <span class="text-base font-extrabold text-slate-900 dark:text-white">100% Call Auditing</span>
+                        <div class="p-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
+                            <span class="text-[10px] font-mono uppercase text-slate-400 font-bold block">Attendance</span>
+                            <span id="cms-stat-attendance" class="text-xl sm:text-2xl font-extrabold text-emerald-600 dark:text-emerald-400 mt-0.5 block">94.2%</span>
+                            <span class="text-[10px] text-slate-400">Confirmed Bids</span>
                         </div>
                     </div>
 
-                    <!-- Hero CTAs -->
-                    <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
-                        <a href="#contact" class="px-8 py-4 rounded-xl text-sm font-bold text-white bg-brand-600 hover:bg-brand-700 shadow-lg shadow-brand-600/25 transition-all text-center">
-                            Request Campaign Feasibility
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-3 pt-3 justify-center lg:justify-start">
+                        <a href="#contact" class="px-7 py-3.5 rounded-xl text-sm font-bold text-white bg-brand-600 hover:bg-brand-700 shadow-md shadow-brand-600/20 transition-all text-center">
+                            Request Feasibility Proposal
                         </a>
-                        <a href="#solutions" class="px-8 py-4 rounded-xl text-sm font-bold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-850 transition-all text-center">
-                            Explore Delivery Models
+                        <a href="#pipeline" class="px-7 py-3.5 rounded-xl text-sm font-bold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 transition-all text-center">
+                            See Outbound Engine
                         </a>
                     </div>
                 </div>
 
-                <!-- Right: Visual Workstation & Infrastructure Showcase -->
+                <!-- Right: Interactive Outbound Pipeline Infographic -->
                 <div class="lg:col-span-5">
-                    <div class="relative bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-7 border border-slate-200 dark:border-slate-800 shadow-xl">
-                        
-                        <!-- Real Call Center Workstation Visual -->
-                        <div class="relative rounded-2xl overflow-hidden h-64 mb-6 border border-slate-100 dark:border-slate-800">
-                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80" alt="NexaPoint BPO Workstations" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
-                            <div class="absolute bottom-3 left-4 right-4 flex justify-between items-center text-xs text-white">
-                                <span class="font-bold">Pabna Delivery Hub Floor</span>
-                                <span class="bg-emerald-500/90 text-white font-mono px-2 py-0.5 rounded text-[10px]">Active Shift</span>
+                    <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-slate-200 dark:border-slate-800 shadow-xl space-y-4">
+                        <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
+                            <div>
+                                <span class="text-[10px] font-mono text-brand-600 dark:text-blue-400 uppercase tracking-widest font-bold">Execution Engine</span>
+                                <h4 class="text-sm font-bold text-slate-900 dark:text-white">Walkthrough Delivery Pipeline</h4>
                             </div>
+                            <span class="px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950 text-emerald-600 text-[10px] font-mono font-bold">
+                                5-STAGE FLOW
+                            </span>
                         </div>
 
-                        <!-- Live Lead Dispatch Feed -->
-                        <div class="space-y-3">
-                            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200/80 dark:border-slate-800 flex items-start justify-between text-xs">
-                                <div>
-                                    <p class="font-bold text-slate-900 dark:text-white">Corporate Tower Walkthrough Confirmed</p>
-                                    <p class="text-slate-500 mt-0.5">London, UK • 24,000 sq ft Office Suite</p>
+                        <!-- 5 Step Visual Pipeline -->
+                        <div class="space-y-2.5 text-xs">
+                            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-6 h-6 rounded-lg bg-blue-100 dark:bg-blue-950 text-brand-600 font-bold flex items-center justify-center text-[11px]">1</span>
+                                    <div>
+                                        <p class="font-bold text-slate-900 dark:text-white">Postal Radius & ICP Mapping</p>
+                                        <p class="text-[11px] text-slate-500">Corporate offices, medical & warehouses</p>
+                                    </div>
                                 </div>
-                                <span class="text-emerald-600 dark:text-emerald-400 font-mono font-bold">£3,400/mo</span>
+                                <span class="text-[10px] font-mono text-slate-400">Day 1</span>
                             </div>
 
-                            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200/80 dark:border-slate-800 flex items-start justify-between text-xs">
-                                <div>
-                                    <p class="font-bold text-slate-900 dark:text-white">Multi-Unit Medical Clinic Walkthrough</p>
-                                    <p class="text-slate-500 mt-0.5">Toronto, Canada • Nightly Terminal Sanitation</p>
+                            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-6 h-6 rounded-lg bg-blue-100 dark:bg-blue-950 text-brand-600 font-bold flex items-center justify-center text-[11px]">2</span>
+                                    <div>
+                                        <p class="font-bold text-slate-900 dark:text-white">DNC Scrubbing & Data Verification</p>
+                                        <p class="text-[11px] text-slate-500">UK ICO, Canada CASL, US TCPA scrubbed</p>
+                                    </div>
                                 </div>
-                                <span class="text-emerald-600 dark:text-emerald-400 font-mono font-bold">$4,200 CAD/mo</span>
+                                <span class="text-[10px] font-mono text-slate-400">Day 2</span>
                             </div>
 
-                            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200/80 dark:border-slate-800 flex items-start justify-between text-xs">
-                                <div>
-                                    <p class="font-bold text-slate-900 dark:text-white">Industrial Logistics Facility</p>
-                                    <p class="text-slate-500 mt-0.5">Auckland, New Zealand • Floor Scrubbing Contract</p>
+                            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-6 h-6 rounded-lg bg-blue-100 dark:bg-blue-950 text-brand-600 font-bold flex items-center justify-center text-[11px]">3</span>
+                                    <div>
+                                        <p class="font-bold text-slate-900 dark:text-white">High-Cadence Dedicated Dialing</p>
+                                        <p class="text-[11px] text-slate-500">Local area code caller IDs deployed</p>
+                                    </div>
                                 </div>
-                                <span class="text-emerald-600 dark:text-emerald-400 font-mono font-bold">$5,500 NZD/mo</span>
+                                <span class="text-[10px] font-mono text-brand-600 font-bold">150/day</span>
+                            </div>
+
+                            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-6 h-6 rounded-lg bg-blue-100 dark:bg-blue-950 text-brand-600 font-bold flex items-center justify-center text-[11px]">4</span>
+                                    <div>
+                                        <p class="font-bold text-slate-900 dark:text-white">1:6 Supervisor QA Audit</p>
+                                        <p class="text-[11px] text-slate-500">Call recording vetted before handover</p>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] font-mono text-emerald-600 font-bold">100% QA</span>
+                            </div>
+
+                            <div class="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-6 h-6 rounded-lg bg-emerald-600 text-white font-bold flex items-center justify-center text-[11px]">5</span>
+                                    <div>
+                                        <p class="font-bold text-emerald-950 dark:text-emerald-200">Confirmed On-Site Walkthrough</p>
+                                        <p class="text-[11px] text-emerald-700 dark:text-emerald-400">Directly on your calendar with sq ft notes</p>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] font-mono text-emerald-700 dark:text-emerald-300 font-bold">Direct Bid</span>
                             </div>
                         </div>
-
-                        <!-- Bottom specs -->
-                        <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 grid grid-cols-3 text-center text-xs">
-                            <div>
-                                <span class="text-slate-400 block text-[10px] uppercase font-semibold">Dialer Lines</span>
-                                <span class="font-bold text-slate-900 dark:text-white">Dual Tier-1 Fiber</span>
-                            </div>
-                            <div>
-                                <span class="text-slate-400 block text-[10px] uppercase font-semibold">CRM Sync</span>
-                                <span class="font-bold text-brand-600 dark:text-blue-400">Direct Calendar</span>
-                            </div>
-                            <div>
-                                <span class="text-slate-400 block text-[10px] uppercase font-semibold">QA Oversight</span>
-                                <span class="font-bold text-emerald-600 dark:text-emerald-400">1:6 Ratio</span>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
 
@@ -279,238 +280,182 @@
         </div>
     </section>
 
-    <!-- Global Client Markets Banner -->
-    <section class="border-y border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-6">
+    <!-- Cost Comparison Infographic Section -->
+    <section id="comparison" class="py-16 bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                    Active Client Campaign Coverage:
-                </span>
-                <div class="flex flex-wrap items-center gap-3 text-xs font-semibold">
-                    <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">United Kingdom (UK)</span>
-                    <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Canada (CA)</span>
-                    <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">New Zealand (NZ)</span>
-                    <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">United States (US)</span>
-                    <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200">Australia (AU)</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Core BPO Solutions -->
-    <section id="solutions" class="py-20 bg-slate-50 dark:bg-slate-950">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl mx-auto text-center space-y-4">
-                <span class="text-xs font-bold font-mono uppercase tracking-widest text-brand-600 dark:text-blue-400">Delivery Portfolio</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-heading">
-                    Structured BPO Solutions for Cleaning Companies
+            <div class="max-w-3xl mx-auto text-center space-y-3 mb-12">
+                <span class="text-xs font-bold font-mono uppercase tracking-widest text-brand-600 dark:text-blue-400">Financial Comparison</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-heading">
+                    In-House Western SDR vs NexaPoint Dedicated Pod
                 </h2>
-                <p class="text-slate-600 dark:text-slate-400 text-base">
-                    Every service is built to handle the end-to-end sales cycle, from cold outreach to locking in confirmed on-site quotes.
+                <p class="text-sm text-slate-500 dark:text-slate-400">
+                    Why commercial cleaning owners scale through our Bangladesh delivery operations.
                 </p>
             </div>
 
-            <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Side by Side Visual Comparison Bars -->
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 
-                <!-- Solution 1 -->
-                <div class="bg-white dark:bg-slate-900 rounded-2xl p-7 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-600 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950 text-brand-600 dark:text-blue-400 flex items-center justify-center font-bold text-lg mb-5">
-                        01
+                <!-- In-House (Expensive) -->
+                <div class="p-6 rounded-2xl border border-rose-200 dark:border-rose-900/60 bg-rose-50/40 dark:bg-rose-950/20 space-y-4">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-slate-900 dark:text-white">In-House Hire (London / Toronto / Texas)</h4>
+                        <span class="text-rose-600 font-mono font-bold text-sm">$6,600 / mo</span>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Dedicated Cold Calling Pods</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                        Full-time outbound representatives dialing 120–180 targeted decision-makers daily during your local operating hours.
-                    </p>
-                    <ul class="space-y-1.5 text-xs text-slate-500 dark:text-slate-400">
-                        <li>• Local city area-code caller ID</li>
-                        <li>• Native script objection navigation</li>
-                        <li>• Real-time call logs delivered daily</li>
-                    </ul>
+
+                    <!-- Progress bar breakdown -->
+                    <div class="space-y-2 text-xs">
+                        <div>
+                            <div class="flex justify-between text-[11px] text-slate-500 mb-1">
+                                <span>Base Salary + Taxes</span>
+                                <strong class="text-slate-800 dark:text-slate-200">$4,800/mo</strong>
+                            </div>
+                            <div class="w-full h-2 rounded-full bg-rose-200 dark:bg-rose-950 overflow-hidden">
+                                <div class="h-full bg-rose-500 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-[11px] text-slate-500 mb-1">
+                                <span>Dialer, CRM & Data List Licenses</span>
+                                <strong class="text-slate-800 dark:text-slate-200">$1,000/mo</strong>
+                            </div>
+                            <div class="w-full h-2 rounded-full bg-rose-200 dark:bg-rose-950 overflow-hidden">
+                                <div class="h-full bg-rose-400 rounded-full" style="width: 15%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-[11px] text-slate-500 mb-1">
+                                <span>Management, Benefits & Turnover Overhead</span>
+                                <strong class="text-slate-800 dark:text-slate-200">$800/mo</strong>
+                            </div>
+                            <div class="w-full h-2 rounded-full bg-rose-200 dark:bg-rose-950 overflow-hidden">
+                                <div class="h-full bg-rose-300 rounded-full" style="width: 10%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-rose-200/60 dark:border-rose-900/40 text-xs text-rose-700 dark:text-rose-400">
+                        High turnover, sick leave liability, and 3-month onboarding delay.
+                    </div>
                 </div>
 
-                <!-- Solution 2 -->
-                <div class="bg-white dark:bg-slate-900 rounded-2xl p-7 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-600 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950 text-brand-600 dark:text-blue-400 flex items-center justify-center font-bold text-lg mb-5">
-                        02
+                <!-- NexaPoint BPO Pod (Optimized) -->
+                <div class="p-6 rounded-2xl border border-emerald-300 dark:border-emerald-800 bg-emerald-50/40 dark:bg-emerald-950/20 space-y-4">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-slate-900 dark:text-white">NexaPoint Dedicated Outbound Pod</h4>
+                        <span class="text-emerald-600 font-mono font-bold text-lg">$1,650 / mo</span>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Walkthrough Appointment Setting</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                        We don't ask for generic email quotes. We book firm, confirmed on-site walkthrough appointments directly on your calendar.
-                    </p>
-                    <ul class="space-y-1.5 text-xs text-slate-500 dark:text-slate-400">
-                        <li>• Pre-verified building square footage</li>
-                        <li>• Current cleaning vendor pain notes</li>
-                        <li>• Automated prospect calendar reminder</li>
-                    </ul>
-                </div>
 
-                <!-- Solution 3 -->
-                <div class="bg-white dark:bg-slate-900 rounded-2xl p-7 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-600 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950 text-brand-600 dark:text-blue-400 flex items-center justify-center font-bold text-lg mb-5">
-                        03
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">B2B Commercial List Building</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                        Custom research identifying property managers, facility heads, and HOA boards within your exact postal code radius.
-                    </p>
-                    <ul class="space-y-1.5 text-xs text-slate-500 dark:text-slate-400">
-                        <li>• National DNC registry scrubbed</li>
-                        <li>• Multi-tenant office and clinic filtering</li>
-                        <li>• Verified direct phone and email</li>
-                    </ul>
-                </div>
+                    <!-- Progress bar breakdown -->
+                    <div class="space-y-2 text-xs">
+                        <div>
+                            <div class="flex justify-between text-[11px] text-slate-500 mb-1">
+                                <span>Dedicated Full-Time SDR (160 Hours)</span>
+                                <strong class="text-emerald-700 dark:text-emerald-300">Included</strong>
+                            </div>
+                            <div class="w-full h-2 rounded-full bg-emerald-200 dark:bg-emerald-950 overflow-hidden">
+                                <div class="h-full bg-emerald-500 rounded-full" style="width: 60%"></div>
+                            </div>
+                        </div>
 
-                <!-- Solution 4 -->
-                <div class="bg-white dark:bg-slate-900 rounded-2xl p-7 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:border-brand-600 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950 text-brand-600 dark:text-blue-400 flex items-center justify-center font-bold text-lg mb-5">
-                        04
+                        <div>
+                            <div class="flex justify-between text-[11px] text-slate-500 mb-1">
+                                <span>Local Caller IDs, Dialer & DNC Data</span>
+                                <strong class="text-emerald-700 dark:text-emerald-300">Included</strong>
+                            </div>
+                            <div class="w-full h-2 rounded-full bg-emerald-200 dark:bg-emerald-950 overflow-hidden">
+                                <div class="h-full bg-emerald-400 rounded-full" style="width: 25%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-[11px] text-slate-500 mb-1">
+                                <span>1:6 Daily QA Oversight & Lead Verification</span>
+                                <strong class="text-emerald-700 dark:text-emerald-300">Included</strong>
+                            </div>
+                            <div class="w-full h-2 rounded-full bg-emerald-200 dark:bg-emerald-950 overflow-hidden">
+                                <div class="h-full bg-emerald-300 rounded-full" style="width: 15%"></div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">CRM Dispatch & Bid Follow-Up</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                        Integration with Jobber, Housecall Pro, Swept, or HubSpot to nurture submitted quotes and follow up on pending bids.
-                    </p>
-                    <ul class="space-y-1.5 text-xs text-slate-500 dark:text-slate-400">
-                        <li>• Bid status telephone follow-up</li>
-                        <li>• Inbound lead intake and routing</li>
-                        <li>• Detailed weekly conversion reports</li>
-                    </ul>
+
+                    <div class="pt-3 border-t border-emerald-200/60 dark:border-emerald-900/40 text-xs text-emerald-700 dark:text-emerald-400 font-bold flex justify-between">
+                        <span>Net Monthly Savings: $4,950 / month</span>
+                        <span>(75% Reduction)</span>
+                    </div>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Cleaning Niche Specialization -->
-    <section id="cleaning-niche" class="py-20 bg-white dark:bg-slate-900">
+    <!-- Facility Matrix Infographic -->
+    <section id="facilities" class="py-16 bg-slate-50 dark:bg-slate-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl mx-auto text-center space-y-4">
-                <span class="text-xs font-bold font-mono uppercase tracking-widest text-brand-600 dark:text-blue-400">Niche Expertise</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-heading">
-                    Targeting High-Margin Commercial Accounts
+            <div class="max-w-3xl mx-auto text-center space-y-3 mb-12">
+                <span class="text-xs font-bold font-mono uppercase tracking-widest text-brand-600 dark:text-blue-400">Target Facility Matrix</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-heading">
+                    Commercial Properties Dialed Daily
                 </h2>
-                <p class="text-slate-600 dark:text-slate-400 text-base">
-                    We specialize solely in commercial and industrial cleaning contracts that create reliable recurring monthly revenue.
-                </p>
+                <p class="text-sm text-slate-500">Filtered by square footage and recurring revenue yield.</p>
             </div>
 
-            <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 
-                <div class="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
-                    <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-950 text-brand-600 dark:text-blue-400 flex items-center justify-center mb-4">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-50 dark:bg-blue-950 text-brand-600">5,000–80,000 SQ FT</span>
+                        <span class="text-xs font-bold text-emerald-600">$1,800–$6,500/mo</span>
                     </div>
-                    <h4 class="text-base font-bold text-slate-900 dark:text-white mb-1">Corporate & Office Buildings</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Multi-tenant suites, headquarters, and tech parks requiring 3x–7x weekly night cleans.</p>
-                    <span class="mt-3 block text-xs font-mono font-bold text-brand-600 dark:text-blue-400">Target Value: $1,800 – $6,500/mo</span>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-sm">Corporate Office Towers</h4>
+                    <p class="text-xs text-slate-500 mt-1">Multi-tenant suites, headquarters, and tech parks requiring 5x/week night janitorial.</p>
                 </div>
 
-                <div class="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
-                    <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-50 dark:bg-emerald-950 text-emerald-600">TERMINAL DISINFECTION</span>
+                        <span class="text-xs font-bold text-emerald-600">$2,500–$8,000/mo</span>
                     </div>
-                    <h4 class="text-base font-bold text-slate-900 dark:text-white mb-1">Medical & Dental Clinics</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Strict terminal sanitization, bloodborne pathogen awareness, and high-frequency disinfection.</p>
-                    <span class="mt-3 block text-xs font-mono font-bold text-brand-600 dark:text-blue-400">Target Value: $2,500 – $8,000/mo</span>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-sm">Medical & Dental Clinics</h4>
+                    <p class="text-xs text-slate-500 mt-1">Strict sterilization protocols, surgical suites, and healthcare regulatory compliance.</p>
                 </div>
 
-                <div class="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
-                    <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-4">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-purple-50 dark:bg-purple-950 text-purple-600">AUTO-SCRUBBING</span>
+                        <span class="text-xs font-bold text-emerald-600">$3,000–$12,000/mo</span>
                     </div>
-                    <h4 class="text-base font-bold text-slate-900 dark:text-white mb-1">Industrial & Logistics Depots</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Distribution warehouses, dispatch offices, and floor scrubbing operations.</p>
-                    <span class="mt-3 block text-xs font-mono font-bold text-brand-600 dark:text-blue-400">Target Value: $3,000 – $12,000/mo</span>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-sm">Logistics Warehouses</h4>
+                    <p class="text-xs text-slate-500 mt-1">High-traffic concrete floor scrubbing, breakroom maintenance, and dispatch hubs.</p>
                 </div>
 
-                <div class="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
-                    <div class="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-950 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-4">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-50 dark:bg-amber-950 text-amber-600">CRIMINAL VETTED</span>
+                        <span class="text-xs font-bold text-emerald-600">$2,000–$7,000/mo</span>
                     </div>
-                    <h4 class="text-base font-bold text-slate-900 dark:text-white mb-1">Schools & Learning Centers</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Private academies, preschools, and tuition centers with strict background-checked requirements.</p>
-                    <span class="mt-3 block text-xs font-mono font-bold text-brand-600 dark:text-blue-400">Target Value: $2,000 – $7,000/mo</span>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-sm">Private Academies & Schools</h4>
+                    <p class="text-xs text-slate-500 mt-1">Classroom sanitation, restroom sanitizing, and holiday floor restoration deep cleans.</p>
                 </div>
 
-                <div class="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
-                    <div class="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 flex items-center justify-center mb-4">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-rose-50 dark:bg-rose-950 text-rose-600">HIGH-TOUCH LOCKERS</span>
+                        <span class="text-xs font-bold text-emerald-600">$1,500–$4,500/mo</span>
                     </div>
-                    <h4 class="text-base font-bold text-slate-900 dark:text-white mb-1">Fitness Clubs & Gyms</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">High-touch locker rooms, showers, rubber floor care, and equipment sanitation.</p>
-                    <span class="mt-3 block text-xs font-mono font-bold text-brand-600 dark:text-blue-400">Target Value: $1,500 – $4,500/mo</span>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-sm">Fitness Clubs & Gyms</h4>
+                    <p class="text-xs text-slate-500 mt-1">Showers, saunas, rubber matting degreasing, and gym equipment disinfection.</p>
                 </div>
 
-                <div class="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
-                    <div class="w-10 h-10 rounded-xl bg-cyan-100 dark:bg-cyan-950 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-4">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 stat-card">
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-cyan-50 dark:bg-cyan-950 text-cyan-600">STRIP & WAX POLISH</span>
+                        <span class="text-xs font-bold text-emerald-600">$2,200–$6,000/mo</span>
                     </div>
-                    <h4 class="text-base font-bold text-slate-900 dark:text-white mb-1">Auto Showrooms & Retail</h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">High-gloss floor buffing, streak-free glass facades, and spotless customer reception zones.</p>
-                    <span class="mt-3 block text-xs font-mono font-bold text-brand-600 dark:text-blue-400">Target Value: $2,200 – $6,000/mo</span>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Bangladesh (The Strategic Advantage) -->
-    <section id="why-bangladesh" class="py-20 bg-slate-50 dark:bg-slate-950">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                
-                <div class="lg:col-span-6 space-y-6">
-                    <span class="text-xs font-bold font-mono uppercase tracking-widest text-brand-600 dark:text-blue-400">Global Sourcing Insight</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-heading leading-tight">
-                        Why Bangladesh is Emerging as the Premier BPO Destination
-                    </h2>
-                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
-                        Global businesses are expanding beyond traditional offshore markets. Bangladesh represents one of the fastest-growing ITES and BPO workforces in Asia, offering university-educated talent, exceptional work ethic, and sustainable cost efficiencies.
-                    </p>
-
-                    <div class="space-y-4 pt-2">
-                        <div class="flex items-start gap-3.5">
-                            <div class="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-950/80 text-brand-600 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                            </div>
-                            <div>
-                                <h4 class="text-sm font-bold text-slate-900 dark:text-white">World's #2 Online Talent Supplier</h4>
-                                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Over 650,000 certified IT and business process professionals serving global clients.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-3.5">
-                            <div class="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-950/80 text-brand-600 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                            </div>
-                            <div>
-                                <h4 class="text-sm font-bold text-slate-900 dark:text-white">Significant Operational Cost Advantage</h4>
-                                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Save 60%–70% compared to onshore hiring in London, Toronto, Auckland, or Texas without quality compromise.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-3.5">
-                            <div class="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-950/80 text-brand-600 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                            </div>
-                            <div>
-                                <h4 class="text-sm font-bold text-slate-900 dark:text-white">Neutral English Pronunciation Training</h4>
-                                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Our Pabna facility runs rigorous phonetics, Western business etiquette, and objection drills daily.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Modern Office Workstations -->
-                <div class="lg:col-span-6">
-                    <div class="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl">
-                        <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1200&q=80" alt="BPO Operations Center Facility" class="w-full h-80 sm:h-96 object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
-                        <div class="absolute bottom-6 left-6 right-6 text-white space-y-1">
-                            <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest font-bold">Delivery Infrastructure</span>
-                            <h4 class="text-xl font-bold">Pabna Sadar Operational Floor</h4>
-                            <p class="text-xs text-slate-300">Dedicated high-speed fiber broadband, Dell/HP workstations, and noise-cancelling audio headsets.</p>
-                        </div>
-                    </div>
+                    <h4 class="font-bold text-slate-900 dark:text-white text-sm">Automotive Showrooms</h4>
+                    <p class="text-xs text-slate-500 mt-1">High-gloss floor buffing, streak-free glass facades, and spotless customer reception zones.</p>
                 </div>
 
             </div>
@@ -518,334 +463,192 @@
     </section>
 
     <!-- Global Delivery Hubs -->
-    <section id="hubs" class="py-20 bg-white dark:bg-slate-900">
+    <section id="hubs" class="py-16 bg-white dark:bg-slate-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl mx-auto text-center space-y-4">
-                <span class="text-xs font-bold font-mono uppercase tracking-widest text-brand-600 dark:text-blue-400">Physical Footprint</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-heading">
-                    Our Operational Facilities & Client Liaison Offices
+            <div class="max-w-3xl mx-auto text-center space-y-3 mb-12">
+                <span class="text-xs font-bold font-mono uppercase tracking-widest text-brand-600 dark:text-blue-400">Physical Presence</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-heading">
+                    Operational Centers & Client Liaisons
                 </h2>
-                <p class="text-slate-600 dark:text-slate-400 text-base">
-                    NexaPoint BPO operates its high-capacity production floor in Bangladesh alongside registered liaison hubs in the US and Australia.
-                </p>
             </div>
 
-            <div class="mt-14 grid md:grid-cols-3 gap-8">
-                
+            <div class="grid md:grid-cols-3 gap-6">
                 <!-- Bangladesh HQ -->
-                <div class="bg-slate-50 dark:bg-slate-850 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-5">
-                            <span class="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/80 px-2.5 py-1 rounded">BD</span>
-                            <span class="text-[10px] font-mono font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-950/80 px-3 py-1 rounded-full">
-                                Delivery Headquarters
-                            </span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 font-heading">Bangladesh Operations Hub</h3>
-                        <address class="not-italic text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                            House: 472 (1st Floor), Aurangzeb Road,<br>
-                            Pabna Sadar, Pabna,<br>
-                            আওরঙ্গজেব সড়ক, Pabna 6600,<br>
-                            Bangladesh
-                        </address>
+                <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono font-bold text-emerald-700 bg-emerald-100 dark:bg-emerald-950 px-2.5 py-1 rounded">BD HQ</span>
+                        <span class="text-[10px] text-slate-400 font-mono">Pabna Delivery Floor</span>
                     </div>
-                    <div class="pt-4 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 space-y-1">
-                        <p>• Outbound dialing & lead generation floor</p>
-                        <p>• 1:6 Supervisor-to-agent QA ratio</p>
-                        <p>• Redundant backup generator power</p>
+                    <h3 class="text-base font-bold text-slate-900 dark:text-white font-heading">Bangladesh Operations Hub</h3>
+                    <address class="not-italic text-xs text-slate-500 leading-relaxed">
+                        House: 472 (1st Floor), Aurangzeb Road,<br>
+                        Pabna Sadar, Pabna, আওরঙ্গজেব সড়ক, Pabna 6600
+                    </address>
+                    <div class="pt-3 border-t border-slate-200 dark:border-slate-800 text-[11px] text-slate-400 space-y-0.5">
+                        <p>• 120-Seat Outbound Dialing Floor</p>
+                        <p>• Dual Tier-1 Fiber Broadband Lines</p>
                     </div>
                 </div>
 
                 <!-- USA Office -->
-                <div class="bg-slate-50 dark:bg-slate-850 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-5">
-                            <span class="text-xs font-mono font-bold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/80 px-2.5 py-1 rounded">US</span>
-                            <span class="text-[10px] font-mono font-bold text-blue-700 dark:text-blue-400 bg-blue-100 dark:bg-blue-950/80 px-3 py-1 rounded-full">
-                                North America Liaison
-                            </span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 font-heading">United States Office</h3>
-                        <address class="not-italic text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                            303 N Frio St,<br>
-                            San Antonio, TX 78207,<br>
-                            United States
-                        </address>
+                <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono font-bold text-blue-700 bg-blue-100 dark:bg-blue-950 px-2.5 py-1 rounded">US LIAISON</span>
+                        <span class="text-[10px] text-slate-400 font-mono">North America</span>
                     </div>
-                    <div class="pt-4 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 space-y-1">
-                        <p>• US & Canadian client relations</p>
-                        <p>• Estimator calendar synchronization</p>
-                        <p>• North America campaign coordination</p>
+                    <h3 class="text-base font-bold text-slate-900 dark:text-white font-heading">United States Office</h3>
+                    <address class="not-italic text-xs text-slate-500 leading-relaxed">
+                        303 N Frio St,<br>
+                        San Antonio, TX 78207, United States
+                    </address>
+                    <div class="pt-3 border-t border-slate-200 dark:border-slate-800 text-[11px] text-slate-400 space-y-0.5">
+                        <p>• US & Canadian Account Management</p>
+                        <p>• Client Estimator Sync Support</p>
                     </div>
                 </div>
 
                 <!-- Australia Office -->
-                <div class="bg-slate-50 dark:bg-slate-850 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-5">
-                            <span class="text-xs font-mono font-bold text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950/80 px-2.5 py-1 rounded">AU</span>
-                            <span class="text-[10px] font-mono font-bold text-purple-700 dark:text-purple-400 bg-purple-100 dark:bg-purple-950/80 px-3 py-1 rounded-full">
-                                Oceania & UK Liaison
-                            </span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 font-heading">Australia Office</h3>
-                        <address class="not-italic text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                            Malaga Markets Corner Alexander Drive &,<br>
-                            Beach Rd, Malaga WA 6062,<br>
-                            Australia
-                        </address>
+                <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-mono font-bold text-purple-700 bg-purple-100 dark:bg-purple-950 px-2.5 py-1 rounded">AU LIAISON</span>
+                        <span class="text-[10px] text-slate-400 font-mono">Oceania & UK</span>
                     </div>
-                    <div class="pt-4 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 space-y-1">
-                        <p>• Australia & New Zealand shift alignment</p>
-                        <p>• UK afternoon scheduling support</p>
-                        <p>• Regional quality compliance checks</p>
+                    <h3 class="text-base font-bold text-slate-900 dark:text-white font-heading">Australia Office</h3>
+                    <address class="not-italic text-xs text-slate-500 leading-relaxed">
+                        Malaga Markets Corner Alexander Drive &,<br>
+                        Beach Rd, Malaga WA 6062, Australia
+                    </address>
+                    <div class="pt-3 border-t border-slate-200 dark:border-slate-800 text-[11px] text-slate-400 space-y-0.5">
+                        <p>• Australia & New Zealand Scheduling</p>
+                        <p>• UK Afternoon Shift Coordination</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
     <!-- Interactive Walkthrough ROI Calculator -->
-    <section id="calculator" class="py-20 bg-slate-50 dark:bg-slate-950">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-2xl mx-auto text-center space-y-4">
-                <span class="text-xs font-bold font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Financial Model</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-heading">
-                    Calculate Projected Walkthroughs & Revenue
-                </h2>
-                <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
-                    Adjust the sliders below to see the realistic monthly walkthrough output NexaPoint BPO can generate for your cleaning company.
-                </p>
-            </div>
-
-            <div class="mt-12 bg-white dark:bg-slate-900 rounded-3xl p-8 sm:p-10 border border-slate-200 dark:border-slate-800 shadow-xl">
-                <div class="grid md:grid-cols-12 gap-8 items-center">
-                    
-                    <!-- Left: Sliders -->
-                    <div class="md:col-span-7 space-y-7">
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <label class="text-sm font-bold text-slate-900 dark:text-white">Dedicated Callers</label>
-                                <span id="c-display" class="text-sm font-mono font-bold text-brand-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/80 px-3 py-1 rounded-lg">1 Full-Time Rep</span>
-                            </div>
-                            <input id="c-slider" type="range" min="1" max="5" value="1" step="1" class="w-full accent-brand-600 cursor-pointer h-2 bg-slate-200 dark:bg-slate-800 rounded-lg">
-                            <span class="text-[11px] text-slate-500 mt-1 block">1 caller = ~3,000 to 3,500 targeted dials per month</span>
-                        </div>
-
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <label class="text-sm font-bold text-slate-900 dark:text-white">Average Contract Value (Monthly)</label>
-                                <span id="v-display" class="text-sm font-mono font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/80 px-3 py-1 rounded-lg">$2,500 / mo</span>
-                            </div>
-                            <input id="v-slider" type="range" min="1000" max="8000" value="2500" step="250" class="w-full accent-emerald-600 cursor-pointer h-2 bg-slate-200 dark:bg-slate-800 rounded-lg">
-                            <span class="text-[11px] text-slate-500 mt-1 block">Standard commercial cleaning accounts range $1,500 – $5,000/mo</span>
-                        </div>
-
-                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-300 space-y-1">
-                            <div class="flex justify-between">
-                                <span>Estimated Walkthrough Close Rate:</span>
-                                <strong class="text-slate-900 dark:text-white">25% (Conservative)</strong>
-                            </div>
-                            <div class="flex justify-between">
-                                <span>Cost Saving vs In-House Western SDR:</span>
-                                <strong class="text-emerald-600 dark:text-emerald-400">~$38,000/yr Saved</strong>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right: Results Panel -->
-                    <div class="md:col-span-5 bg-gradient-to-br from-slate-900 to-slate-950 text-white p-7 rounded-2xl text-center space-y-6">
-                        <div>
-                            <span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest block font-bold">Monthly Walkthroughs</span>
-                            <span id="walk-out" class="text-4xl font-extrabold text-brand-500 font-heading mt-1 block">12 - 16</span>
-                            <span class="text-xs text-slate-300">Confirmed On-Site Walkthroughs</span>
-                        </div>
-
-                        <div class="pt-4 border-t border-slate-800">
-                            <span class="text-[10px] font-mono text-slate-400 uppercase tracking-widest block font-bold">Projected New MRR Added</span>
-                            <span id="rev-out" class="text-3xl font-extrabold text-emerald-400 font-heading mt-1 block">+$7,500 / mo</span>
-                            <span id="ann-out" class="text-xs text-slate-400 block mt-1">(~$90,000 New Annual Revenue)</span>
-                        </div>
-
-                        <a href="#contact" class="block w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider text-white bg-brand-600 hover:bg-brand-700 transition-all">
-                            Start Campaign Feasibility
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Accordion -->
-    <section id="faq" class="py-20 bg-white dark:bg-slate-900">
+    <section id="calculator" class="py-16 bg-slate-50 dark:bg-slate-950">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-3 mb-14">
-                <span class="text-xs font-bold font-mono uppercase tracking-widest text-brand-600 dark:text-blue-400">Direct Answers</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-heading">
-                    Frequently Asked Questions
-                </h2>
-                <p class="text-slate-600 dark:text-slate-400 text-sm">Everything you need to know about partnering with NexaPoint BPO.</p>
+            <div class="text-center space-y-2 mb-10">
+                <span class="text-xs font-bold font-mono uppercase tracking-widest text-emerald-600">Financial Model</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-heading">Walkthrough & Revenue Calculator</h2>
             </div>
 
-            <div class="space-y-4" id="faq-list">
-                
-                <div class="rounded-xl border border-slate-200 dark:border-slate-800 p-5 bg-slate-50 dark:bg-slate-850 cursor-pointer" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center">
-                        <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">How do your callers source prospective facility data?</h4>
-                        <span class="text-brand-600 font-bold text-lg">+</span>
+            <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-xl grid md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-7 space-y-6">
+                    <div>
+                        <div class="flex justify-between items-center mb-1.5">
+                            <label class="text-xs font-bold text-slate-900 dark:text-white uppercase">Dedicated Callers</label>
+                            <span id="c-display" class="text-xs font-mono font-bold text-brand-600 bg-blue-50 px-2.5 py-0.5 rounded">1 Caller</span>
+                        </div>
+                        <input id="c-slider" type="range" min="1" max="5" value="1" step="1" class="w-full accent-brand-600 cursor-pointer h-2 bg-slate-200 dark:bg-slate-800 rounded-lg">
                     </div>
-                    <div class="faq-content hidden mt-3 pt-3 border-t border-slate-200 dark:border-slate-800 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                        We build custom, proprietary B2B contact lists targeting commercial office towers, healthcare facilities, warehouses, and schools within your designated postal codes. Every record is scrubbed against National Do Not Call (DNC) registers and phone numbers are pre-verified before dialing.
+
+                    <div>
+                        <div class="flex justify-between items-center mb-1.5">
+                            <label class="text-xs font-bold text-slate-900 dark:text-white uppercase">Average Contract Value / mo</label>
+                            <span id="v-display" class="text-xs font-mono font-bold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded">$2,500/mo</span>
+                        </div>
+                        <input id="v-slider" type="range" min="1000" max="8000" value="2500" step="250" class="w-full accent-emerald-600 cursor-pointer h-2 bg-slate-200 dark:bg-slate-800 rounded-lg">
                     </div>
                 </div>
 
-                <div class="rounded-xl border border-slate-200 dark:border-slate-800 p-5 bg-slate-50 dark:bg-slate-850 cursor-pointer" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center">
-                        <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Can your reps work directly inside our CRM?</h4>
-                        <span class="text-brand-600 font-bold text-lg">+</span>
+                <div class="md:col-span-5 bg-slate-900 text-white p-6 rounded-2xl text-center space-y-4">
+                    <div>
+                        <span class="text-[10px] font-mono text-slate-400 uppercase font-bold block">Monthly Walkthroughs</span>
+                        <span id="walk-out" class="text-3xl font-extrabold text-brand-400 font-heading">12 - 16</span>
                     </div>
-                    <div class="faq-content hidden mt-3 pt-3 border-t border-slate-200 dark:border-slate-800 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                        Yes. Our representatives work seamlessly with Jobber, Housecall Pro, Swept, CleanGuru, and HubSpot. When a walkthrough is confirmed, the rep creates the opportunity, logs building square footage, and syncs calendar invites directly to your estimator.
+                    <div class="pt-3 border-t border-slate-800">
+                        <span class="text-[10px] font-mono text-slate-400 uppercase font-bold block">Projected New MRR</span>
+                        <span id="rev-out" class="text-2xl font-extrabold text-emerald-400 font-heading">+$7,500/mo</span>
                     </div>
+                    <a href="#contact" class="block w-full py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider text-white bg-brand-600 hover:bg-brand-700 transition-all">
+                        Schedule Consultation
+                    </a>
                 </div>
-
-                <div class="rounded-xl border border-slate-200 dark:border-slate-800 p-5 bg-slate-50 dark:bg-slate-850 cursor-pointer" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center">
-                        <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">Do you display local phone numbers when calling?</h4>
-                        <span class="text-brand-600 font-bold text-lg">+</span>
-                    </div>
-                    <div class="faq-content hidden mt-3 pt-3 border-t border-slate-200 dark:border-slate-800 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                        Yes. We provision local geographic caller IDs for every target market (e.g., Manchester 0161 in the UK, Toronto 416 in Canada, Auckland 09 in NZ, San Antonio 210 in the US), ensuring high connection and answer rates.
-                    </div>
-                </div>
-
-                <div class="rounded-xl border border-slate-200 dark:border-slate-800 p-5 bg-slate-50 dark:bg-slate-850 cursor-pointer" onclick="toggleFaq(this)">
-                    <div class="flex justify-between items-center">
-                        <h4 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">What are your agreement terms?</h4>
-                        <span class="text-brand-600 font-bold text-lg">+</span>
-                    </div>
-                    <div class="faq-content hidden mt-3 pt-3 border-t border-slate-200 dark:border-slate-800 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                        We begin with an initial 60-day campaign calibration period to establish prospect lists, refine scripts, and stabilize appointment volume. After 60 days, agreements convert to flexible month-to-month contracts.
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Contact & Consultation Form (Clean Corporate Standards) -->
-    <section id="contact" class="py-20 bg-slate-50 dark:bg-slate-950">
+    <!-- Contact & RFP Proposal Form -->
+    <section id="contact" class="py-16 bg-white dark:bg-slate-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-12 items-start">
+            <div class="grid lg:grid-cols-12 gap-10 items-start">
                 
-                <!-- Left: Department Contact Channels (Corporate Standards) -->
-                <div class="lg:col-span-5 space-y-6">
-                    <span class="text-xs font-bold font-mono uppercase tracking-widest text-brand-600 dark:text-blue-400">Official Routing</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-heading">
-                        Connect with Our BPO Delivery Team
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="text-xs font-bold font-mono uppercase tracking-widest text-brand-600">Official Routing</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-heading">
+                        Connect with NexaPoint BPO
                     </h2>
-                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
-                        Schedule a discovery consultation to evaluate your target postal codes and receive a tailored campaign proposal within 4 business hours.
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Feasibility reports and territory mapping delivered within 4 business hours.
                     </p>
 
-                    <!-- Department Routing Cards -->
-                    <div class="space-y-3 pt-2">
-                        <a href="mailto:info@nexapointbpo.com" class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3.5 hover:border-brand-600 transition-colors block">
-                            <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-blue-950/80 text-brand-600 flex items-center justify-center flex-shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                            </div>
-                            <div>
-                                <span class="text-[10px] font-mono text-slate-400 uppercase font-semibold">General Inquiries</span>
-                                <p class="text-sm font-bold text-slate-900 dark:text-white">info@nexapointbpo.com</p>
-                            </div>
+                    <div class="space-y-2.5 pt-2">
+                        <a href="mailto:info@nexapointbpo.com" class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs hover:border-brand-600 transition-colors">
+                            <span class="text-slate-500 font-medium">General Inquiries</span>
+                            <span class="font-bold text-slate-900 dark:text-white">info@nexapointbpo.com</span>
                         </a>
-
-                        <a href="mailto:sales@nexapointbpo.com" class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3.5 hover:border-brand-600 transition-colors block">
-                            <div class="w-10 h-10 rounded-lg bg-emerald-50 dark:bg-emerald-950/80 text-emerald-600 flex items-center justify-center flex-shrink-0">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                            </div>
-                            <div>
-                                <span class="text-[10px] font-mono text-slate-400 uppercase font-semibold">Campaign Strategy & Partnerships</span>
-                                <p class="text-sm font-bold text-slate-900 dark:text-white">sales@nexapointbpo.com</p>
-                            </div>
+                        <a href="mailto:sales@nexapointbpo.com" class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs hover:border-brand-600 transition-colors">
+                            <span class="text-slate-500 font-medium">Campaign Strategy</span>
+                            <span class="font-bold text-slate-900 dark:text-white">sales@nexapointbpo.com</span>
                         </a>
-
-                        <div class="grid grid-cols-2 gap-3">
-                            <a href="mailto:admin@nexapointbpo.com" class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 block hover:border-brand-600 transition-colors">
-                                <span class="text-[10px] font-mono text-slate-400 uppercase">Administration</span>
-                                <p class="text-xs font-bold text-slate-900 dark:text-white truncate mt-0.5">admin@nexapointbpo.com</p>
-                            </a>
-                            <a href="mailto:careers@nexapointbpo.com" class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 block hover:border-brand-600 transition-colors">
-                                <span class="text-[10px] font-mono text-slate-400 uppercase">Talent Hub</span>
-                                <p class="text-xs font-bold text-slate-900 dark:text-white truncate mt-0.5">careers@nexapointbpo.com</p>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="p-4 rounded-xl bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-900 text-xs text-slate-600 dark:text-slate-300">
-                        <strong class="text-slate-900 dark:text-white block mb-0.5">Service Commitment:</strong>
-                        All inquiries receive territory mapping and walk-through volume estimates within 4 business hours.
+                        <a href="mailto:admin@nexapointbpo.com" class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs hover:border-brand-600 transition-colors">
+                            <span class="text-slate-500 font-medium">Administration</span>
+                            <span class="font-bold text-slate-900 dark:text-white">admin@nexapointbpo.com</span>
+                        </a>
+                        <a href="mailto:careers@nexapointbpo.com" class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs hover:border-brand-600 transition-colors">
+                            <span class="text-slate-500 font-medium">Careers Hub</span>
+                            <span class="font-bold text-slate-900 dark:text-white">careers@nexapointbpo.com</span>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Right: Clean Proposal Form -->
-                <div class="lg:col-span-7">
-                    <div class="bg-white dark:bg-slate-900 rounded-3xl p-8 sm:p-10 border border-slate-200 dark:border-slate-800 shadow-xl">
-                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white font-heading mb-1">Request a Campaign Proposal</h3>
-                        <p class="text-xs text-slate-500 mb-6">Complete the brief form below to receive territory data and pricing.</p>
+                <!-- Form -->
+                <div class="lg:col-span-7 bg-slate-50 dark:bg-slate-850 p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white font-heading mb-1">Request a Campaign Proposal</h3>
+                    <p class="text-xs text-slate-500 mb-5">Receive territory feasibility data and caller pricing.</p>
 
-                        <form id="proposal-form" action="https://formspree.io/f/xbjnyqvo" method="POST" class="space-y-4">
-                            <div class="grid sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">Your Name *</label>
-                                    <input type="text" name="name" required placeholder="Alex Turner" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">Work Email *</label>
-                                    <input type="email" name="email" required placeholder="alex@cleaningco.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600">
-                                </div>
-                            </div>
-
-                            <div class="grid sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">Company Name *</label>
-                                    <input type="text" name="company" required placeholder="Apex Janitorial Services" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">Target Market *</label>
-                                    <select name="target_market" required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600">
-                                        <option value="United Kingdom">United Kingdom</option>
-                                        <option value="Canada">Canada</option>
-                                        <option value="New Zealand">New Zealand</option>
-                                        <option value="United States">United States</option>
-                                        <option value="Australia">Australia</option>
-                                    </select>
-                                </div>
-                            </div>
-
+                    <form id="public-lead-form" class="space-y-3.5">
+                        <div class="grid sm:grid-cols-2 gap-3">
                             <div>
-                                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">Delivery Requirement</label>
-                                <select name="service_type" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600">
-                                    <option value="Dedicated Outbound Cold Calling & Appointment Setting">Dedicated Outbound Cold Calling & Appointment Setting</option>
-                                    <option value="1 Dedicated SDR (160 Hours / Month)">1 Dedicated SDR (160 Hours / Month)</option>
-                                    <option value="B2B Commercial Facility List Building">B2B Commercial Facility List Building</option>
-                                    <option value="CRM Dispatch & Proposal Follow-Up Support">CRM Dispatch & Proposal Follow-Up Support</option>
+                                <label class="block text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">Your Name *</label>
+                                <input type="text" id="lead-name" required placeholder="Alex Turner" class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">Business Email *</label>
+                                <input type="email" id="lead-email" required placeholder="alex@cleaningltd.co.uk" class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600">
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">Company Name *</label>
+                                <input type="text" id="lead-company" required placeholder="Prime Commercial Janitorial" class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">Target Market *</label>
+                                <select id="lead-market" required class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600">
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="New Zealand">New Zealand</option>
+                                    <option value="United States">United States</option>
+                                    <option value="Australia">Australia</option>
                                 </select>
                             </div>
+                        </div>
 
-                            <div>
-                                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1">Target Cities & Goals</label>
-                                <textarea name="message" rows="3" placeholder="e.g., We service Manchester and Leeds. Looking for 15 confirmed walkthroughs per month for offices over 10,000 sq ft..." class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-700 text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600"></textarea>
-                            </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase mb-1">Target Cities & Goals</label>
+                            <textarea id="lead-message" rows="2" placeholder="e.g. Manchester & Leeds, 15 walkthroughs/month desired for offices over 10,000 sq ft..." class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600"></textarea>
+                        </div>
 
-                            <button type="submit" class="w-full py-4 rounded-xl font-bold text-sm uppercase tracking-wider text-white bg-brand-600 hover:bg-brand-700 shadow-md shadow-brand-600/20 transition-all">
-                                Submit Proposal Request
-                            </button>
-                            <p class="text-[11px] text-center text-slate-400">We respect client confidentiality. NDA available upon request.</p>
-                        </form>
-                    </div>
+                        <button type="submit" class="w-full py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider text-white bg-brand-600 hover:bg-brand-700 shadow-md shadow-brand-600/20 transition-all">
+                            Submit Proposal Request
+                        </button>
+                        <p id="lead-form-status" class="text-[10px] text-center text-slate-400 hidden"></p>
+                    </form>
                 </div>
 
             </div>
@@ -853,126 +656,306 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
-                
-                <div class="space-y-4">
-                    <div class="flex items-center gap-3">
-                        <img src="assets/logo.jpg" alt="NexaPoint BPO" class="h-10 w-auto rounded bg-white p-0.5">
-                        <div>
-                            <span class="text-base font-bold text-white font-heading">NexaPoint <span class="text-brand-500">BPO</span></span>
-                            <span class="block text-[9px] tracking-wider text-slate-400 uppercase">Your Goals, Our Support</span>
-                        </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-xs">
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2">
+                        <img src="assets/logo.jpg" alt="NexaPoint BPO" class="h-8 w-auto rounded bg-white p-0.5">
+                        <span class="text-sm font-bold text-white">NexaPoint <span class="text-brand-500">BPO</span></span>
                     </div>
-                    <p class="text-xs text-slate-400 leading-relaxed">
-                        Dedicated Business Process Outsourcing provider specializing in commercial cleaning appointment setting across the UK, New Zealand, Canada, United States, and Australia.
+                    <p class="text-slate-400 leading-relaxed">
+                        Dedicated outbound appointment setting infrastructure for commercial cleaning companies globally.
                     </p>
                 </div>
-
                 <div>
-                    <h5 class="text-xs font-mono font-bold text-white uppercase tracking-wider mb-4">Navigation</h5>
-                    <ul class="space-y-2 text-xs">
-                        <li><a href="#solutions" class="hover:text-white transition-colors">Solutions</a></li>
-                        <li><a href="#cleaning-niche" class="hover:text-white transition-colors">Cleaning Specialization</a></li>
-                        <li><a href="#why-bangladesh" class="hover:text-white transition-colors">Why Bangladesh</a></li>
-                        <li><a href="#hubs" class="hover:text-white transition-colors">Global Hubs</a></li>
-                        <li><a href="#calculator" class="hover:text-white transition-colors">ROI Model</a></li>
-                        <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+                    <h5 class="font-bold text-white uppercase mb-3">Navigation</h5>
+                    <ul class="space-y-1.5">
+                        <li><a href="#pipeline" class="hover:text-white">Outbound Pipeline</a></li>
+                        <li><a href="#comparison" class="hover:text-white">Cost Arbitrage</a></li>
+                        <li><a href="#facilities" class="hover:text-white">Target Facilities</a></li>
+                        <li><a href="#hubs" class="hover:text-white">Global Hubs</a></li>
                     </ul>
                 </div>
-
                 <div>
-                    <h5 class="text-xs font-mono font-bold text-white uppercase tracking-wider mb-4">Active Coverage</h5>
-                    <ul class="space-y-1.5 text-xs text-slate-400">
-                        <li>United Kingdom (London, Manchester, Birmingham)</li>
-                        <li>Canada (Toronto, Vancouver, Calgary, Ottawa)</li>
-                        <li>New Zealand (Auckland, Wellington, Christchurch)</li>
-                        <li>United States (Texas, Florida, California, NY)</li>
-                        <li>Australia (WA, NSW, Victoria, Queensland)</li>
+                    <h5 class="font-bold text-white uppercase mb-3">Target Markets</h5>
+                    <ul class="space-y-1.5">
+                        <li>United Kingdom (London, Manchester)</li>
+                        <li>Canada (Toronto, Vancouver, Calgary)</li>
+                        <li>New Zealand (Auckland, Wellington)</li>
+                        <li>United States (Texas, Florida, California)</li>
+                        <li>Australia (Perth, Sydney, Melbourne)</li>
                     </ul>
                 </div>
-
                 <div>
-                    <h5 class="text-xs font-mono font-bold text-white uppercase tracking-wider mb-4">Official Channels</h5>
-                    <ul class="space-y-2 text-xs">
-                        <li><span class="text-slate-500">Inquiries:</span> <a href="mailto:info@nexapointbpo.com" class="text-slate-300 hover:text-white">info@nexapointbpo.com</a></li>
-                        <li><span class="text-slate-500">Strategy:</span> <a href="mailto:sales@nexapointbpo.com" class="text-slate-300 hover:text-white">sales@nexapointbpo.com</a></li>
-                        <li><span class="text-slate-500">Corporate:</span> <a href="mailto:admin@nexapointbpo.com" class="text-slate-300 hover:text-white">admin@nexapointbpo.com</a></li>
-                        <li><span class="text-slate-500">Careers:</span> <a href="mailto:careers@nexapointbpo.com" class="text-slate-300 hover:text-white">careers@nexapointbpo.com</a></li>
-                        <li class="pt-2"><button type="button" onclick="document.getElementById('webmail-modal').classList.remove('hidden')" class="text-xs text-brand-500 font-bold hover:underline inline-flex items-center gap-1"><span>Staff Webmail Portal</span> →</button></li>
+                    <h5 class="font-bold text-white uppercase mb-3">Staff & Admin Access</h5>
+                    <ul class="space-y-1.5">
+                        <li><button type="button" onclick="openLoginModal()" class="text-brand-400 hover:underline font-bold">Admin CMS & Mail Portal →</button></li>
+                        <li><a href="mailto:info@nexapointbpo.com" class="hover:text-white">info@nexapointbpo.com</a></li>
+                        <li><a href="mailto:admin@nexapointbpo.com" class="hover:text-white">admin@nexapointbpo.com</a></li>
                     </ul>
                 </div>
-
             </div>
-
-            <div class="mt-12 pt-8 border-t border-slate-800 text-xs text-center text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
-                <p>&copy; 2026 NexaPoint BPO. All rights reserved. Registered domain: <span class="text-slate-300 font-mono">nexapointbpo.com</span></p>
+            <div class="mt-8 pt-6 border-t border-slate-800 text-center text-[11px] text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-2">
+                <p>&copy; 2026 NexaPoint BPO. Registered: nexapointbpo.com • Operated from Pabna, Bangladesh</p>
                 <div class="flex gap-4">
                     <a href="#home" class="hover:text-slate-300">Privacy Policy</a>
                     <a href="#home" class="hover:text-slate-300">Terms of Service</a>
-                    <a href="#home" class="hover:text-slate-300">DNC Compliance</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Staff Webmail Portal Modal -->
-    <div id="webmail-modal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <!-- ============================================================ -->
+    <!-- NORMAL LOGIN MODAL (Email + Password Authentication) -->
+    <!-- ============================================================ -->
+    <div id="login-modal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4 hidden">
         <div class="relative bg-white dark:bg-slate-900 rounded-3xl p-7 sm:p-9 max-w-md w-full border border-slate-200 dark:border-slate-800 shadow-2xl space-y-6">
             
-            <!-- Close Button -->
-            <button id="close-webmail-btn" type="button" class="absolute top-5 right-5 p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Close portal modal">
+            <button onclick="closeLoginModal()" class="absolute top-5 right-5 p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Close login modal">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
 
-            <!-- Brand Header -->
             <div class="flex items-center gap-3">
                 <img src="assets/logo.jpg" alt="NexaPoint BPO" class="h-10 w-auto rounded bg-white p-0.5 border border-slate-200 dark:border-slate-700">
                 <div>
-                    <h3 class="text-base font-extrabold text-slate-900 dark:text-white font-heading">Staff Webmail Portal</h3>
-                    <p class="text-[10px] font-mono text-slate-400 uppercase tracking-widest font-semibold">NexaPoint BPO Secure Access</p>
+                    <h3 class="text-base font-extrabold text-slate-900 dark:text-white font-heading">NexaPoint Portal Login</h3>
+                    <p class="text-[10px] font-mono text-slate-400 uppercase tracking-widest font-semibold">Admin CMS & Staff Mailbox</p>
                 </div>
             </div>
 
-            <!-- Portal Instructions -->
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                Select your designated corporate mailbox below. Your account email will be pre-filled automatically on the secure authentication page.
-            </p>
-
-            <!-- Mailbox Selection Form -->
-            <div class="space-y-4">
+            <!-- Login Form -->
+            <form id="portal-login-form" class="space-y-4">
                 <div>
-                    <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">Select Account</label>
-                    <select id="webmail-account-select" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm font-semibold text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600">
-                        <option value="info@nexapointbpo.com">info@nexapointbpo.com (General Inquiries)</option>
-                        <option value="hr@nexapointbpo.com">hr@nexapointbpo.com (Human Resources)</option>
-                        <option value="admin@nexapointbpo.com">admin@nexapointbpo.com (Operations & Admin)</option>
-                        <option value="sales@nexapointbpo.com">sales@nexapointbpo.com (Campaign Partnerships)</option>
-                    </select>
+                    <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">Official Email</label>
+                    <input type="email" id="login-email" required value="admin@nexapointbpo.com" placeholder="admin@nexapointbpo.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm font-semibold text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600">
                 </div>
 
-                <button id="launch-webmail-action" type="button" class="w-full py-4 rounded-xl font-bold text-sm uppercase tracking-wider text-white bg-brand-600 hover:bg-brand-700 shadow-lg shadow-brand-600/25 transition-all flex items-center justify-center gap-2">
-                    <span>Launch Secure Inbox</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-1.5">Password</label>
+                    <div class="relative">
+                        <input type="password" id="login-password" required placeholder="Enter your password" class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm font-semibold text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-600 pr-10">
+                        <button type="button" onclick="togglePasswordVisibility()" class="absolute right-3 top-3.5 text-slate-400 hover:text-slate-600 dark:hover:text-white">
+                            <svg id="eye-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="login-error" class="hidden p-3 rounded-xl bg-rose-50 dark:bg-rose-950/80 border border-rose-200 dark:border-rose-800 text-rose-600 dark:text-rose-400 text-xs font-semibold">
+                    Invalid credentials. Please verify your email and password.
+                </div>
+
+                <button type="submit" class="w-full py-3.5 rounded-xl font-bold text-sm uppercase tracking-wider text-white bg-brand-600 hover:bg-brand-700 shadow-md shadow-brand-600/25 transition-all">
+                    Sign In to Portal
+                </button>
+            </form>
+
+            <div class="pt-3 border-t border-slate-100 dark:border-slate-800 text-center">
+                <p class="text-[11px] text-slate-400">
+                    Staff accessing webmail? <button type="button" onclick="launchZohoDirect()" class="text-brand-600 dark:text-blue-400 font-bold hover:underline">Direct Zoho Sign-In →</button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ADMIN CMS & CORPORATE MAILBOX HUB (Full Screen Dashboard) -->
+    <!-- ============================================================ -->
+    <div id="admin-dashboard" class="fixed inset-0 z-50 bg-slate-900/95 backdrop-blur-md flex flex-col hidden overflow-y-auto">
+        
+        <!-- Dashboard Top Header -->
+        <div class="bg-slate-950 border-b border-slate-800 px-6 py-4 flex items-center justify-between flex-shrink-0">
+            <div class="flex items-center gap-3">
+                <img src="assets/logo.jpg" alt="NexaPoint BPO" class="h-10 w-auto rounded bg-white p-0.5">
+                <div>
+                    <h3 class="text-sm font-bold text-white font-heading">NexaPoint BPO Admin & Mail Hub</h3>
+                    <p class="text-[10px] font-mono text-emerald-400">Logged in: <span id="admin-user-display">admin@nexapointbpo.com</span></p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <button onclick="closeAdminDashboard()" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-200 hover:bg-slate-700 text-xs font-bold transition-colors">
+                    View Live Site
+                </button>
+                <button onclick="logoutAdmin()" class="px-4 py-2 rounded-xl bg-rose-600/80 hover:bg-rose-600 text-white text-xs font-bold transition-colors">
+                    Log Out
+                </button>
+            </div>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div class="max-w-7xl mx-auto w-full p-6 sm:p-8 space-y-8 flex-1">
+            
+            <!-- Dashboard Navigation Tabs -->
+            <div class="flex border-b border-slate-800 gap-6 text-sm font-bold">
+                <button onclick="switchAdminTab('mail')" id="tab-btn-mail" class="pb-3 text-brand-400 border-b-2 border-brand-500">
+                    Mail Center (Inbox & Outbox)
+                </button>
+                <button onclick="switchAdminTab('cms')" id="tab-btn-cms" class="pb-3 text-slate-400 hover:text-white border-b-2 border-transparent">
+                    Dynamic CMS Live Editor
+                </button>
+                <button onclick="switchAdminTab('leads')" id="tab-btn-leads" class="pb-3 text-slate-400 hover:text-white border-b-2 border-transparent">
+                    Client Inquiries (<span id="inquiry-count">0</span>)
                 </button>
             </div>
 
-            <!-- Security Trust Badge -->
-            <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-[11px] text-slate-400 font-mono">
-                <span class="flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                    256-Bit SSL Encrypted
-                </span>
-                <span>Zoho Mail Infrastructure</span>
+            <!-- TAB 1: MAIL CENTER (THE BIG BOX OF MAIL INBOX AND OUTBOX) -->
+            <div id="tab-content-mail" class="space-y-6">
+                
+                <!-- Big Mailbox Overview Card -->
+                <div class="bg-slate-950 rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-6">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-6 border-b border-slate-800">
+                        <div>
+                            <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest font-bold">Connected Email Engine</span>
+                            <h2 class="text-2xl font-extrabold text-white mt-0.5">Corporate Mailbox Hub</h2>
+                            <p class="text-xs text-slate-400 mt-1">Directly integrated with Zoho Mail encrypted mail servers.</p>
+                        </div>
+
+                        <!-- Mailbox Account Selector -->
+                        <div class="flex items-center gap-3">
+                            <span class="text-xs font-bold text-slate-400 uppercase">Mailbox:</span>
+                            <select id="active-mailbox-select" class="px-4 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs font-bold focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                <option value="info@nexapointbpo.com">info@nexapointbpo.com (Primary General)</option>
+                                <option value="admin@nexapointbpo.com" selected>admin@nexapointbpo.com (Administration)</option>
+                                <option value="hr@nexapointbpo.com">hr@nexapointbpo.com (Human Resources)</option>
+                                <option value="sales@nexapointbpo.com">sales@nexapointbpo.com (Sales & Strategy)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Visual Inbox & Outbox Stats Box -->
+                    <div class="grid sm:grid-cols-3 gap-4">
+                        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+                            <span class="text-[10px] font-mono uppercase text-slate-400 font-bold block">Active Inbound Queue</span>
+                            <span id="mail-stat-inbox" class="text-3xl font-extrabold text-white mt-1 block">3 Inquiries</span>
+                            <span class="text-xs text-emerald-400">Ready for review</span>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+                            <span class="text-[10px] font-mono uppercase text-slate-400 font-bold block">Outbox Proposals</span>
+                            <span class="text-3xl font-extrabold text-brand-400 mt-1 block">18 Sent</span>
+                            <span class="text-xs text-slate-400">Dispatched this month</span>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+                            <span class="text-[10px] font-mono uppercase text-slate-400 font-bold block">Mail Infrastructure</span>
+                            <span class="text-3xl font-extrabold text-emerald-400 mt-1 block">Active</span>
+                            <span class="text-xs text-slate-400">Zoho MX + Brevo SMTP</span>
+                        </div>
+                    </div>
+
+                    <!-- Direct Zoho Action Buttons (Big Boxes) -->
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <button onclick="launchZohoMailbox('inbox')" class="p-6 rounded-2xl bg-brand-600 hover:bg-brand-500 text-white text-left transition-all shadow-lg shadow-brand-600/25 flex justify-between items-center group">
+                            <div>
+                                <span class="text-[11px] font-mono uppercase tracking-wider block text-blue-100 font-bold">Direct Access</span>
+                                <h4 class="text-lg font-extrabold mt-1">Open Full Zoho Mail Inbox</h4>
+                                <p class="text-xs text-blue-100 mt-0.5">Launches encrypted webmail with selected address pre-filled.</p>
+                            </div>
+                            <svg class="w-6 h-6 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </button>
+
+                        <button onclick="launchZohoMailbox('outbox')" class="p-6 rounded-2xl bg-slate-900 hover:bg-slate-850 border border-slate-800 text-white text-left transition-all flex justify-between items-center group">
+                            <div>
+                                <span class="text-[11px] font-mono uppercase tracking-wider block text-emerald-400 font-bold">New Message</span>
+                                <h4 class="text-lg font-extrabold mt-1">Launch Zoho Outbox & Compose</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Send new client proposals and walk-through confirmations.</p>
+                            </div>
+                            <svg class="w-6 h-6 text-slate-400 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- TAB 2: DYNAMIC CMS LIVE CONTROLLER -->
+            <div id="tab-content-cms" class="hidden space-y-6">
+                
+                <div class="bg-slate-950 rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-6">
+                    <div>
+                        <span class="text-xs font-mono text-brand-400 uppercase tracking-widest font-bold">Live Website Control</span>
+                        <h2 class="text-2xl font-extrabold text-white mt-0.5">Dynamic Content Management System (CMS)</h2>
+                        <p class="text-xs text-slate-400 mt-1">Edit what users see on the live website. Changes apply immediately upon saving.</p>
+                    </div>
+
+                    <form id="cms-editor-form" class="space-y-4">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-400 uppercase mb-1.5">Announcement Ticker Notice</label>
+                                <input type="text" id="cms-input-ticker" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs focus:ring-2 focus:ring-brand-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-400 uppercase mb-1.5">Monthly Dials Stat</label>
+                                <input type="text" id="cms-input-dials" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs focus:ring-2 focus:ring-brand-500">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-400 uppercase mb-1.5">Hero Headline Title</label>
+                            <input type="text" id="cms-input-title" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-sm focus:ring-2 focus:ring-brand-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-400 uppercase mb-1.5">Hero Subtitle Text</label>
+                            <textarea id="cms-input-sub" rows="3" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs focus:ring-2 focus:ring-brand-500"></textarea>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-400 uppercase mb-1.5">Cost Savings Stat</label>
+                                <input type="text" id="cms-input-savings" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs focus:ring-2 focus:ring-brand-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-400 uppercase mb-1.5">Attendance Stat</label>
+                                <input type="text" id="cms-input-attendance" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs focus:ring-2 focus:ring-brand-500">
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3 pt-3">
+                            <button type="submit" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all shadow-md">
+                                Save CMS Live Changes
+                            </button>
+                            <button type="button" onclick="resetCmsDefaults()" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold transition-all">
+                                Reset to Factory Defaults
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- TAB 3: CLIENT INQUIRIES LOG -->
+            <div id="tab-content-leads" class="hidden space-y-6">
+                
+                <div class="bg-slate-950 rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-4">
+                    <div class="flex justify-between items-center pb-4 border-b border-slate-800">
+                        <div>
+                            <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest font-bold">Client Submissions</span>
+                            <h2 class="text-2xl font-extrabold text-white mt-0.5">Website Proposal Inquiries</h2>
+                        </div>
+                        <button onclick="clearInquiries()" class="text-xs text-rose-400 hover:underline">Clear Log</button>
+                    </div>
+
+                    <div id="inquiries-container" class="space-y-3">
+                        <p class="text-xs text-slate-500">No client submissions logged yet. Submitted RFP forms will appear here in real-time.</p>
+                    </div>
+                </div>
+
             </div>
 
         </div>
     </div>
 
-    <!-- Interactive Scripts: Live World Clocks, Theme Switcher, Calculator, FAQ -->
+    <!-- Floating Admin Indicator (Visible when logged in) -->
+    <div id="admin-floating-pill" class="fixed bottom-5 right-5 z-40 hidden">
+        <button onclick="openAdminDashboard()" class="px-4 py-2.5 rounded-full bg-slate-900 text-white border border-brand-500 shadow-xl text-xs font-bold flex items-center gap-2 hover:scale-105 transition-transform">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Admin CMS & Mailbox Active</span>
+        </button>
+    </div>
+
+    <!-- Interactive Scripts -->
     <script>
-        // 1. Theme Toggle (Day / Night Mode)
+        // 1. Theme Toggle
         const themeToggleBtn = document.getElementById('theme-toggle');
         themeToggleBtn.addEventListener('click', () => {
             if (document.documentElement.classList.contains('dark')) {
@@ -984,25 +967,15 @@
             }
         });
 
-        // 2. Mobile Menu Drawer
+        // 2. Mobile Menu
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-        });
+        mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => mobileMenu.classList.add('hidden')));
 
         // 3. Live World Clocks
         function updateClocks() {
-            const fmt = (tz) => new Intl.DateTimeFormat('en-GB', {
-                timeZone: tz,
-                hour: '2-digit',
-                minute: '2-digit',
-                hour12: false
-            }).format(new Date());
-
+            const fmt = (tz) => new Intl.DateTimeFormat('en-GB', { timeZone: tz, hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date());
             document.getElementById('t-lon').textContent = fmt('Europe/London') + ' GMT';
             document.getElementById('t-tor').textContent = fmt('America/Toronto') + ' EST';
             document.getElementById('t-akl').textContent = fmt('Pacific/Auckland') + ' NZT';
@@ -1013,82 +986,243 @@
         updateClocks();
         setInterval(updateClocks, 30000);
 
-        // 4. ROI Walkthrough Calculator
+        // 4. ROI Calculator
         const cSlider = document.getElementById('c-slider');
         const vSlider = document.getElementById('v-slider');
-        const cDisplay = document.getElementById('c-display');
-        const vDisplay = document.getElementById('v-display');
-        const walkOut = document.getElementById('walk-out');
-        const revOut = document.getElementById('rev-out');
-        const annOut = document.getElementById('ann-out');
-
         function updateCalc() {
-            const callers = parseInt(cSlider.value, 10);
+            const c = parseInt(cSlider.value, 10);
             const val = parseInt(vSlider.value, 10);
-            cDisplay.textContent = callers === 1 ? '1 Full-Time Rep' : `${callers} Full-Time Reps`;
-            vDisplay.textContent = `$${val.toLocaleString()} / mo`;
-
-            const minWalk = 12 * callers;
-            const maxWalk = 16 * callers;
-            walkOut.textContent = `${minWalk} - ${maxWalk}`;
-
-            const mrrAdded = Math.round(14 * callers * 0.25 * val);
-            revOut.textContent = `+$${mrrAdded.toLocaleString()} / mo`;
-            annOut.textContent = `(~$${(mrrAdded * 12).toLocaleString()} New Annual Revenue)`;
+            document.getElementById('c-display').textContent = c === 1 ? '1 Caller' : `${c} Callers`;
+            document.getElementById('v-display').textContent = `$${val.toLocaleString()}/mo`;
+            document.getElementById('walk-out').textContent = `${12 * c} - ${16 * c}`;
+            document.getElementById('rev-out').textContent = `+$${Math.round(14 * c * 0.25 * val).toLocaleString()}/mo`;
         }
         cSlider.addEventListener('input', updateCalc);
         vSlider.addEventListener('input', updateCalc);
         updateCalc();
 
-        // 5. FAQ Accordion
-        function toggleFaq(el) {
-            const content = el.querySelector('.faq-content');
-            const icon = el.querySelector('span');
-            const isHidden = content.classList.contains('hidden');
+        // 5. Normal Login Logic (admin@nexapointbpo.com / admin123)
+        const loginModal = document.getElementById('login-modal');
+        const navLoginBtn = document.getElementById('nav-login-btn');
+        const mobileLoginBtn = document.getElementById('mobile-login-btn');
+        const loginForm = document.getElementById('portal-login-form');
+        const loginError = document.getElementById('login-error');
+        const adminDashboard = document.getElementById('admin-dashboard');
+        const adminFloatingPill = document.getElementById('admin-floating-pill');
 
-            document.querySelectorAll('#faq-list .faq-content').forEach(c => c.classList.add('hidden'));
-            document.querySelectorAll('#faq-list span').forEach(s => {
-                if (s.textContent === '−') s.textContent = '+';
+        function openLoginModal() {
+            if (sessionStorage.isAdminLoggedIn === 'true') {
+                openAdminDashboard();
+            } else {
+                loginModal.classList.remove('hidden');
+            }
+        }
+        function closeLoginModal() {
+            loginModal.classList.add('hidden');
+            loginError.classList.add('hidden');
+        }
+
+        navLoginBtn.addEventListener('click', openLoginModal);
+        if (mobileLoginBtn) mobileLoginBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            openLoginModal();
+        });
+
+        function togglePasswordVisibility() {
+            const pwd = document.getElementById('login-password');
+            pwd.type = pwd.type === 'password' ? 'text' : 'password';
+        }
+
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value.trim();
+            const pass = document.getElementById('login-password').value;
+
+            // Verified Credentials
+            if (email === 'admin@nexapointbpo.com' && pass === 'admin123') {
+                sessionStorage.isAdminLoggedIn = 'true';
+                closeLoginModal();
+                openAdminDashboard();
+                updateAdminUIAfterLogin();
+            } else {
+                loginError.classList.remove('hidden');
+            }
+        });
+
+        function updateAdminUIAfterLogin() {
+            document.getElementById('nav-login-label').textContent = 'Admin CMS & Mail';
+            adminFloatingPill.classList.remove('hidden');
+        }
+
+        function openAdminDashboard() {
+            adminDashboard.classList.remove('hidden');
+            loadCmsFormValues();
+            renderInquiriesList();
+        }
+        function closeAdminDashboard() {
+            adminDashboard.classList.add('hidden');
+        }
+        function logoutAdmin() {
+            sessionStorage.removeItem('isAdminLoggedIn');
+            adminDashboard.classList.add('hidden');
+            adminFloatingPill.classList.add('hidden');
+            document.getElementById('nav-login-label').textContent = 'Portal Login';
+        }
+
+        // Restore login state if previously authenticated
+        if (sessionStorage.isAdminLoggedIn === 'true') {
+            updateAdminUIAfterLogin();
+        }
+
+        // 6. Admin Tabs Navigation
+        function switchAdminTab(tab) {
+            ['mail', 'cms', 'leads'].forEach(t => {
+                document.getElementById(`tab-content-${t}`).classList.add('hidden');
+                document.getElementById(`tab-btn-${t}`).classList.remove('text-brand-400', 'border-brand-500');
+                document.getElementById(`tab-btn-${t}`).classList.add('text-slate-400', 'border-transparent');
             });
+            document.getElementById(`tab-content-${tab}`).classList.remove('hidden');
+            document.getElementById(`tab-btn-${tab}`).classList.add('text-brand-400', 'border-brand-500');
+            document.getElementById(`tab-btn-${tab}`).classList.remove('text-slate-400', 'border-transparent');
+        }
 
-            if (isHidden) {
-                content.classList.remove('hidden');
-                icon.textContent = '−';
+        // 7. Launch Zoho Webmail directly
+        function launchZohoMailbox(type) {
+            const mailbox = document.getElementById('active-mailbox-select').value;
+            const targetUrl = `https://accounts.zoho.com/signin?servicename=VirtualOffice&serviceurl=https%3A%2F%2Fmail.zoho.com%2F&login_id=${encodeURIComponent(mailbox)}`;
+            window.open(targetUrl, '_blank', 'noopener,noreferrer');
+        }
+        function launchZohoDirect() {
+            const email = document.getElementById('login-email').value || 'admin@nexapointbpo.com';
+            const targetUrl = `https://accounts.zoho.com/signin?servicename=VirtualOffice&serviceurl=https%3A%2F%2Fmail.zoho.com%2F&login_id=${encodeURIComponent(email)}`;
+            window.open(targetUrl, '_blank', 'noopener,noreferrer');
+        }
+
+        // 8. Dynamic CMS Live Editor Logic
+        const defaultCMS = {
+            title: "Fill Your Calendar with High-Value Commercial Cleaning Contracts",
+            sub: "Dedicated offshore cold calling pods connecting your cleaning business with corporate facility decision-makers across the UK, Canada, New Zealand, Australia, and the USA.",
+            ticker: "Delivery Operations Center: Pabna, Bangladesh",
+            dials: "60,000+",
+            savings: "65%–70%",
+            attendance: "94.2%"
+        };
+
+        function getStoredCMS() {
+            try {
+                return JSON.parse(localStorage.getItem('nexapoint_cms')) || defaultCMS;
+            } catch (e) {
+                return defaultCMS;
             }
         }
 
-        // 6. Staff Webmail Modal Logic (Pre-filled Zoho Login)
-        const webmailModal = document.getElementById('webmail-modal');
-        const openWebmailBtn = document.getElementById('open-webmail-btn');
-        const mobileWebmailBtn = document.getElementById('mobile-webmail-btn');
-        const closeWebmailBtn = document.getElementById('close-webmail-btn');
-        const launchActionBtn = document.getElementById('launch-webmail-action');
-        const webmailSelect = document.getElementById('webmail-account-select');
-
-        function openModal() {
-            webmailModal.classList.remove('hidden');
-        }
-        function closeModal() {
-            webmailModal.classList.add('hidden');
+        function applyCmsToDOM(cms) {
+            if (document.getElementById('cms-hero-title')) document.getElementById('cms-hero-title').innerHTML = cms.title;
+            if (document.getElementById('cms-hero-sub')) document.getElementById('cms-hero-sub').textContent = cms.sub;
+            if (document.getElementById('cms-ticker-text')) document.getElementById('cms-ticker-text').textContent = cms.ticker;
+            if (document.getElementById('cms-stat-dials')) document.getElementById('cms-stat-dials').textContent = cms.dials;
+            if (document.getElementById('cms-stat-savings')) document.getElementById('cms-stat-savings').textContent = cms.savings;
+            if (document.getElementById('cms-stat-attendance')) document.getElementById('cms-stat-attendance').textContent = cms.attendance;
         }
 
-        if (openWebmailBtn) openWebmailBtn.addEventListener('click', openModal);
-        if (mobileWebmailBtn) mobileWebmailBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            openModal();
-        });
-        if (closeWebmailBtn) closeWebmailBtn.addEventListener('click', closeModal);
-        webmailModal.addEventListener('click', (e) => {
-            if (e.target === webmailModal) closeModal();
+        function loadCmsFormValues() {
+            const cms = getStoredCMS();
+            document.getElementById('cms-input-title').value = cms.title;
+            document.getElementById('cms-input-sub').value = cms.sub;
+            document.getElementById('cms-input-ticker').value = cms.ticker;
+            document.getElementById('cms-input-dials').value = cms.dials;
+            document.getElementById('cms-input-savings').value = cms.savings;
+            document.getElementById('cms-input-attendance').value = cms.attendance;
+        }
+
+        document.getElementById('cms-editor-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const newCMS = {
+                title: document.getElementById('cms-input-title').value,
+                sub: document.getElementById('cms-input-sub').value,
+                ticker: document.getElementById('cms-input-ticker').value,
+                dials: document.getElementById('cms-input-dials').value,
+                savings: document.getElementById('cms-input-savings').value,
+                attendance: document.getElementById('cms-input-attendance').value
+            };
+            localStorage.setItem('nexapoint_cms', JSON.stringify(newCMS));
+            applyCmsToDOM(newCMS);
+            alert('Live Website CMS Updated Successfully!');
         });
 
-        // Launch Zoho Mail with pre-filled email
-        launchActionBtn.addEventListener('click', () => {
-            const email = webmailSelect.value;
-            const targetUrl = `https://accounts.zoho.com/signin?servicename=VirtualOffice&serviceurl=https%3A%2F%2Fmail.zoho.com%2F&login_id=${encodeURIComponent(email)}`;
-            window.open(targetUrl, '_blank', 'noopener,noreferrer');
-            closeModal();
+        function resetCmsDefaults() {
+            if (confirm('Reset live website content to original factory defaults?')) {
+                localStorage.removeItem('nexapoint_cms');
+                applyCmsToDOM(defaultCMS);
+                loadCmsFormValues();
+            }
+        }
+
+        // Apply saved CMS on load
+        applyCmsToDOM(getStoredCMS());
+
+        // 9. Client Lead Submission & Logging
+        const leadForm = document.getElementById('public-lead-form');
+        leadForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const newLead = {
+                name: document.getElementById('lead-name').value,
+                email: document.getElementById('lead-email').value,
+                company: document.getElementById('lead-company').value,
+                market: document.getElementById('lead-market').value,
+                message: document.getElementById('lead-message').value,
+                date: new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString()
+            };
+
+            let leads = [];
+            try { leads = JSON.parse(localStorage.getItem('nexapoint_inquiries')) || []; } catch(err){}
+            leads.unshift(newLead);
+            localStorage.setItem('nexapoint_inquiries', JSON.stringify(leads));
+
+            // Also post to Formspree silently in background
+            fetch("https://formspree.io/f/xbjnyqvo", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(newLead)
+            }).catch(() => {});
+
+            leadForm.reset();
+            const statusMsg = document.getElementById('lead-form-status');
+            statusMsg.textContent = "Proposal request received! Our team will contact you within 4 hours.";
+            statusMsg.classList.remove('hidden', 'text-rose-500');
+            statusMsg.classList.add('text-emerald-500');
+            renderInquiriesList();
         });
+
+        function renderInquiriesList() {
+            let leads = [];
+            try { leads = JSON.parse(localStorage.getItem('nexapoint_inquiries')) || []; } catch(err){}
+            document.getElementById('inquiry-count').textContent = leads.length;
+            document.getElementById('mail-stat-inbox').textContent = `${leads.length} Inquiries`;
+
+            const container = document.getElementById('inquiries-container');
+            if (leads.length === 0) {
+                container.innerHTML = '<p class="text-xs text-slate-500">No client submissions logged yet.</p>';
+                return;
+            }
+
+            container.innerHTML = leads.map(l => `
+                <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-xs space-y-1">
+                    <div class="flex justify-between items-center">
+                        <strong class="text-white">${l.name} (${l.company})</strong>
+                        <span class="text-[10px] font-mono text-slate-400">${l.date}</span>
+                    </div>
+                    <p class="text-brand-400">${l.email} • Target: ${l.market}</p>
+                    <p class="text-slate-300 mt-1">${l.message || 'No additional notes.'}</p>
+                </div>
+            `).join('');
+        }
+        function clearInquiries() {
+            if (confirm('Clear all logged inquiries?')) {
+                localStorage.removeItem('nexapoint_inquiries');
+                renderInquiriesList();
+            }
+        }
     </script>
 </body>
 </html>
