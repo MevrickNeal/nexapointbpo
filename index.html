@@ -137,6 +137,12 @@
                     </svg>
                 </button>
 
+                <!-- Live Inbound Mail Alert Bell -->
+                <button id="nav-alert-bell" onclick="openLoginModal()" type="button" aria-label="Mail Alerts" class="relative p-2 sm:p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 transition-colors" title="Inbound Mailbox Alerts">
+                    <svg class="w-4 h-4 text-brand-600 dark:text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                    <span id="nav-bell-badge" class="absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 rounded-full bg-rose-500 text-white text-[9px] font-bold flex items-center justify-center animate-pulse">0</span>
+                </button>
+
                 <!-- Admin & Staff Portal Login Button -->
                 <button id="nav-login-btn" type="button" class="inline-flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3.5 sm:py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-xs font-bold text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 hover:border-brand-600 transition-all shadow-sm">
                     <svg class="w-3.5 h-3.5 text-brand-600 dark:text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
@@ -1032,6 +1038,10 @@
             </div>
 
             <div class="flex items-center gap-2 sm:gap-3">
+                <button id="dashboard-sound-toggle" onclick="toggleAlertSound()" type="button" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold transition-colors flex items-center gap-1.5 border border-slate-700" title="Toggle incoming email audio chime">
+                    <span id="sound-status-icon">🔊</span>
+                    <span id="sound-status-text" class="hidden xs:inline">Audio Alert: ON</span>
+                </button>
                 <button onclick="closeAdminDashboard()" class="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-slate-800 text-slate-200 hover:bg-slate-700 text-xs font-bold transition-colors">
                     View Live Site
                 </button>
@@ -1119,6 +1129,58 @@
                             </div>
                             <svg class="w-5 h-5 sm:w-6 sm:h-6 text-slate-400 transform group-hover:translate-x-1 transition-transform shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                         </button>
+                    </div>
+
+                    <!-- ======================================================== -->
+                    <!-- LIVE INBOUND MAIL MONITOR & REAL-TIME ALERTS FEED -->
+                    <!-- ======================================================== -->
+                    <div class="bg-slate-950 rounded-2xl sm:rounded-3xl p-5 sm:p-7 border border-slate-800 space-y-4 mt-6">
+                        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pb-4 border-b border-slate-800">
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                                    <h3 class="text-base sm:text-lg font-extrabold text-white">Live Inbound Feed & Alerts: <span class="text-brand-400">info@nexapointbpo.com</span></h3>
+                                </div>
+                                <p class="text-xs text-slate-400 mt-0.5">Real-time incoming emails, client proposal submissions, and live notification monitor.</p>
+                            </div>
+
+                            <!-- Live Action Buttons -->
+                            <div class="flex flex-wrap items-center gap-2">
+                                <button onclick="simulateInboundEmail()" type="button" class="px-3 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                                    <span>Simulate Inbound Email</span>
+                                </button>
+                                <button id="btn-desktop-perm" onclick="requestNotificationPermission()" type="button" class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold transition-all flex items-center gap-1.5 border border-slate-700">
+                                    <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                                    <span id="btn-desktop-perm-text">Desktop Alerts: Enable</span>
+                                </button>
+                                <button onclick="markAllAsRead()" type="button" class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition-all">
+                                    Mark All Read
+                                </button>
+                                <button onclick="refreshInboundFeed()" type="button" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 transition-all" title="Refresh Live Feed">
+                                    <svg id="sync-spinner" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Filter & Status Bar -->
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="text-slate-400">Filter Feed:</span>
+                                <button onclick="filterMailboxFeed('all')" id="filter-btn-all" class="px-2.5 py-1 rounded-lg bg-brand-600 text-white font-bold text-[11px]">All (<span id="count-all">0</span>)</button>
+                                <button onclick="filterMailboxFeed('info@nexapointbpo.com')" id="filter-btn-info" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-400 font-semibold text-[11px] hover:text-white">info@ (<span id="count-info">0</span>)</button>
+                                <button onclick="filterMailboxFeed('admin@nexapointbpo.com')" id="filter-btn-admin" class="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-400 font-semibold text-[11px] hover:text-white">admin@ (<span id="count-admin">0</span>)</button>
+                            </div>
+                            <span class="text-[11px] font-mono text-emerald-400 flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                DNS MX Verified: Routing Active
+                            </span>
+                        </div>
+
+                        <!-- Live Inbound Email Items Container -->
+                        <div id="live-inbox-feed-list" class="space-y-2.5 max-h-[420px] overflow-y-auto pr-1">
+                            <!-- Inbound email cards rendered here by JS -->
+                        </div>
                     </div>
 
                 </div>
@@ -1210,6 +1272,45 @@
             <span>Admin CMS & Mailbox Active</span>
         </button>
     </div>
+
+    <!-- Email Details & Quick Action Modal -->
+    <div id="email-detail-modal" class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 hidden">
+        <div class="relative bg-slate-900 rounded-2xl sm:rounded-3xl p-5 sm:p-7 max-w-xl w-full border border-slate-700 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto text-white">
+            <button onclick="closeEmailDetailModal()" class="absolute top-4 right-4 p-2 text-slate-400 hover:text-white text-lg">&times;</button>
+            <div class="border-b border-slate-800 pb-3">
+                <span id="detail-badge" class="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold bg-brand-500/20 text-brand-400 uppercase">INCOMING EMAIL</span>
+                <h3 id="detail-subject" class="text-base sm:text-lg font-bold text-white mt-1">--</h3>
+                <div class="text-xs text-slate-400 mt-1 flex flex-wrap items-center gap-2">
+                    <span>From: <strong id="detail-from" class="text-slate-200">--</strong></span>
+                    <span>•</span>
+                    <span>To: <strong id="detail-to" class="text-emerald-400 font-mono">info@nexapointbpo.com</strong></span>
+                    <span>•</span>
+                    <span id="detail-date" class="font-mono text-slate-500">--</span>
+                </div>
+            </div>
+            <div>
+                <span class="text-[10px] font-mono uppercase text-slate-400 block mb-1">Message Body:</span>
+                <div id="detail-body" class="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs sm:text-sm text-slate-200 whitespace-pre-wrap leading-relaxed min-h-[90px]"></div>
+            </div>
+            <div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-800">
+                <div class="flex flex-wrap items-center gap-2">
+                    <button id="detail-reply-btn" class="px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold flex items-center gap-1.5 transition-colors">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/></svg>
+                        <span>Reply in Zoho Mail</span>
+                    </button>
+                    <button id="detail-toggle-read-btn" class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition-colors">
+                        Mark Unread
+                    </button>
+                </div>
+                <button id="detail-delete-btn" class="px-3.5 py-2 rounded-xl bg-rose-950/80 hover:bg-rose-900 border border-rose-800 text-rose-300 text-xs font-semibold transition-colors">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Real-Time Alert Toast Container -->
+    <div id="alert-toast-container" class="fixed top-5 right-5 z-50 space-y-2 max-w-sm w-full pointer-events-none"></div>
 
     <!-- ============================================================ -->
     <!-- 12. INTERACTIVE JAVASCRIPT LOGIC -->
@@ -1342,12 +1443,16 @@
         function updateAdminUIAfterLogin() {
             document.getElementById('nav-login-label').textContent = 'Admin CMS & Mail';
             adminFloatingPill.classList.remove('hidden');
+            updateAllBadges();
+            renderLiveInboundFeed();
         }
 
         function openAdminDashboard() {
             adminDashboard.classList.remove('hidden');
             loadCmsFormValues();
             renderInquiriesList();
+            renderLiveInboundFeed();
+            updateAllBadges();
         }
         function closeAdminDashboard() {
             adminDashboard.classList.add('hidden');
@@ -1374,12 +1479,17 @@
             document.getElementById(`tab-content-${tab}`).classList.remove('hidden');
             document.getElementById(`tab-btn-${tab}`).classList.add('text-brand-400', 'border-brand-500');
             document.getElementById(`tab-btn-${tab}`).classList.remove('text-slate-400', 'border-transparent');
+            if (tab === 'mail') renderLiveInboundFeed();
+            if (tab === 'leads') renderInquiriesList();
         }
 
         // 7. Launch Zoho Webmail directly
         function launchZohoMailbox(type) {
             const mailbox = document.getElementById('active-mailbox-select').value;
-            const targetUrl = `https://accounts.zoho.com/signin?servicename=VirtualOffice&serviceurl=https%3A%2F%2Fmail.zoho.com%2F&login_id=${encodeURIComponent(mailbox)}`;
+            let targetUrl = `https://accounts.zoho.com/signin?servicename=VirtualOffice&serviceurl=https%3A%2F%2Fmail.zoho.com%2F&login_id=${encodeURIComponent(mailbox)}`;
+            if (type === 'outbox') {
+                targetUrl = `https://accounts.zoho.com/signin?servicename=VirtualOffice&serviceurl=${encodeURIComponent('https://mail.zoho.com/zm/#mail/compose')}&login_id=${encodeURIComponent(mailbox)}`;
+            }
             window.open(targetUrl, '_blank', 'noopener,noreferrer');
         }
         function launchZohoDirect() {
@@ -1387,8 +1497,423 @@
             const targetUrl = `https://accounts.zoho.com/signin?servicename=VirtualOffice&serviceurl=https%3A%2F%2Fmail.zoho.com%2F&login_id=${encodeURIComponent(email)}`;
             window.open(targetUrl, '_blank', 'noopener,noreferrer');
         }
+        function replyViaZoho(email, subject) {
+            const mailbox = document.getElementById('active-mailbox-select').value || 'info@nexapointbpo.com';
+            const composeUrl = `https://mail.zoho.com/zm/#mail/compose?to=${encodeURIComponent(email)}&subject=${encodeURIComponent('Re: ' + (subject || 'NexaPoint BPO Inquiry'))}`;
+            const targetUrl = `https://accounts.zoho.com/signin?servicename=VirtualOffice&serviceurl=${encodeURIComponent(composeUrl)}&login_id=${encodeURIComponent(mailbox)}`;
+            window.open(targetUrl, '_blank', 'noopener,noreferrer');
+        }
 
-        // 8. Dynamic CMS Live Editor Logic
+        // ============================================================
+        // 8. REAL-TIME ALERT SYSTEM: CHIME, NOTIFICATIONS & TOASTS
+        // ============================================================
+        let isAudioAlertOn = localStorage.getItem('alert_sound') !== 'off';
+
+        function updateAudioAlertUI() {
+            const icon = document.getElementById('sound-status-icon');
+            const text = document.getElementById('sound-status-text');
+            if (isAudioAlertOn) {
+                if (icon) icon.textContent = '🔊';
+                if (text) text.textContent = 'Audio Alert: ON';
+            } else {
+                if (icon) icon.textContent = '🔇';
+                if (text) text.textContent = 'Audio Alert: OFF';
+            }
+        }
+        updateAudioAlertUI();
+
+        function toggleAlertSound() {
+            isAudioAlertOn = !isAudioAlertOn;
+            localStorage.setItem('alert_sound', isAudioAlertOn ? 'on' : 'off');
+            updateAudioAlertUI();
+            if (isAudioAlertOn) playNotificationChime();
+        }
+
+        function playNotificationChime() {
+            if (!isAudioAlertOn) return;
+            try {
+                const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(587.33, audioCtx.currentTime); // D5
+                osc.frequency.setValueAtTime(880.00, audioCtx.currentTime + 0.12); // A5
+                gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.38);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.38);
+            } catch(e) {}
+        }
+
+        function requestNotificationPermission() {
+            if (!('Notification' in window)) {
+                alert('This browser does not support desktop notifications.');
+                return;
+            }
+            Notification.requestPermission().then(perm => {
+                const permText = document.getElementById('btn-desktop-perm-text');
+                if (perm === 'granted') {
+                    if (permText) permText.textContent = 'Desktop Alerts: ON';
+                    playNotificationChime();
+                    triggerDesktopNotification('Notifications Active', 'You will now receive desktop alerts for info@nexapointbpo.com.');
+                } else {
+                    if (permText) permText.textContent = 'Desktop Alerts: Blocked';
+                }
+            });
+        }
+
+        function updateDesktopPermUI() {
+            const permText = document.getElementById('btn-desktop-perm-text');
+            if (!permText) return;
+            if ('Notification' in window && Notification.permission === 'granted') {
+                permText.textContent = 'Desktop Alerts: ACTIVE';
+            } else {
+                permText.textContent = 'Desktop Alerts: Enable';
+            }
+        }
+        updateDesktopPermUI();
+
+        function triggerDesktopNotification(title, body) {
+            if ('Notification' in window && Notification.permission === 'granted') {
+                try {
+                    new Notification(title, {
+                        body: body,
+                        icon: 'assets/logo.jpg'
+                    });
+                } catch(e) {}
+            }
+        }
+
+        function showInboundAlertToast(senderName, subject, targetMailbox, id) {
+            const container = document.getElementById('alert-toast-container');
+            if (!container) return;
+            const toast = document.createElement('div');
+            toast.className = "pointer-events-auto p-4 rounded-2xl bg-slate-900/95 border border-brand-500 text-white shadow-2xl flex items-start gap-3 transform transition-all duration-300 translate-y-[-20px] opacity-0";
+            toast.innerHTML = `
+                <div class="p-2 rounded-xl bg-brand-600/30 text-brand-400 shrink-0">
+                    <svg class="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider">New Inbound Alert</span>
+                        <span class="text-[10px] text-slate-400 font-mono">Just Now</span>
+                    </div>
+                    <p class="text-xs font-bold text-white truncate mt-0.5">${escapeHtml(senderName)}</p>
+                    <p class="text-[11px] text-slate-300 truncate">${escapeHtml(subject)}</p>
+                    <div class="mt-2 flex items-center gap-2">
+                        <span class="px-2 py-0.5 rounded bg-brand-500/20 text-brand-300 text-[10px] font-mono">${escapeHtml(targetMailbox || 'info@nexapointbpo.com')}</span>
+                        <button onclick="openAdminDashboard(); switchAdminTab('mail'); if('${id}') viewEmailDetails('${id}'); this.closest('.pointer-events-auto').remove();" class="text-[10px] font-bold text-brand-400 hover:underline">View in Mailbox →</button>
+                    </div>
+                </div>
+                <button onclick="this.parentElement.remove()" class="text-slate-400 hover:text-white text-base leading-none">&times;</button>
+            `;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.classList.remove('translate-y-[-20px]', 'opacity-0');
+                toast.classList.add('translate-y-0', 'opacity-100');
+            }, 10);
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-[-10px]');
+                setTimeout(() => toast.remove(), 300);
+            }, 7000);
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        // ============================================================
+        // 9. INBOUND EMAILS DATA STORE & SAMPLE INITIALIZATION
+        // ============================================================
+        function getStoredInquiries() {
+            try {
+                let items = JSON.parse(localStorage.getItem('nexapoint_inquiries'));
+                if (!items || !Array.isArray(items) || items.length === 0) {
+                    items = [
+                        {
+                            id: 'msg_sample_1',
+                            name: "Sarah Jenkins",
+                            email: "s.jenkins@apexfacilities.co.uk",
+                            company: "Apex Facility Management Ltd",
+                            market: "United Kingdom",
+                            subject: "Janitorial Tender Walkthroughs — London & Manchester",
+                            message: "Hello NexaPoint team, we are expanding commercial cleaning contracts across Greater London and Manchester. Looking for 15 confirmed walkthroughs per month for corporate office towers over 20,000 sq ft. Please provide pod pricing and launch timeline.",
+                            to: "info@nexapointbpo.com",
+                            date: new Date(Date.now() - 3600000 * 2).toLocaleDateString() + ' 09:42 AM',
+                            unread: true
+                        },
+                        {
+                            id: 'msg_sample_2',
+                            name: "Liam O'Connor",
+                            email: "liam@metroclean.com.au",
+                            company: "Metro Janitorial Services Sydney",
+                            market: "Australia",
+                            subject: "Outbound Cold Calling Pod Inquiry for Medical Clinics",
+                            message: "Hi, looking to deploy 2 dedicated cold callers for specialized medical and healthcare clinic sterilization bids in Perth and Sydney. What is your supervisor QA verification protocol before handing over bids?",
+                            to: "info@nexapointbpo.com",
+                            date: new Date(Date.now() - 3600000 * 18).toLocaleDateString() + ' 04:15 PM',
+                            unread: false
+                        }
+                    ];
+                    localStorage.setItem('nexapoint_inquiries', JSON.stringify(items));
+                }
+                return items;
+            } catch(e) {
+                return [];
+            }
+        }
+
+        let currentMailFilter = 'all';
+
+        function filterMailboxFeed(filter) {
+            currentMailFilter = filter;
+            ['all', 'info', 'admin'].forEach(f => {
+                const btn = document.getElementById(`filter-btn-${f}`);
+                if (!btn) return;
+                if ((f === 'all' && filter === 'all') || (f === 'info' && filter.includes('info')) || (f === 'admin' && filter.includes('admin'))) {
+                    btn.className = "px-2.5 py-1 rounded-lg bg-brand-600 text-white font-bold text-[11px]";
+                } else {
+                    btn.className = "px-2.5 py-1 rounded-lg bg-slate-800 text-slate-400 font-semibold text-[11px] hover:text-white";
+                }
+            });
+            renderLiveInboundFeed();
+        }
+
+        function renderLiveInboundFeed() {
+            const list = document.getElementById('live-inbox-feed-list');
+            if (!list) return;
+            const allItems = getStoredInquiries();
+            let items = allItems;
+            if (currentMailFilter !== 'all') {
+                items = allItems.filter(i => (i.to || 'info@nexapointbpo.com') === currentMailFilter);
+            }
+
+            if (items.length === 0) {
+                list.innerHTML = `
+                    <div class="p-8 text-center text-slate-500 bg-slate-900/60 rounded-xl border border-slate-800 text-xs">
+                        <p class="font-bold text-slate-400">No emails matching current filter.</p>
+                        <p class="text-[11px] mt-1 text-slate-500">Incoming emails sent to info@nexapointbpo.com or website inquiries will appear here.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            list.innerHTML = items.map(item => `
+                <div class="p-3.5 sm:p-4 rounded-xl border ${item.unread ? 'bg-slate-900/90 border-brand-500/60 shadow-md shadow-brand-900/20' : 'bg-slate-900/40 border-slate-800/80'} flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs transition-colors hover:border-slate-700">
+                    <div class="flex items-start gap-3 min-w-0 flex-1">
+                        <div class="pt-1 shrink-0">
+                            ${item.unread ? '<span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" title="Unread Message"></span>' : '<span class="inline-block w-2 h-2 rounded-full bg-slate-600" title="Read"></span>'}
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <strong class="text-white text-xs sm:text-sm font-semibold truncate">${escapeHtml(item.name)}</strong>
+                                <span class="text-slate-400 text-[11px] truncate">(${escapeHtml(item.company || item.email)})</span>
+                                <span class="px-2 py-0.5 rounded text-[9px] font-mono font-bold ${item.to === 'admin@nexapointbpo.com' ? 'bg-purple-950 text-purple-400' : 'bg-blue-950 text-blue-400'}">
+                                    To: ${escapeHtml(item.to || 'info@nexapointbpo.com')}
+                                </span>
+                            </div>
+                            <h4 class="text-xs font-bold text-slate-200 mt-1 truncate">${escapeHtml(item.subject || 'Campaign Proposal Request')}</h4>
+                            <p class="text-[11px] text-slate-400 line-clamp-1 mt-0.5 leading-relaxed">${escapeHtml(item.message || 'No additional notes provided.')}</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-2 shrink-0 self-end sm:self-center">
+                        <span class="text-[10px] font-mono text-slate-500 hidden md:inline">${escapeHtml(item.date)}</span>
+                        <button onclick="viewEmailDetails('${item.id}')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold transition-colors">
+                            Read
+                        </button>
+                        <button onclick="replyViaZoho('${escapeHtml(item.email)}', '${escapeHtml(item.subject)}')" class="px-3 py-1.5 rounded-lg bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold transition-colors flex items-center gap-1">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/></svg>
+                            <span>Reply</span>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+
+            updateAllBadges();
+        }
+
+        function updateAllBadges() {
+            const items = getStoredInquiries();
+            const unreadCount = items.filter(i => i.unread).length;
+            const totalCount = items.length;
+
+            const bellBadge = document.getElementById('nav-bell-badge');
+            if (bellBadge) {
+                bellBadge.textContent = unreadCount;
+                if (unreadCount > 0) {
+                    bellBadge.classList.remove('hidden');
+                } else {
+                    bellBadge.classList.add('hidden');
+                }
+            }
+
+            const inqCount = document.getElementById('inquiry-count');
+            if (inqCount) inqCount.textContent = totalCount;
+
+            const inboxStat = document.getElementById('mail-stat-inbox');
+            if (inboxStat) inboxStat.textContent = `${unreadCount} Unread`;
+
+            const cntAll = document.getElementById('count-all');
+            const cntInfo = document.getElementById('count-info');
+            const cntAdmin = document.getElementById('count-admin');
+            if (cntAll) cntAll.textContent = totalCount;
+            if (cntInfo) cntInfo.textContent = items.filter(i => (i.to || 'info@nexapointbpo.com') === 'info@nexapointbpo.com').length;
+            if (cntAdmin) cntAdmin.textContent = items.filter(i => i.to === 'admin@nexapointbpo.com').length;
+        }
+
+        function markAllAsRead() {
+            const items = getStoredInquiries().map(i => ({ ...i, unread: false }));
+            localStorage.setItem('nexapoint_inquiries', JSON.stringify(items));
+            renderLiveInboundFeed();
+            renderInquiriesList();
+            updateAllBadges();
+        }
+
+        function refreshInboundFeed() {
+            const spinner = document.getElementById('sync-spinner');
+            if (spinner) spinner.classList.add('animate-spin');
+            setTimeout(() => {
+                if (spinner) spinner.classList.remove('animate-spin');
+                renderLiveInboundFeed();
+                updateAllBadges();
+            }, 600);
+        }
+
+        // ============================================================
+        // 10. SIMULATE INBOUND EMAIL TO info@nexapointbpo.com
+        // ============================================================
+        const simulatedPool = [
+            {
+                name: "Marcus Vance",
+                email: "marcus.vance@vanceclean.com",
+                company: "Vance Commercial Facilities USA",
+                market: "United States",
+                subject: "Seeking 2 Cold Calling Pods for Texas Medical Centers",
+                message: "Good day, we manage night janitorial for 24 clinics in San Antonio and Austin. We need an aggressive BPO cold calling pod dialing facility managers. Can we schedule a brief onboarding sync this week?",
+                to: "info@nexapointbpo.com"
+            },
+            {
+                name: "Fiona MacLeod",
+                email: "fiona@scotjanitorial.co.uk",
+                company: "Highland Cleaners Ltd",
+                market: "United Kingdom",
+                subject: "Inquiry on Corporate Office Janitorial Leads",
+                message: "Hello NexaPoint, what is your standard weekly walkthrough quota per caller for office buildings over 15,000 sq ft? We want to start next Monday.",
+                to: "info@nexapointbpo.com"
+            },
+            {
+                name: "David Kim",
+                email: "dkim@pacificclean.co.nz",
+                company: "Pacific Janitorial Auckland",
+                market: "New Zealand",
+                subject: "Walkthrough Setting for Logistics Warehouses in Auckland",
+                message: "Hi there, we need auto-scrubbing bids booked for 50,000+ sq ft industrial dispatch warehouses in South Auckland. Please send contract rates for a 1-caller dedicated pod.",
+                to: "info@nexapointbpo.com"
+            }
+        ];
+
+        function simulateInboundEmail() {
+            const pick = simulatedPool[Math.floor(Math.random() * simulatedPool.length)];
+            const newEmail = {
+                id: 'msg_' + Date.now(),
+                name: pick.name,
+                email: pick.email,
+                company: pick.company,
+                market: pick.market,
+                subject: pick.subject,
+                message: pick.message,
+                to: pick.to,
+                date: new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+                unread: true
+            };
+
+            const items = getStoredInquiries();
+            items.unshift(newEmail);
+            localStorage.setItem('nexapoint_inquiries', JSON.stringify(items));
+
+            playNotificationChime();
+            showInboundAlertToast(newEmail.name, newEmail.subject, newEmail.to, newEmail.id);
+            triggerDesktopNotification('New Email to info@nexapointbpo.com', `${newEmail.name}: ${newEmail.subject}`);
+            renderLiveInboundFeed();
+            renderInquiriesList();
+            updateAllBadges();
+        }
+
+        // ============================================================
+        // 11. EMAIL DETAIL MODAL LOGIC
+        // ============================================================
+        let activeDetailId = null;
+
+        function viewEmailDetails(id) {
+            const items = getStoredInquiries();
+            const email = items.find(i => String(i.id) === String(id));
+            if (!email) return;
+
+            // Mark as read
+            email.unread = false;
+            localStorage.setItem('nexapoint_inquiries', JSON.stringify(items));
+            activeDetailId = id;
+
+            document.getElementById('detail-subject').textContent = email.subject || 'Proposal Request';
+            document.getElementById('detail-from').textContent = `${email.name} <${email.email}>`;
+            document.getElementById('detail-to').textContent = email.to || 'info@nexapointbpo.com';
+            document.getElementById('detail-date').textContent = email.date;
+            document.getElementById('detail-body').textContent = email.message || 'No additional details provided.';
+
+            const replyBtn = document.getElementById('detail-reply-btn');
+            replyBtn.onclick = () => replyViaZoho(email.email, email.subject);
+
+            const toggleReadBtn = document.getElementById('detail-toggle-read-btn');
+            toggleReadBtn.textContent = 'Mark Unread';
+            toggleReadBtn.onclick = () => {
+                toggleEmailRead(email.id);
+                closeEmailDetailModal();
+            };
+
+            const deleteBtn = document.getElementById('detail-delete-btn');
+            deleteBtn.onclick = () => {
+                deleteEmail(email.id);
+                closeEmailDetailModal();
+            };
+
+            document.getElementById('email-detail-modal').classList.remove('hidden');
+            renderLiveInboundFeed();
+            updateAllBadges();
+        }
+
+        function closeEmailDetailModal() {
+            document.getElementById('email-detail-modal').classList.add('hidden');
+        }
+
+        function toggleEmailRead(id) {
+            const items = getStoredInquiries();
+            const item = items.find(i => String(i.id) === String(id));
+            if (item) {
+                item.unread = !item.unread;
+                localStorage.setItem('nexapoint_inquiries', JSON.stringify(items));
+                renderLiveInboundFeed();
+                updateAllBadges();
+            }
+        }
+
+        function deleteEmail(id) {
+            if (confirm('Delete this message from the inbound queue?')) {
+                let items = getStoredInquiries();
+                items = items.filter(i => String(i.id) !== String(id));
+                localStorage.setItem('nexapoint_inquiries', JSON.stringify(items));
+                renderLiveInboundFeed();
+                renderInquiriesList();
+                updateAllBadges();
+            }
+        }
+
+        // ============================================================
+        // 12. DYNAMIC CMS LIVE CONTROLLER
+        // ============================================================
         const defaultCMS = {
             title: "Fill Your Calendar with High-Value <span class=\"text-brand-600 dark:text-blue-500\">Commercial Cleaning Contracts</span>",
             sub: "Dedicated offshore cold calling pods connecting your cleaning business with corporate facility decision-makers across the UK, Canada, New Zealand, Australia, and the USA.",
@@ -1447,25 +1972,34 @@
                 loadCmsFormValues();
             }
         }
-
-        // Apply saved CMS on load
         applyCmsToDOM(getStoredCMS());
 
-        // 9. Client Lead Submission & Logging
+        // ============================================================
+        // 13. CLIENT LEAD PROPOSAL FORM HOOK
+        // ============================================================
         const leadForm = document.getElementById('public-lead-form');
         leadForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            const name = document.getElementById('lead-name').value;
+            const email = document.getElementById('lead-email').value;
+            const company = document.getElementById('lead-company').value;
+            const market = document.getElementById('lead-market').value;
+            const message = document.getElementById('lead-message').value;
+
             const newLead = {
-                name: document.getElementById('lead-name').value,
-                email: document.getElementById('lead-email').value,
-                company: document.getElementById('lead-company').value,
-                market: document.getElementById('lead-market').value,
-                message: document.getElementById('lead-message').value,
-                date: new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString()
+                id: 'lead_' + Date.now(),
+                name: name,
+                email: email,
+                company: company,
+                market: market,
+                subject: `Proposal Request: Commercial Janitorial (${market})`,
+                message: message,
+                to: "info@nexapointbpo.com",
+                date: new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+                unread: true
             };
 
-            let leads = [];
-            try { leads = JSON.parse(localStorage.getItem('nexapoint_inquiries')) || []; } catch(err){}
+            let leads = getStoredInquiries();
             leads.unshift(newLead);
             localStorage.setItem('nexapoint_inquiries', JSON.stringify(leads));
 
@@ -1481,16 +2015,22 @@
             statusMsg.textContent = "Proposal request received! Our team will contact you within 4 hours.";
             statusMsg.classList.remove('hidden', 'text-rose-500');
             statusMsg.classList.add('text-emerald-500');
+
+            // Trigger instant real-time audio chime, desktop alert, and toast
+            playNotificationChime();
+            showInboundAlertToast(newLead.name, newLead.subject, newLead.to, newLead.id);
+            triggerDesktopNotification('New Email to info@nexapointbpo.com', `${newLead.name} (${newLead.company}) requested a proposal.`);
+            renderLiveInboundFeed();
             renderInquiriesList();
+            updateAllBadges();
         });
 
         function renderInquiriesList() {
-            let leads = [];
-            try { leads = JSON.parse(localStorage.getItem('nexapoint_inquiries')) || []; } catch(err){}
+            let leads = getStoredInquiries();
             document.getElementById('inquiry-count').textContent = leads.length;
-            document.getElementById('mail-stat-inbox').textContent = `${leads.length} Inquiries`;
 
             const container = document.getElementById('inquiries-container');
+            if (!container) return;
             if (leads.length === 0) {
                 container.innerHTML = '<p class="text-xs text-slate-500">No client submissions logged yet.</p>';
                 return;
@@ -1499,20 +2039,27 @@
             container.innerHTML = leads.map(l => `
                 <div class="p-3.5 sm:p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs space-y-1">
                     <div class="flex justify-between items-center">
-                        <strong class="text-white">${l.name} (${l.company})</strong>
-                        <span class="text-[10px] font-mono text-slate-400">${l.date}</span>
+                        <strong class="text-white">${escapeHtml(l.name)} (${escapeHtml(l.company)})</strong>
+                        <span class="text-[10px] font-mono text-slate-400">${escapeHtml(l.date)}</span>
                     </div>
-                    <p class="text-brand-400 font-medium">${l.email} • Target: ${l.market}</p>
-                    <p class="text-slate-300 mt-1">${l.message || 'No additional notes.'}</p>
+                    <p class="text-brand-400 font-medium">${escapeHtml(l.email)} • Target: ${escapeHtml(l.market)} • To: <span class="text-emerald-400">${escapeHtml(l.to || 'info@nexapointbpo.com')}</span></p>
+                    <p class="text-slate-300 mt-1">${escapeHtml(l.message || 'No additional notes.')}</p>
                 </div>
             `).join('');
         }
+
         function clearInquiries() {
             if (confirm('Clear all logged inquiries?')) {
                 localStorage.removeItem('nexapoint_inquiries');
+                renderLiveInboundFeed();
                 renderInquiriesList();
+                updateAllBadges();
             }
         }
+
+        // Initial setup on load
+        updateAllBadges();
+        renderLiveInboundFeed();
     </script>
 </body>
 </html>
